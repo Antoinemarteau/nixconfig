@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./framework-hardware.nix
       ./keyboard
+      ./users.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -37,14 +38,16 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  #services.xserver.displayManager.defaultSession = "xfce";
-  #services.xserver.desktopManager.xfce.enable = true;
+  services.xserver.displayManager.lightdm.enable = true;
+  #services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.windowManager.i3 = {
+      enable = true;
+      package = pkgs.i3-gaps;
+  };
 
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  
+
 
   # Enable sound.
   sound.enable = true;
@@ -52,15 +55,6 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.mutableUsers = true;
-  users.users.antoine = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager"]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-    ];
-  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

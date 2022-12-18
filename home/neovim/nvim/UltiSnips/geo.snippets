@@ -1,0 +1,74 @@
+snippet poi "Point"
+Point(${1:id}) = {${2:x}, ${3:y}, ${4:z}${5:, ${6:mesh_density}}};$0
+endsnippet
+
+snippet npoi "Point with next id available"
+p${1:id} = newp; Point(p$1) = {${2:x}, ${3:y}, ${4:z}${5:, ${6:mesh_density}}};$0
+endsnippet
+
+snippet ppoi "Physical Point"
+Physical Point(${1:"${2:Name}", }${3:ID}) = {$0};
+endsnippet
+
+snippet lin "Line"
+Line(${1:id}) = {${2:p1}, ${3:p2}};$0
+endsnippet
+
+snippet nlin "Line with next curve id available"
+l${1:id} = newl; Line(l$1) = {${2:p1}, ${3:p2}};$0
+endsnippet
+
+snippet cir "Circle"
+Circle(${1:id}) = {${2:p1}, ${3:p2}, ${4:p3}}$0
+endsnippet
+
+snippet ncir "Circle with next curve id available"
+c${1:id} = newl; Circle(c$1) = {${2:p1}, ${3:p2}, ${4:p3}}$0
+endsnippet
+
+snippet loo "Line Loop"
+Line Loop(${1:id}) = {$0};
+endsnippet
+
+global !p
+"""
+Takes a snippet consisting of one number n and a string line_start and expand :
+"line_start{$2, $3, ... };" with placeholders going from 2 to n+1.
+"""
+def comma_placeholders_snip_expand(snip, line_start):
+    # retrieving single line from current string and treat it like tabstops
+    # count
+    placeholders_amount = int(snip.buffer[snip.line].strip())
+
+    # erase current line
+    snip.buffer[snip.line] = ''
+
+    # create anonymous snippet with expected content and number of tabstops
+    anon_snippet_body = line_start + "{" + ', '.join(['$' + str(i+2)
+                                    for i in range(placeholders_amount)]) + "};"
+
+    # expand anonymous snippet
+    snip.expand_anon(anon_snippet_body)
+endglobal
+
+post_jump "comma_placeholders_snip_expand(snip, 'Line Loop(${1:id}) = ')"
+snippet "loo(\d+)" "latex table row variable" br
+`!p snip.rv = match.group(1)`
+endsnippet
+
+post_jump "comma_placeholders_snip_expand(snip, 'll${1:id} = newll; Line Loop(ll$1) = ')"
+snippet "nloo(\d+)" "latex table row variable" br
+`!p snip.rv = match.group(1)`
+endsnippet
+
+snippet pcur "Physical Curve"
+Physical Curve(${1:"${2:Name}", }${3:ID}) = {$0};
+endsnippet
+
+snippet psur "Physical Surface"
+Physical Surface(${1:"${2:Name}", }${3:ID}) = {$0};
+endsnippet
+
+snippet pvol "Physical Volume"
+Physical Volume(${1:"${2:Name}", }${3:ID}) = {$0};
+endsnippet

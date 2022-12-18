@@ -1,0 +1,78 @@
+snippet dnum "DefineNumber"
+${1:id} = DefineNumber[${2:value}, Name "${3:name}"${4:, ${5:options}}];$0
+endsnippet
+
+snippet dstr "DefineString"
+${1:id} = DefineString["${2:value}", Name "${3:name}"${4:, ${5:options}}];$0
+endsnippet
+
+snippet dcst "DefineConstant"
+DefineConstant[ ${1:id} = {${2:value}, Name "${3:name}"${4:, ${5:options}}} ];$0
+endsnippet
+
+snippet dcsts "DefineConstants"
+DefineConstant[
+  ${1:id} = {${2:value}, Name "${3:name}"${4:, ${5:options}}}$0
+];
+endsnippet
+
+snippet cste "Constant Entry"
+${1:id} = {${2:value}, Name "${3:name}"${4:, ${5:options}}}$0
+endsnippet
+
+snippet cho "Choices"
+Choices {$0}
+endsnippet
+
+snippet snum "SetNumber"
+SetNumber[ "${1:name}", ${2:value} ];$0
+endsnippet
+
+snippet sstr "SetString"
+SetString[ "${1:name}", "${2:value}" ];$0
+endsnippet
+
+snippet gnum "GetNumber"
+GetNumber["${1:name}"];$0
+endsnippet
+
+snippet gstr "GetString"
+GetString["${1:name}"];$0
+endsnippet
+
+##########
+# Macros #
+##########
+
+snippet if "If EndIf"
+If ($1)
+	$0
+EndIf
+endsnippet
+
+snippet ife "If Else EndIf"
+If ($1)
+	$0${2:
+Else
+	}
+EndIf
+endsnippet
+
+snippet iff "If ElseIf ElseIf Else EndIf"
+If ($1)
+	$0${2:
+ElseIf ($3)
+	${4:
+ElseIf ($5)
+	}}${6:
+Else
+	}
+EndIf
+endsnippet
+
+snippet for "For"
+For $1 In {$2}
+  $0
+EndFor
+endsnippet
+

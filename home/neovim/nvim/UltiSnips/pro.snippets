@@ -1,0 +1,216 @@
+################
+# Single Lines #
+################
+
+snippet inc "Include" b
+Include "$1.${2:pro}";
+endsnippet
+
+snippet reg "Define Region"
+$1 = Region[ $2 ];
+endsnippet
+
+snippet term "Term"
+Term { [$1]; In $2; Jacobian $3; }
+endsnippet
+
+snippet local "Local"
+Local { [$1]; In $2; Jacobian $3; }
+endsnippet
+
+snippet pprint "PostOp Print"
+Print[ $1, OnElementsOf $2, File $3 ];
+endsnippet
+
+snippet eval "Evaluate" b
+Evaluate[ $0 ];
+endsnippet
+
+#################
+# Curly entries #
+#################
+
+snippet na "Name"
+{ Name $1;
+  $0
+}
+endsnippet
+
+snippet ty "Type"
+{ Type $1;
+  $0
+}
+endsnippet
+
+snippet naty "Name Type"
+{ Name $1; Type $2;
+  $0
+}
+endsnippet
+
+snippet nava "Name Value"
+{ Name $1; Value {
+    $0
+  }
+}
+endsnippet
+
+snippet nafo "Name NameOfFormulation"
+{ Name $1; NameOfFormulation $2; ${3:
+  $0
+}}
+endsnippet
+
+snippet napo "Name NameOfPostProcessing"
+{ Name $1; NameOfPostProcessing $2;
+  Operation {
+    $0
+  }
+}
+endsnippet
+
+snippet ca "Case"
+Case {
+  $0
+}
+endsnippet
+
+snippet jca "Jacobian Case"
+{ Region $1; Jacobian $2; }$0
+endsnippet
+
+snippet ica "Integration Case"
+{ GeoElement $1; NumberOfPoints $2; }$0
+endsnippet
+
+snippet cca "Constraint Case"
+{ Region $1; SubRegion $2; Value $3}$0
+endsnippet
+
+snippet bf "BasisFunction"
+BasisFunction {
+  ${0}
+}
+endsnippet
+
+snippet bfe "BasisFunction Entry"
+{ Name $1; NameOfCoef $2; Function $3;
+  Support $4; Entity $5; }$0
+endsnippet
+
+snippet coe "Constraint Entry"
+{ NameOfCoef $1; EntityType ${2:Auto}; NameOfConstraint $3; }$0
+endsnippet
+
+snippet qua "Quantity"
+Quantity {
+  $0
+}
+endsnippet
+
+snippet que "Quantity Entry"
+{ Name $1; Type $2; NameOfSpace $3; }
+endsnippet
+
+snippet eq "Equation"
+Equation {
+  $0
+}
+endsnippet
+
+snippet ine "Integral Entry"
+Integral { [ $0, {${1:test_function}} ];
+  In $2; Jacobian $3; Integration ${4:Int}; }
+endsnippet
+
+snippet sy "System"
+System {
+  $0
+}
+endsnippet
+
+snippet op "Operation"
+Operation {
+  $0
+}
+endsnippet
+
+################
+# Environments #
+################
+
+snippet gro "Group" b
+Group {
+	$0
+}
+endsnippet
+
+snippet jac "Jacobian" b
+Jacobian {
+	$0
+}
+endsnippet
+
+
+snippet int "Integration" b
+Integration {
+	$0
+}
+endsnippet
+
+snippet fun "Function" b
+Function {
+	$0
+}
+endsnippet
+
+snippet con "Constraint"
+Constraint {
+	$0
+}
+endsnippet
+
+snippet spa "FunctionSpace" b
+FunctionSpace {
+	$0
+}
+endsnippet
+
+snippet for "Formulation" b
+Formulation {
+	$0
+}
+endsnippet
+
+snippet res "Resolution" b
+Resolution {
+	$0
+}
+endsnippet
+
+snippet posp "PostProcessing" b
+PostProcessing {
+	$0
+}
+endsnippet
+
+snippet poso "PostOperation" b
+PostOperation {
+	$0
+}
+endsnippet
+
+snippet while "While"
+While [$1] {
+  $0
+}
+endsnippet
+
+###########
+# Inlines #
+###########
+
+snippet scat "StrCat"
+StrCat[$1, $2]
+endsnippet
+
