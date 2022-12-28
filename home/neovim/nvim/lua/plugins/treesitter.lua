@@ -12,6 +12,7 @@ require 'nvim-treesitter.configs'.setup {
         'julia',
         'latex',
         'lua',
+        'nix',
         'python'
     },
 
