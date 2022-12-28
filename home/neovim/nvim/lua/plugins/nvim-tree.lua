@@ -13,7 +13,7 @@ vim.api.nvim_create_autocmd(
 
 require'nvim-tree'.setup {
     disable_netrw       = false,             -- Disables netrw completely.
-    hijack_netrw        = true,             -- Hijack netrw window on startup.
+    hijack_netrw        = false,             -- Hijack netrw window on startup.
     open_on_setup       = false,            -- Open the tree when running this setup function.
     ignore_ft_on_setup  = { 'startify' },   -- Will not open on setup if the filetype is in this
                                             --      list.

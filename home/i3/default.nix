@@ -1,11 +1,19 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
+    imports = [
+        ./i3status.nix
+    ];
+
+    home.packages = with pkgs; [
+        python3
+    ];
+
     xsession.windowManager.i3 = {
         enable = true;
 
         config = {
             assigns = {
-                "2" = [{class = "^Firefox$"; }];
+                "2" = [{class = "irefox$"; }];
                 "4" = [{class = "FLTK"; }];
                 "5" = [{class = "Signal"; }];
                 "6" = [{class = "Zotero"; }];
@@ -15,6 +23,8 @@
             bars = [
                 {statusCommand =  "./mybar.sh";}
             ];
+
+            defaultWorkspace = "workspace number 1";
 
             floating.criteria = [
                 { class = "firefox"; title = "Library"; }
@@ -68,7 +78,7 @@
                 "${mod}+d" = "exec --no-startup-id rofi -show run";
                 "${mod}+Shift+l" = "reload";
                 "${mod}+Shift+h" = "restart";
-                "${mod}+Shift+e" = "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'";
+                "${mod}+Shift+e" = "exec i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'";
                 "Print" = "exec --no-startup-id flameshot gui";
                 "${mod}+Insert" = "exec --no-startup-id scrot -e 'mv $f ~/Pictures/'";
 
@@ -142,7 +152,49 @@
 
     xdg.configFile.barScript = {
         source = ./mybar.sh;
-        target = "i3/mybar.sh"; # targets ~/.config/i3/mybar.sh
+        target = "i3status/mybar.sh"; # targets ~/.config/i3status/mybar.sh
+        executable = true;
+    };
+
+    xdg.configFile.bar_click_time = {
+        source = ./click_time.sh;
+        target = "i3status/click_time.sh";
+        executable = true;
+    };
+
+    xdg.configFile.bar_click_vpn = {
+        source = ./click_vpn.sh;
+        target = "i3status/click_vpn.sh";
+        executable = true;
+    };
+
+    xdg.configFile.bar_cpu = {
+        source = ./cpu.py;
+        target = "i3status/cpu.py";
+        executable = true;
+    };
+
+    xdg.configFile.bar_disk = {
+        source = ./disk.py;
+        target = "i3status/disk.py";
+        executable = true;
+    };
+
+    xdg.configFile.bar_ip = {
+        source = ./ip.py;
+        target = "i3status/ip.py";
+        executable = true;
+    };
+
+    xdg.configFile.bar_memory = {
+        source = ./memory.py;
+        target = "i3status/memory.py";
+        executable = true;
+    };
+
+    xdg.configFile.bar_meteo = {
+        source = ./meteo.py;
+        target = "i3status/meteo.py";
         executable = true;
     };
 }

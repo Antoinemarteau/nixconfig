@@ -9,8 +9,13 @@
     [ # Include the results of the hardware scan.
       ./framework-hardware.nix
       ./keyboard
+      ./neovim.nix
+      ./nix.nix
       ./users.nix
+      ./zsh.nix
     ];
+
+  services.gnome.gnome-keyring.enable = true;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -59,9 +64,11 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
-    vlc
+    btop
+    htop
+    ripgrep
+
     firefox
     git
   ];

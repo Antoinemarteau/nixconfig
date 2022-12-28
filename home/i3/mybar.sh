@@ -35,18 +35,6 @@ common() {
   echo -n "\"border_right\":0"
 }
 
-mycrypto() {
-  local bg="#FFD180"
-  separator $bg $bg_bar_color
-  echo -n ",{"
-  echo -n "\"name\":\"id_crypto\","
-  echo -n "\"full_text\":\" $($HOME/.config/i3status/crypto.py) \","
-  echo -n "\"color\":\"#000000\","
-  echo -n "\"background\":\"$bg\","
-  common
-  echo -n "},"
-}
-
 myip_public() {
   local bg="#1976D2"
   separator $bg "#FFD180"
@@ -178,16 +166,6 @@ volume() {
   separator $bg_bar_color $bg
 }
 
-systemupdate() {
-  local nb=$(checkupdates | wc -l)
-  if (( $nb > 0)); then
-    echo -n ",{"
-    echo -n "\"name\":\"id_systemupdate\","
-    echo -n "\"full_text\":\"  ${nb}\""
-    echo -n "}"
-  fi
-}
-
 logout() {
   echo -n ",{"
   echo -n "\"name\":\"id_logout\","
@@ -204,7 +182,6 @@ echo '[]'                   # We send an empty first array of blocks to make the
 (while :;
 do
 	echo -n ",["
-  #mycrypto
   myip_public
   myvpn_on
   myip_local
@@ -215,7 +192,6 @@ do
   mydate
   battery0
   volume
-  systemupdate
   logout
   echo "]"
 	sleep 10
@@ -231,10 +207,6 @@ do
   if [[ $line == *"name"*"id_vpn"* ]]; then
     kitty -e $HOME/.config/i3status/click_vpn.sh &
 
-  # CHECK UPDATES
-  elif [[ $line == *"name"*"id_systemupdate"* ]]; then
-    kitty -e $HOME/.config/i3status/click_checkupdates.sh &
-
   # CPU
   elif [[ $line == *"name"*"id_cpu_usage"* ]]; then
     kitty -e htop &
@@ -246,10 +218,6 @@ do
   # METEO
   elif [[ $line == *"name"*"id_meteo"* ]]; then
     xdg-open https://openweathermap.org/city/2986140 > /dev/null &
-
-  # CRYPTO
-  elif [[ $line == *"name"*"id_crypto"* ]]; then
-    xdg-open https://www.livecoinwatch.com/ > /dev/null &
 
   # VOLUME
   elif [[ $line == *"name"*"id_volume"* ]]; then

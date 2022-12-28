@@ -81,4 +81,6 @@ require 'lspconfig'.pylsp.setup {
 }
 
 -- Julia
-require'lspconfig'.julials.setup{}
+require'lspconfig'.julials.setup{
+    capabilities = capabilities,
+}
