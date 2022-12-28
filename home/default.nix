@@ -2,6 +2,7 @@
     imports = [
         ./neovim
         ./kitty.nix
+        ./i3
     ];
 
     home = {
