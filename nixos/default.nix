@@ -11,6 +11,7 @@
       ./keyboard
       ./neovim.nix
       ./nix.nix
+      ./steam.nix
       ./users.nix
       ./zsh.nix
     ];
@@ -68,6 +69,8 @@
     btop
     htop
     ripgrep
+    fd
+    nfs-utils
 
     firefox
     git
