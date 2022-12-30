@@ -14,6 +14,7 @@
         ./ssh.nix
         ./tmux.nix
         ./xdg.nix
+        ./zathura.nix
     ];
 
     home = {
