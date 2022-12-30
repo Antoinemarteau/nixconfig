@@ -76,22 +76,22 @@
         # Key mappings #
         ################
         mappings = {
-            T = "zoom in";
-            S = "zoom out";
+            "0" = "zoom in";          # AltGR T
+            "1" = "zoom out";         # AltGR S
 
-            l = "reload";
-            L = "rotate";
+            l   = "reload";
+            "7" = "rotate";           # AltGR L
 
-            u = "scroll half-up";
-            d = "scroll half-down";
+            u   = "scroll half-up";
+            d   = "scroll half-down";
 
-            D = "toggle_page_mode";
+            "6" = "toggle_page_mode"; # AltGR D
 
-            i = "recolor";
+            i   = "recolor";
 
             # next/previous page
-            C = "navigate previous";
-            R = "navigate next";
+            "!" = "navigate previous";# AltGR C
+            "2" = "navigate next";    # AltGR R
 
             c   = "scroll left";
             t   = "scroll down";
