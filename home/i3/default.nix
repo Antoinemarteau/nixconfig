@@ -122,7 +122,6 @@
 
             startup = [
                 { command = "dunst"; }
-                { command = "picom"; }
                 { command = "nitrogen --restore"; }
                 { command = "kitty"; }
                 { command = "pa-applet"; }
