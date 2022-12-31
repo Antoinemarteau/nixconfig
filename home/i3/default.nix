@@ -131,7 +131,6 @@
                 { command = "nextcloud"; }
                 { command = "zotero"; }
                 { command = "redshift -P -O 4500"; }
-                { command = "udiskie"; }
                 { command = "VBoxClient-All"; }
                 { command = "nm-applet"; }
             ];

@@ -8,6 +8,7 @@
         ./kitty.nix
         ./less.nix
         ./neovim
+        ./picom.nix
         ./readline.nix
         ./rofi.nix
         ./shell
@@ -53,5 +54,9 @@
         stateVersion = "22.11";
     };
 
-    services.network-manager-applet.enable = true;
+    services = {
+        network-manager-applet.enable = true;
+        udiskie.enable = true;
+        nextcloud-client.enable = true;
+    };
 }
