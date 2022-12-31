@@ -28,6 +28,7 @@
 
             floating.criteria = [
                 { class = "firefox"; title = "Library"; }
+                { class = "blueman-manager-wrapped"; }
             ];
 
             #fonts = {name = }; TODO font pango:monospace 8
