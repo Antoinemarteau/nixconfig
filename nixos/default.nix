@@ -7,13 +7,15 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./framework-hardware.nix
-      ./keyboard
-      ./neovim.nix
-      ./nix.nix
-      ./steam.nix
-      ./users.nix
-      ./zsh.nix
+        ./bluetooth.nix
+        ./framework-hardware.nix
+        ./keyboard
+        ./neovim.nix
+        ./nix.nix
+        #./sound.nix
+        ./steam.nix
+        ./users.nix
+        ./zsh.nix
     ];
 
   services.gnome.gnome-keyring.enable = true;
