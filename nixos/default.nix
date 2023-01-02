@@ -18,8 +18,6 @@
         ./zsh.nix
     ];
 
-  services.gnome.gnome-keyring.enable = true;
-
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -40,13 +38,21 @@
     useXkbConfig = true; # use xkbOptions in tty.
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  services.xserver.displayManager.lightdm.enable = true;
-  #services.xserver.desktopManager.gnome.enable = true;
-  services.xserver.windowManager.i3 = {
-      enable = true;
-      package = pkgs.i3-gaps;
+  services = {
+      fwupd.enable = true;
+
+      gnome.gnome-keyring.enable = true;
+
+      # Enable the X11 windowing system.
+      xserver = {
+          enable = true;
+          displayManager.lightdm.enable = true;
+          #desktopManager.gnome.enable = true;
+          windowManager.i3 = {
+              enable = true;
+              package = pkgs.i3-gaps;
+          };
+      };
   };
 
 
@@ -58,12 +64,13 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    wget
     btop
-    htop
-    ripgrep
     fd
+    htop
     nfs-utils
+    ncdu
+    ripgrep
+    wget
 
     firefox
     git
@@ -72,26 +79,18 @@
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
+  programs = {
+      gnupg.agent = {
+        enable = true;
+        enableSSHSupport = true;
+      };
+
+      singularity.enable = true;
   };
 
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
   networking.firewall.enable = true;
-
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
