@@ -4,7 +4,7 @@
 
         font = {
             name = "DejaVu Sans Mono";
-            size = 16;
+            size = 18;
         };
 
         theme = "Gruvbox Dark";

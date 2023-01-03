@@ -3,7 +3,6 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -31,12 +30,22 @@
   time.timeZone = "Europe/Paris";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n = {
+      defaultLocale = "en_US.UTF-8";     # langue generale du PC
+      extraLocaleSettings = {
+          LC_TIME    = "fr_FR.UTF-8";    # format date / heure
+      };
+  };
+
   console = {
     font = "Lat2-Terminus16";
     #keyMap = "fr";
     useXkbConfig = true; # use xkbOptions in tty.
   };
+
+  fonts.fonts = with pkgs; [
+      (nerdfonts.override { fonts = [ "DejaVuSansMono" ]; })
+  ];
 
   services = {
       fwupd.enable = true;

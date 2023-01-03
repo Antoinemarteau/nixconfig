@@ -21,7 +21,14 @@
             };
 
             bars = [
-                {statusCommand =  "./mybar.sh";}
+                {
+                    statusCommand =  "i3status-rs ~/.config/i3status-rust/config-default.toml";
+                    fonts = {
+                        names = [ "DejaVu Sans Mono" ];
+                        size = 16.;
+                    };
+                    position = "bottom";
+                }
             ];
 
             defaultWorkspace = "workspace number 1";
@@ -30,8 +37,6 @@
                 { class = "firefox"; title = "Library"; }
                 { class = "blueman-manager-wrapped"; }
             ];
-
-            #fonts = {name = }; TODO font pango:monospace 8
 
             gaps = {
                 inner = 3;
@@ -132,68 +137,25 @@
                 { command = "zotero"; }
                 { command = "redshift -P -O 4500"; }
                 { command = "VBoxClient-All"; }
-                { command = "nm-applet"; }
             ];
 
             terminal = "kitty";
 
             window = {
-                commands = [ {
-                    command = "focus";
-                    criteria = { class = "firefox"; urgent = "latest"; };
-                } ];
+                commands = [
+                    {
+                        command = "focus";
+                        criteria = { class = "firefox"; urgent = "latest"; };
+                    }
+                    {
+                        command = "fullscreen enable";
+                        criteria = { class = "Civ5XP"; };
+                    }
+                ];
                 hideEdgeBorders = "smart";
             };
 
             workspaceAutoBackAndForth = false;
         };
-    };
-
-    xdg.configFile.barScript = {
-        source = ./mybar.sh;
-        target = "i3status/mybar.sh"; # targets ~/.config/i3status/mybar.sh
-        executable = true;
-    };
-
-    xdg.configFile.bar_click_time = {
-        source = ./click_time.sh;
-        target = "i3status/click_time.sh";
-        executable = true;
-    };
-
-    xdg.configFile.bar_click_vpn = {
-        source = ./click_vpn.sh;
-        target = "i3status/click_vpn.sh";
-        executable = true;
-    };
-
-    xdg.configFile.bar_cpu = {
-        source = ./cpu.py;
-        target = "i3status/cpu.py";
-        executable = true;
-    };
-
-    xdg.configFile.bar_disk = {
-        source = ./disk.py;
-        target = "i3status/disk.py";
-        executable = true;
-    };
-
-    xdg.configFile.bar_ip = {
-        source = ./ip.py;
-        target = "i3status/ip.py";
-        executable = true;
-    };
-
-    xdg.configFile.bar_memory = {
-        source = ./memory.py;
-        target = "i3status/memory.py";
-        executable = true;
-    };
-
-    xdg.configFile.bar_meteo = {
-        source = ./meteo.py;
-        target = "i3status/meteo.py";
-        executable = true;
     };
 }

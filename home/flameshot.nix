@@ -5,6 +5,7 @@
         settings = {
             General = {
                 showHelp = false;
+                showDesktopNotification = false;
 
                 drawColor = "#ff0000";
                 drawFontSize = 23;
