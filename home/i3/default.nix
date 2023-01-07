@@ -151,6 +151,10 @@
                         command = "fullscreen enable";
                         criteria = { class = "Civ5XP"; };
                     }
+                    {
+                        command = "move to workspace 8";
+                        criteria = { class = "potify"; };
+                    }
                 ];
                 hideEdgeBorders = "smart";
             };
