@@ -100,6 +100,7 @@
       nfs-utils
       ncdu
       ripgrep
+      xclip
       wget
 
       firefox
