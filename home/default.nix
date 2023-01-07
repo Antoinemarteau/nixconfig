@@ -3,6 +3,7 @@
     imports = [
         ./flameshot.nix
         ./git.nix
+        ./gtk.nix
         ./i3
         ./julia.nix
         ./kitty.nix
@@ -37,6 +38,8 @@
             # gui applications
             signal-desktop
             spotify
+            # set setting layout.css.devPixelsPerPx = 1.5 in zotero GUI,
+            # and change font in the gui "view" menu
             zotero
 
             #latex

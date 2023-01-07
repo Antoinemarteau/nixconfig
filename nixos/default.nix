@@ -60,8 +60,23 @@
         # Enable the X11 windowing system.
         xserver = {
             enable = true;
-            displayManager.lightdm.enable = true;
-            #desktopManager.gnome.enable = true;
+
+            # session login screen
+            displayManager.lightdm = {
+                enable = true;
+                greeters.gtk = {
+                    enable = true;
+                    theme = {
+                        name = "Matcha-dark-aliz";
+                        package = pkgs.matcha-gtk-theme;
+                    };
+                    cursorTheme = {
+                        name = "Numix-Cursor-Light";
+                        package = pkgs.numix-cursor-theme;
+                    };
+                };
+            };
+
             windowManager.i3 = {
                 enable = true;
                 package = pkgs.i3-gaps;
@@ -95,6 +110,10 @@
     # started in user sessions.
     # programs.mtr.enable = true;
     programs = {
+        # Some programs need SUID wrappers, can be configured further or are started in user sessions.
+        dconf.enable = true;
+        # needed to use gtk
+
         gnupg.agent = {
           enable = true;
           enableSSHSupport = true;
