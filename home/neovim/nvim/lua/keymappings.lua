@@ -86,15 +86,15 @@ cmap('<A-j>', '<End>')     -- Go to end of line
 cmap('<A-v>', '<S-Left>')  -- Cursor one word left
 cmap('<A-d>', '<S-Right>') -- Cursor one word right
 
-local function cmap_menu(key, menu_action, fallback)
-    vim.keymap.set('c', key,
-    'wildmenumode() ? "' .. menu_action .. '" : "' .. fallback .. '"',
-    { expr = true })
+local function cmap_menu_fallback(key, menu_action, fallback)
+    vim.keymap.set('c', key, function()
+        return vim.fn.wildmenumode() == 1 and menu_action or fallback
+    end, {expr = true})
 end
-cmap_menu('<A-t>', '<Right>', '<Left>')  -- Next file/folder     | cursor Left
-cmap_menu('<A-s>', '<Left>',  '<Right>') -- Previous file/folder | cursor Right
-cmap(     '<A-c>',            '<Up>')    -- Go to parent folder  | back history command
-cmap(     '<A-r>',            '<Down>')  -- Enter file/folder    | forward history command
+cmap_menu_fallback('<A-t>', '<C-N>', '<Left>')  -- Next file/folder     | cursor Left
+cmap_menu_fallback('<A-s>', '<C-P>', '<Right>') -- Previous file/folder | cursor Right
+cmap(              '<A-c>',          '<Up>')    -- Go to parent folder  | back history command
+cmap(              '<A-r>',          '<Down>')  -- Enter file/folder    | forward history command
 
 cmap('<A-h>', '<C-W>')    -- Delete word before cursor
 cmap('<A-q>', '<BS>')     -- Delete char before cursor
