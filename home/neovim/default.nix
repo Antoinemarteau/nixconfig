@@ -20,6 +20,7 @@
             sumneko-lua-language-server                 # Lua language server
             clang-tools                                 # C/C++ language server
             texlab                                      # LaTeX language server
+            ltex-ls                                     # LaTeX language server
             xdotool                                     # For forward search in zathura
             pstree                                      # For inverse search in vimtex
             rnix-lsp                                    # Nix language server

@@ -87,9 +87,6 @@ use 'L3MON4D3/LuaSnip'                  -- snippet engine
 use 'saadparwaiz1/cmp_luasnip'          -- luasnip completion source for nvim-cmp
 use 'honza/vim-snippets'                -- snippets files for various programming languages.
 
-use {'iamcco/markdown-preview.nvim',    -- Markdown preview
-     run = 'cd app && yarn install'}
-
 
 --------
 -- UI ----------------------------------------------------------------------------------------------
