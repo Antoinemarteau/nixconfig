@@ -2,6 +2,7 @@
 {
     imports = [
         ./flameshot.nix
+        ./games
         ./git.nix
         ./gtk.nix
         ./i3
