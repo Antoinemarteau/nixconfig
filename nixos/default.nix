@@ -119,8 +119,6 @@
           enable = true;
           enableSSHSupport = true;
         };
-
-        singularity.enable = true;
     };
 
     # Open ports in the firewall.

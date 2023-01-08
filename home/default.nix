@@ -15,6 +15,7 @@
         ./rofi.nix
         ./shell
         ./ssh.nix
+        ./thesis.nix
         ./tmux.nix
         ./xdg.nix
         ./zathura.nix
