@@ -14,12 +14,19 @@
         nixpkgs,
         home-manager
     }:
-    {
+    let
+        system = "x86_64-linux";
+
+        nixpkgs-outPath = {
+            environment.etc."nix/inputs/nixpkgs".source = nixpkgs.outPath;
+        };
+    in {
         nixosConfigurations = {
             framework = nixpkgs.lib.nixosSystem {
-                system = "x86_64-linux";
-                modules = [ 
-                    ./nixos 
+                modules = [
+                    ./nixos
+                    nixpkgs-outPath
+
                     home-manager.nixosModules.home-manager
                     {
                         home-manager = {

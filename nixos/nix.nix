@@ -42,7 +42,7 @@
         };
 
         # set the value NIX_PATH to whatever nixpkgs our flake uses
-        #nixPath = [ "nixpkgs=/etc/nix/inputs/nixpkgs" ]; TODO
+        nixPath = [ "nixpkgs=/etc/nix/inputs/nixpkgs" ];
     };
 
 }
