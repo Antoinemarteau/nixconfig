@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
     imports = [
+        ./dunst.nix
         ./flameshot.nix
         ./games
         ./git.nix

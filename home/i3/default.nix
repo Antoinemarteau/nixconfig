@@ -83,6 +83,9 @@
                 "${mod}+z" = "layout tabbed      ";
                 "${mod}+e" = "layout toggle split";
 
+                "${mod}+percent"  = "exec setxkbmap fr oss && dunstify 'loaded azerty layout'";
+                "${mod}+parenright" = "exec setxkbmap bepo_antoine && dunstify 'loaded bepo layout'";
+
                 "${mod}+d" = "exec --no-startup-id rofi -show run";
                 "${mod}+Shift+l" = "reload";
                 "${mod}+Shift+h" = "restart";
