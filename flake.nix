@@ -39,7 +39,7 @@
         };
     in {
         nixosConfigurations = builtins.listToAttrs (
-            builtins.map mkNixosSystem [ "framework" ]
+            builtins.map mkNixosSystem [ "framework" "desktop" "vm" "manjaro" ]
         );
     };
 }
