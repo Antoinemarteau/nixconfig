@@ -8,6 +8,8 @@
         python3
     ];
 
+    xdg.dataFile.wallpaper.source = ./wallpaper.jpeg;
+
     xsession.windowManager.i3 = {
         enable = true;
 
@@ -135,8 +137,9 @@
                 { command = "firefox"; }
                 { command = "nextcloud"; }
                 { command = "zotero"; }
-                { command = "redshift -P -O 4500"; }
+                { command = "${pkgs.redshift}/bin/redshift -P -O 4500"; }
                 { command = "VBoxClient-All"; }
+                { command = "${pkgs.feh}/bin/feh --bg-fill ${config.xdg.dataFile.wallpaper.target}"; }
             ];
 
             terminal = "kitty";
