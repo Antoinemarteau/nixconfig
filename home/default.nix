@@ -39,6 +39,7 @@
             mpv
 
             # gui applications
+            firefox
             signal-desktop
             spotify
             # set setting layout.css.devPixelsPerPx = 1.5 in zotero GUI,

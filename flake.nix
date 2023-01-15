@@ -20,11 +20,12 @@
         nixpkgs-outPath = {
             environment.etc."nix/inputs/nixpkgs".source = nixpkgs.outPath;
         };
-    in {
-        nixosConfigurations = {
-            framework = nixpkgs.lib.nixosSystem {
+
+        mkNixosSystem = hostname: {
+            name = hostname;
+            value = nixpkgs.lib.nixosSystem {
                 modules = [
-                    ./nixos
+                    ./nixos/${hostname}
                     nixpkgs-outPath
 
                     home-manager.nixosModules.home-manager
@@ -38,6 +39,10 @@
                 ];
             };
         };
+    in {
+        nixosConfigurations = builtins.listToAttrs (
+            builtins.map mkNixosSystem [ "framework" ]
+        );
     };
 }
 
