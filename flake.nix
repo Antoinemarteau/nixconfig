@@ -15,8 +15,6 @@
         home-manager
     }:
     let
-        system = "x86_64-linux";
-
         nixpkgs-outPath = {
             environment.etc."nix/inputs/nixpkgs".source = nixpkgs.outPath;
         };
