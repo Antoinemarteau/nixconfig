@@ -4,6 +4,7 @@
         ../modules/common
         ../modules/steam.nix
         ../modules/ssh.nix
+        ./nvidia.nix
 
         ./hardware.nix
     ];
