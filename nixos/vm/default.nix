@@ -4,6 +4,7 @@
         ../modules/common
 
         ./hardware.nix
+        ./shared_folder.nix
     ];
 
     boot.loader.grub = {
