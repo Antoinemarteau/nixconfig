@@ -11,6 +11,15 @@
                 hostname = "manjaro.g2elab.grenoble-inp.fr";
             };
 
+            ###########
+            # Desktop #
+            ###########
+            desktop = {
+                user = "antoine";
+                hostname = "glepage.com";
+                port = 224;
+            };
+
             ##########
             # GriCAD #
             ##########
