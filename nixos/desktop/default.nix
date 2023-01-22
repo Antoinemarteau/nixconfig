@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 {
     imports = [
+        ../modules/bootloader.nix
         ../modules/common
         ../modules/steam.nix
         ../modules/ssh.nix
