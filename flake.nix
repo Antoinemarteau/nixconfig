@@ -31,7 +31,11 @@
                         home-manager = {
                             useGlobalPkgs = true;
                             useUserPackages = true;
-                            users.antoine = import ./home/${hostname};
+                            #users.antoine = import ./home/${hostname};
+                            users.antoine = {
+                                imports = [ ./home/${hostname} ];
+                                home.sessionVariables.HOSTNAME = hostname;
+                            };
                         };
                     }
                 ];

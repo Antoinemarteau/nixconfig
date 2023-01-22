@@ -1,3 +1,4 @@
+{ config, lib, ... }:
 {
     programs.i3status-rust = {
         enable = true;
@@ -17,6 +18,18 @@
                     unit = "GB";
                     warning = 20.0;
                 }
+             (lib.mkIf ( config.home.sessionVariables.HOSTNAME == "desktop" )
+                {
+                    alert = 10.0;
+                    alias = "hdd";
+                    block = "disk_space";
+                    info_type = "available";
+                    interval = 60;
+                    path = "/mnt/hdd/";
+                    unit = "GB";
+                    warning = 20.0;
+                }
+             )
                 {
                     block = "memory";
                     display_type = "memory";
@@ -40,9 +53,12 @@
                     format = "%a %d/%m %R";
                     interval = 60;
                 }
+            (lib.mkIf ( builtins.elem config.home.sessionVariables.HOSTNAME [ "framework" "vm" ] )
                 {
                     block = "battery";
                 }
+            )
+
             ];
         };
 
