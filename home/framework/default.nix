@@ -1,3 +1,4 @@
+{ lib, ...}:
 {
     imports = [
         ../modules/common
@@ -9,4 +10,6 @@
         homeDirectory = "/home/antoine";
         stateVersion = "22.11";
     };
+
+    programs.kitty.font.size = lib.mkForce 18;
 }
