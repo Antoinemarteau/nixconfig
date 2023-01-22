@@ -17,6 +17,11 @@
       fsType = "ext4";
     };
 
+  fileSystems."/mnt/hdd" =
+    { device = "/dev/disk/by-label/hdd";
+      fsType = "ext4";
+    };
+
   fileSystems."/boot" =
     { device = "/dev/disk/by-label/nixboot";
       fsType = "vfat";
