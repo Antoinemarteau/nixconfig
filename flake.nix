@@ -31,7 +31,7 @@
                         home-manager = {
                             useGlobalPkgs = true;
                             useUserPackages = true;
-                            users.antoine = import ./home;
+                            users.antoine = import ./home/${hostname};
                         };
                     }
                 ];

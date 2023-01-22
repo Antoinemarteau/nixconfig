@@ -1,10 +1,10 @@
 { config, pkgs, ... }:
 {
     imports = [
-        ../common
+        ../modules/common
+        ../modules/steam.nix
 
         ./hardware.nix
-        ../steam.nix
     ];
 
     # framework is gen 12 proc, needs recent kernel
