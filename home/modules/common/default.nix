@@ -10,7 +10,7 @@
         ./kitty.nix
         ./less.nix
         ./neovim
-        #./picom.nix
+        ./picom.nix
         ./readline.nix
         ./rofi.nix
         ./shell
