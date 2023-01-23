@@ -1,4 +1,4 @@
-{ config, ...}:
+{ lib, config, ...}:
 {
     imports = [
         ../modules/common
@@ -11,4 +11,5 @@
 
         file."common_with_host".source = config.lib.file.mkOutOfStoreSymlink /mnt/common_with_host;
     };
+    services.picom.enable = lib.mkForce false;
 }

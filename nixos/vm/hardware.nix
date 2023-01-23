@@ -30,6 +30,5 @@
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   virtualisation.virtualbox.guest = {
       enable = true;
-      x11 = true;
   };
 }
