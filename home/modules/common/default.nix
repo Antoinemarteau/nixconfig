@@ -30,8 +30,12 @@
         pcmanfm
         gthumb
         vlc
-        zathura #TODO
+        zathura
         mpv
+
+        #file editors
+        pinta
+        libreoffice
 
         # gui applications
         firefox
