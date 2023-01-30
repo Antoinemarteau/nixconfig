@@ -12,6 +12,8 @@
             nsp = "nix-shell -p";
 
             fs = "pcmanfm";
+
+            vs = "nvim -c ':vert Git'";
         };
     };
 }
