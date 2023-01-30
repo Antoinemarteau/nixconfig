@@ -2,9 +2,7 @@
     services.picom = {
         enable = true;
 
-        backend = "xr_glx_hybrid";
-
-        extraArgs = [ "--legacy-backends" ];
+        backend = "glx";
 
         settings.blur = {
             method = "gaussian";

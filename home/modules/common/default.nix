@@ -10,7 +10,7 @@
         ./kitty.nix
         ./less.nix
         ./neovim
-        #./picom.nix
+        ./picom.nix
         ./readline.nix
         ./rofi.nix
         ./shell
@@ -30,9 +30,13 @@
         pcmanfm
         gthumb
         vlc
-        zathura #TODO
+        zathura
         mpv
         gnome.gedit
+
+        #file editors
+        pinta
+        libreoffice
 
         # gui applications
         firefox
