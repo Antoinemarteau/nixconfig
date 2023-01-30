@@ -71,7 +71,7 @@ use 'chiel92/vim-autoformat'            -- Formatting
 
 use 'lervag/vimtex'                     -- LaTeX support
 use {'iamcco/markdown-preview.nvim',    -- Markdown preview
-     run = function() vim.fn["mkdp#util#install"]() end}
+     run = 'cd app && yarn install'}
 
 --[[
 use 'folke/trouble.nvim'                -- Pretty list for showing diagnostics

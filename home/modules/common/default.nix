@@ -32,6 +32,7 @@
         vlc
         zathura #TODO
         mpv
+        gnome.gedit
 
         # gui applications
         firefox

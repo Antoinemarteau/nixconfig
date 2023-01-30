@@ -30,6 +30,8 @@
                 # Text
                 "text/html"                 = "firefox.desktop";
                 "text/xml"                  = "firefox.desktop";
+                "text/plain"                = "org.gnome.gedit.desktop";
+                "text/markdown"             = "org.gnome.gedit.desktop";
 
                 # Images
                 "image/gif"                 = "mpvgif.desktop";
