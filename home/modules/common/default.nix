@@ -25,6 +25,7 @@
         # essentials and basics
         redshift
         udiskie
+        jmtpfs # mount android phone
 
         # file readers
         pcmanfm

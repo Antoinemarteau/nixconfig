@@ -49,11 +49,14 @@
 
         #enables udiskie services
         udisks2.enable = true;
+
+        # mounting phone android storage
+        gvfs.enable = true;
+
+        # Enable touchpad support (enabled default in most desktopManager).
+        xserver.libinput.enable = true;
     };
 
-
-    # Enable touchpad support (enabled default in most desktopManager).
-    services.xserver.libinput.enable = true;
 
     # List packages installed in system profile. To search, run:
     # $ nix search wget

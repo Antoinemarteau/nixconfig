@@ -136,6 +136,9 @@ xmap('T', ':move \'>+1<CR>gv-gv')
 nmap('<A-s>', ':move-2<CR>')
 nmap('<A-t>', ':move+<CR>')
 
+nmap('<C-u>', '<C-u>zz')
+nmap('<C-d>', '<C-d>zz')
+
 -- Acces a doc c++ cppman
 vim.cmd[[
     function! s:JbzCppMan()
