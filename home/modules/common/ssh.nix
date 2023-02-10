@@ -32,6 +32,7 @@
     };
 
     home.shellAliases = {
-        dahu = "ssh -t dahu.ciment .nix-profile/bin/zsh-5.8";
+        dahu  = "ssh -t dahu.ciment  .nix-profile/bin/zsh-5.8";
+        cargo = "ssh -t cargo.ciment .nix-profile/bin/zsh-5.8";
     };
 }
