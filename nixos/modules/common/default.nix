@@ -10,6 +10,7 @@
             ./keyboard
             ./neovim.nix
             ./nix.nix
+            ./singularity.nix
             ./sound.nix
             ./users.nix
             ./xorg.nix
