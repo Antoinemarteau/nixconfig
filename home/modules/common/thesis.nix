@@ -2,7 +2,7 @@
 {
     home.packages = with pkgs; [
         gmsh
-        singularity
+        #singularity
     ];
 
     #programs.singularity.enable = true;
