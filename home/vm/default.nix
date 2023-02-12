@@ -12,4 +12,8 @@
         file."common_with_host".source = config.lib.file.mkOutOfStoreSymlink /mnt/common_with_host;
     };
     services.picom.enable = lib.mkForce false;
+
+    xsession.windowManager.i3.config.startup = [
+        { command = "VBoxClient-All"; }
+    ];
 }

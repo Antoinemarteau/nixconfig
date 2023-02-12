@@ -37,7 +37,9 @@
 
             floating.criteria = [
                 { class = "firefox"; title = "Library"; }
+                { class = "Spotify"; }
                 { class = "blueman-manager-wrapped"; }
+                { class = ".arandr-wrapped"; }
             ];
 
             gaps = {
@@ -74,22 +76,19 @@
                 "${mod}+b"       = "workspace back_and_forth";
                 "${mod}+Shift+b" = "move container to workspace back_and_forth; workspace back_and_forth";
 
-                "${mod}+g" = "split h"; # split in horizontal orientation
-                "${mod}+v" = "split v"; # split in vertical orientation
                 "${mod}+f" = "fullscreen toggle";
                 "${mod}+Shift+space" = "floating toggle";
 
-                "${mod}+k" = "layout stacking    ";
-                "${mod}+z" = "layout tabbed      ";
+                "${mod}+z" = "layout tabbed";
                 "${mod}+e" = "layout toggle split";
 
-                "${mod}+percent"  = "exec setxkbmap fr oss && dunstify 'loaded azerty layout'";
-                "${mod}+parenright" = "exec setxkbmap bepo_antoine && dunstify 'loaded bepo layout'";
+                "${mod}+percent"    = "exec setxkbmap fr oss       && dunstify 'loaded azerty layout'";
+                "${mod}+parenright" = "exec setxkbmap bepo_antoine && dunstify 'loaded bepo   layout'";
 
                 "${mod}+d" = "exec --no-startup-id rofi -show run";
                 "${mod}+Shift+l" = "reload";
                 "${mod}+Shift+h" = "restart";
-                "${mod}+Shift+e" = "exec i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'";
+                "${mod}+Shift+q" = "exec i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'";
                 "Print" = "exec --no-startup-id flameshot gui";
                 "${mod}+Insert" = "exec --no-startup-id scrot -e 'mv $f ~/Pictures/'";
 
@@ -114,6 +113,12 @@
                 "${mod}+Shift+minus         " = "move container to workspace number 8";
                 "${mod}+Shift+at            " = "move container to workspace number 9";
                 "${mod}+Shift+equal         " = "move container to workspace number 10";
+
+                "${mod}+w" = "[class=\"ttrm\"] scratchpad show; move position center"; # floating terminal
+                "${mod}+y" = "[class=\"btop\"] scratchpad show; move position center";
+                "${mod}+x" = "[class=\"Spotify\"] scratchpad show; move position center"; # spotify
+                "${mod}+period" = "exec blueman-manager"; # bluetooth applet
+                "${mod}+k" = "exec arandr"; # choosing display layout
 
                 "${mod}+h" = "mode resize";
             };
@@ -141,8 +146,9 @@
                 { command = "nextcloud"; }
                 { command = "zotero"; }
                 { command = "${pkgs.redshift}/bin/redshift -P -O 4500"; }
-                { command = "VBoxClient-All"; }
                 { command = "${pkgs.feh}/bin/feh --bg-fill ${config.xdg.dataFile.wallpaper.target}"; }
+                { command = "kitty --class=ttrm";      always = true; }
+                { command = "kitty --class=btop btop"; always = true; }
             ];
 
             terminal = "kitty";
@@ -153,14 +159,15 @@
                         command = "focus";
                         criteria = { class = "firefox"; urgent = "latest"; };
                     }
-                    {
-                        command = "fullscreen enable";
-                        criteria = { class = "Civ5XP"; };
-                    }
-                    {
-                        command = "move to workspace 8";
-                        criteria = { class = "potify"; };
-                    }
+                    { command = "fullscreen enable"; criteria = { class = "Civ5XP"; }; }
+                    { command = "move scratchpad"; criteria = { class = "ttrm"; }; }
+                    { command = "move scratchpad"; criteria = { class = "btop"; }; }
+                    { command = "move scratchpad"; criteria = { class = "Spotify"; }; }
+                    { command = "resize set width 80 ppt height 80 ppt"; criteria = { class = "ttrm"; }; }
+                    { command = "resize set width 80 ppt height 80 ppt"; criteria = { class = "btop"; }; }
+                    { command = "resize set width 80 ppt height 80 ppt"; criteria = { class = "Spotify"; }; }
+                    { command = "resize set width 80 ppt height 80 ppt"; criteria = { class = ".arandr-wrapped"; }; }
+                    { command = "move position center"; criteria = { class = ".arandr-wrapped"; }; }
                 ];
                 hideEdgeBorders = "smart";
             };
