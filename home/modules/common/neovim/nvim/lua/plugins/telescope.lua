@@ -14,6 +14,7 @@ nmap('<leader>fd',
         builtin.diagnostics({bufnr = 0})
      end
 )
+nmap('<leader>fw', builtin.grep_string)
 
 
 -------------------
