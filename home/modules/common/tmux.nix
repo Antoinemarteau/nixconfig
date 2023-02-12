@@ -22,7 +22,7 @@
                 plugin = tmuxPlugins.continuum;
                 extraConfig = ''
                     set -g @continuum-restore 'on'
-                    set -g @continuum-save-interval '60' # minutes
+                    set -g @continuum-save-interval '5' # minutes
                 '';
             }
         ];
@@ -64,5 +64,6 @@
         tml = "tmux list-sessions";
         tma = "tmux attach -t";
         tmk = "tmux kill-session -t";
+        tmd = "tmux detach";
     };
 }

@@ -32,6 +32,7 @@ local use = packer.use
 packer.reset()
 use 'wbthomason/packer.nvim'            -- Packer can manage itself as an optional plugin
 
+use 'tpope/vim-obsession'               -- save vim session
 ---------------
 -- LANGUAGES ---------------------------------------------------------------------------------------
 ---------------
@@ -66,6 +67,7 @@ use 'tpope/vim-fugitive'                -- Git integration
 use 'airblade/vim-gitgutter'            -- Show a git diff in the sign column.
 
 use 'SirVer/ultisnips'                  -- Snippets engine
+use 'honza/vim-snippets'                -- snippets files for various programming languages.
 
 use 'chiel92/vim-autoformat'            -- Formatting
 
@@ -85,7 +87,6 @@ use 'onsails/lspkind-nvim'              -- vscode-like pictograms to neovim buil
 -- Snippets
 use 'L3MON4D3/LuaSnip'                  -- snippet engine
 use 'saadparwaiz1/cmp_luasnip'          -- luasnip completion source for nvim-cmp
-use 'honza/vim-snippets'                -- snippets files for various programming languages.
 
 
 --------
