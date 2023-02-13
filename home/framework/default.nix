@@ -16,4 +16,5 @@
     # Font size overrides
     programs.kitty.font.size = lib.mkForce 18;
     services.dunst.settings.global.font = lib.mkForce "DejaVu Sans 22";
+    gtk.font.name = lib.mkForce "DejaVu Sans 18";
 }
