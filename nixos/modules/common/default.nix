@@ -7,6 +7,7 @@
     imports =
         [ # Include the results of the hardware scan.
             ./bluetooth.nix
+            ./firefox.nix
             ./keyboard
             ./neovim.nix
             ./nix.nix

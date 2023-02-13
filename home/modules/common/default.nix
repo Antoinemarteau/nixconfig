@@ -2,6 +2,7 @@
 {
     imports = [
         ./dunst.nix
+        ./firefox.nix
         ./flameshot.nix
         ./git.nix
         ./gtk.nix
@@ -40,7 +41,6 @@
         libreoffice
 
         # gui applications
-        firefox
         signal-desktop
         spotify
         # set setting layout.css.devPixelsPerPx = 1.5 in zotero GUI,
