@@ -7,12 +7,12 @@
         ''
             /* menu and toolbars font size */
             #navigator-toolbox {
-                font-size: 18pt !important;
+                font-size: 14pt !important;
             }
 
             /* global font size*/
             * {
-                font-size: 16pt !important;
+                font-size: 12pt !important;
             }
         '';
     };
