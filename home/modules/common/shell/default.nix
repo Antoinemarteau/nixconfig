@@ -14,6 +14,9 @@
             fs = "pcmanfm";
 
             vs = "nvim -c ':vert Git'";
+
+            vulab = "nmcli con up G2Elab";
+            vdlab = "nmcli con down G2Elab";
         };
     };
 }
