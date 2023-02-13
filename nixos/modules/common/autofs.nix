@@ -50,7 +50,7 @@
 
         in ''
             /mnt/gricad  ${gricadMapConf} ${autoMasterSshfsOptions}
-            /mnt         ${mapConf}       ${autoMasterSshfsOptions}
         '';
+            #/mnt         ${mapConf}       ${autoMasterSshfsOptions}
     };
 }
