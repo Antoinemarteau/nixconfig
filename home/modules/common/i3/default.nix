@@ -120,7 +120,7 @@
                 "${mod}+x" = "[class=\"Spotify\"] scratchpad show; move position center"; # spotify
                 "${mod}+period" = "exec blueman-manager"; # bluetooth applet
                 "${mod}+k" = "exec arandr"; # choosing display layout
-                "${mod}+apostrophe" = "exec pavucontrol"; # choosing display layout
+                "${mod}+apostrophe" = "exec pavucontrol --tab=3"; # choosing display layout
 
                 "${mod}+h" = "mode resize";
             };

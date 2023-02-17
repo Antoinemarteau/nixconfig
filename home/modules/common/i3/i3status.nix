@@ -47,11 +47,13 @@
                 }
                 {
                     block = "sound";
+                    on_click = "pavucontrol --tab=3";
                 }
                 {
                     block = "time";
                     format = "%a %d/%m %R";
                     interval = 60;
+                    on_click = "kitty --hold cal -y -w";
                 }
             (lib.mkIf ( builtins.elem config.home.sessionVariables.HOSTNAME [ "framework" "vm" ] )
                 {
