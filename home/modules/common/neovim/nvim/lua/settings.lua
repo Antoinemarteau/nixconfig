@@ -10,6 +10,11 @@ autocmd('InsertEnter', {command = 'norm zz'})
 -- Remove trailing whitespace on save
 autocmd('BufWrite', { command = "%s/\\s\\+$//e"})
 
+-- Compile md notes after writing them (see notes.nix)
+autocmd('BufWritePost', {
+    pattern = "*notes-*.md",
+    command = "silent !buildNote %:p",
+})
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = 'ç'
