@@ -133,8 +133,8 @@ xmap('T', ':move \'>+1<CR>gv-gv')
 
 -- move current line up/down
 -- M = Alt key
-nmap('<A-s>', ':move-2<CR>')
-nmap('<A-t>', ':move+<CR>')
+nmap('<C-s>', ':move-2<CR>')
+nmap('<C-t>', ':move+<CR>')
 
 nmap('<C-u>', '<C-u>zz')
 nmap('<C-d>', '<C-d>zz')

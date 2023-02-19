@@ -39,6 +39,8 @@ use 'tpope/vim-obsession'               -- save vim session
 -- LSP
 use 'neovim/nvim-lspconfig'             -- A collection of common configurations for the built-in
                                         --  language server client.
+use {'thomasfaingnaert/vim-lsp-ultisnips',-- add ultisnips snippets to lsp sugestions
+    requires={'thomasfaingnaert/vim-lsp-snippets' }}
 
 -- Style & status bar
 use {'vim-airline/vim-airline',         --  status bar (needs devicons special font)
@@ -52,6 +54,7 @@ use 'hrsh7th/cmp-buffer'                -- nvim-cmp source for buffer words
 use 'hrsh7th/cmp-path'                  -- nvim-cmp source for paths
 use 'hrsh7th/cmp-nvim-lsp'              -- Nvim-cmp source for neovim builtin LSP client
 
+use 'andymass/vim-matchup'              -- add smarter match and text object for pairs (%, a%, i%)
 
 use {'nvim-treesitter/nvim-treesitter', -- Treesitter (for syntax highlighting and more)
      run = ':TSUpdate'}
@@ -75,6 +78,7 @@ use 'lervag/vimtex'                     -- LaTeX support
 use {'iamcco/markdown-preview.nvim',    -- Markdown preview
      run = 'cd app && yarn install'}
 
+use 'JuliaEditorSupport/julia-vim'      -- julia support
 --[[
 use 'folke/trouble.nvim'                -- Pretty list for showing diagnostics
 
