@@ -132,12 +132,17 @@ xmap('S', ':move \'<-2<CR>gv-gv')
 xmap('T', ':move \'>+1<CR>gv-gv')
 
 -- move current line up/down
--- M = Alt key
 nmap('<C-s>', ':move-2<CR>')
 nmap('<C-t>', ':move+<CR>')
 
+-- center buffer on current line after jump
 nmap('<C-u>', '<C-u>zz')
 nmap('<C-d>', '<C-d>zz')
+
+-- Close quickfix list
+-- C = Alt key
+nmap('<A-q>', ':cclose<cr>')
+nmap('<A-o>', ':copen<cr>')
 
 -- Acces a doc c++ cppman
 vim.cmd[[

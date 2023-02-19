@@ -10,6 +10,7 @@ nmap('gi', vim.lsp.buf.implementation)
 nmap('gk', vim.lsp.buf.hover)
 nmap('gf', vim.lsp.buf.format)
 nmap('ga', vim.lsp.buf.code_action)
+nmap('gy', vim.lsp.buf.document_symbol) -- close quickfix list with <A-q>
 
 -- Navigate in diagnostics
 nmap('<A-s>', vim.diagnostic.goto_prev)
