@@ -11,6 +11,7 @@
         ./kitty.nix
         ./less.nix
         ./neovim
+        ./note.nix
         ./picom.nix
         ./readline.nix
         ./rofi.nix

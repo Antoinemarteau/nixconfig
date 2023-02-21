@@ -120,7 +120,7 @@
                 "${mod}+x" = "[class=\"Spotify\"] scratchpad show; move position center"; # spotify
                 "${mod}+period" = "exec blueman-manager"; # bluetooth applet
                 "${mod}+k" = "exec arandr"; # choosing display layout
-                "${mod}+apostrophe" = "exec pavucontrol"; # choosing display layout
+                "${mod}+apostrophe" = "exec pavucontrol --tab=3"; # choosing display layout
 
                 "${mod}+h" = "mode resize";
             };
@@ -161,17 +161,17 @@
                         command = "focus";
                         criteria = { class = "firefox"; urgent = "latest"; };
                     }
-                    { command = "fullscreen enable"; criteria = { class = "Civ5XP"; }; }
-                    { command = "move scratchpad"; criteria = { class = "ttrm"; }; }
-                    { command = "move scratchpad"; criteria = { class = "btop"; }; }
-                    { command = "move scratchpad"; criteria = { class = "Spotify"; }; }
+                    { command = "fullscreen enable";                     criteria = { class = "Civ5XP"; }; }
+                    { command = "move scratchpad";                       criteria = { class = "ttrm"; }; }
+                    { command = "move scratchpad";                       criteria = { class = "btop"; }; }
+                    { command = "move scratchpad";                       criteria = { class = "Spotify"; }; }
                     { command = "resize set width 80 ppt height 80 ppt"; criteria = { class = "ttrm"; }; }
                     { command = "resize set width 80 ppt height 80 ppt"; criteria = { class = "btop"; }; }
                     { command = "resize set width 80 ppt height 80 ppt"; criteria = { class = "Spotify"; }; }
                     { command = "resize set width 80 ppt height 80 ppt"; criteria = { class = ".arandr-wrapped"; }; }
-                    { command = "move position center"; criteria = { class = ".arandr-wrapped"; }; }
                     { command = "resize set width 80 ppt height 80 ppt"; criteria = { class = "Pavucontrol"; }; }
-                    { command = "move position center"; criteria = { class = "Pavucontrol"; }; }
+                    { command = "move position center";                  criteria = { class = ".arandr-wrapped"; }; }
+                    { command = "move position center";                  criteria = { class = "Pavucontrol"; }; }
                 ];
                 hideEdgeBorders = "smart";
             };

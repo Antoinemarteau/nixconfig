@@ -4,14 +4,17 @@
 local nmap = require 'utils'.nmap
 
 nmap('gd', vim.lsp.buf.definition)
-nmap('gD', vim.lsp.buf.references)
+nmap('gr', vim.lsp.buf.references)
 nmap('gt', vim.lsp.buf.type_definition)
 nmap('gi', vim.lsp.buf.implementation)
-nmap('K', vim.lsp.buf.hover)
+nmap('gk', vim.lsp.buf.hover)
+nmap('gf', vim.lsp.buf.format)
+nmap('ga', vim.lsp.buf.code_action)
+nmap('gy', vim.lsp.buf.document_symbol) -- close quickfix list with <A-q>
 
 -- Navigate in diagnostics
-nmap('<leader>k', vim.diagnostic.goto_prev)
-nmap('<leader>j', vim.diagnostic.goto_next)
+nmap('<A-s>', vim.diagnostic.goto_prev)
+nmap('<A-t>', vim.diagnostic.goto_next)
 
 -- Rename
 nmap('<F2>', vim.lsp.buf.rename)

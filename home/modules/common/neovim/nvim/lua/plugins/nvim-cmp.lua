@@ -17,8 +17,8 @@ cmp.setup({
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
-    ['<A-v>'] = cmp.mapping.select_next_item(),
-    ['<A-d>'] = cmp.mapping.select_prev_item(),
+    ['<A-t>'] = cmp.mapping.select_next_item(),
+    ['<A-s>'] = cmp.mapping.select_prev_item(),
     ['<C-e>'] = cmp.mapping.abort(),
     ['<A-c>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
@@ -44,8 +44,8 @@ local function confirm_Nth_item(N)
 end
 
 -- mappings for accepting the Nth item in list
-imap('<A-t>', function() confirm_Nth_item(1) end)
-imap('<A-s>', function() confirm_Nth_item(2) end)
-imap('<A-r>', function() confirm_Nth_item(3) end)
-imap('<A-n>', function() confirm_Nth_item(4) end)
-imap('<A-m>', function() confirm_Nth_item(5) end)
+imap('<A-v>', function() confirm_Nth_item(1) end)
+imap('<A-d>', function() confirm_Nth_item(2) end)
+imap('<A-l>', function() confirm_Nth_item(3) end)
+imap('<A-j>', function() confirm_Nth_item(4) end)
+imap('<A-à>', function() confirm_Nth_item(5) end)
