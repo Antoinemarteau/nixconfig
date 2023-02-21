@@ -33,6 +33,9 @@ packer.reset()
 use 'wbthomason/packer.nvim'            -- Packer can manage itself as an optional plugin
 
 use 'tpope/vim-obsession'               -- save vim session
+
+--use 'christoomey/vim-tmux-navigator'    -- Move between vim and tmux panes seemlessly
+
 ---------------
 -- LANGUAGES ---------------------------------------------------------------------------------------
 ---------------
