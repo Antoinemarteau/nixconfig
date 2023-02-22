@@ -43,7 +43,7 @@
         };
     in {
         nixosConfigurations = builtins.listToAttrs (
-            builtins.map mkNixosSystem [ "framework" "desktop" "vm" "manjaro" ]
+            builtins.map mkNixosSystem [ "framework" "desktop" "vm" "mage" ]
         );
     };
 }
