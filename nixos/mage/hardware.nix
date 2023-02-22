@@ -12,23 +12,6 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  #fileSystems."/iso" =
-  #  { device = "/dev/disk/by-uuid/1980-01-01-00-00-00-00";
-  #    fsType = "tmpfs";
-  #  };
-
-  #fileSystems."/nix/.ro-store" =
-  #  { device = "/iso/nix-store.squashfs";
-  #    fsType = "squashfs";
-  #    option = [ "loop" ];
-  #  };
-
-  #fileSystems."/nix/.rw-store" =
-  #  { device = "/iso/nix-store.squashfs";
-  #    fsType = "squashfs";
-  #    option = [ "loop" ];
-  #  };
-
   fileSystems."/" =
     { device = "/dev/disk/by-label/nixroot";
       fsType = "ext4";
