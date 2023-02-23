@@ -7,7 +7,7 @@
             # Mage #
             ########
             mage = {
-                user = "marteaua";
+                user = "antoine";
                 hostname = "manjaro.g2elab.grenoble-inp.fr";
             };
 
@@ -32,6 +32,7 @@
     };
 
     home.shellAliases = {
+        mage  = "ssh -t mage";
         dahu  = "ssh -t dahu.ciment  .nix-profile/bin/zsh-5.8";
         cargo = "ssh -t cargo.ciment .nix-profile/bin/zsh-5.8";
     };
