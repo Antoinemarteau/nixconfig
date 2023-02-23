@@ -29,8 +29,8 @@
 
                 # Remap arrows to Alt+ctsr
                 bindkey -M viins '^[c' vi-backward-char
-                bindkey -M viins '^[t' vi-down-line-or-history
-                bindkey -M viins '^[s' vi-up-line-or-history
+                bindkey -M viins '^[t' down-line-or-search
+                bindkey -M viins '^[s' up-line-or-search
                 bindkey -M viins '^[r' vi-forward-char
 
                 # Mappings for completion mode
@@ -40,8 +40,8 @@
                 bindkey -M menuselect 's' vi-up-line-or-history
                 bindkey -M menuselect 'r' vi-forward-char
                 bindkey -M menuselect '^[' send-break
-                bindkey -M menuselect '^M' accept-and-infer-next-history
                 bindkey -M menuselect 'u' undo
+                bindkey -M menuselect '^[^M' accept-and-infer-next-history
 
 
                 # Vi mode for commands edition
