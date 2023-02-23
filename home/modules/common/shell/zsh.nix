@@ -23,39 +23,59 @@
 
             # Highly inspired by Mathieu Cneude's blog
             initExtra = ''
+
                 # Run the ssh-agent
                 eval `gnome-keyring-daemon --start --components=ssh --daemonize 2> /dev/null`
                 export SSH_AUTH_SOCK
 
-                # Remap arrows to Alt+ctsr
+                #==============================================================
+                # Insert mode mappings
+                # (prefixed with Alt, fixed for bépo, like in nvim)
+                #==============================================================
+
+                bindkey -M viins '^[u'    undo
+
+                # Remap  left/down/up/right arrows  to  ctsr
                 bindkey -M viins '^[c' vi-backward-char
                 bindkey -M viins '^[t' down-line-or-search
                 bindkey -M viins '^[s' up-line-or-search
                 bindkey -M viins '^[r' vi-forward-char
 
-                # Mappings for completion mode
+                # Remap  Home/Word_left/Word_right/End  to  vdlj
+                bindkey -M viins '^[v' vi-digit-or-beginning-of-line
+                bindkey -M viins '^[d' vi-backward-word
+                bindkey -M viins '^[l' vi-forward-word
+                bindkey -M viins '^[j' vi-end-of-line
+
+                # Remap  D_p_word/D_Home/D_p_char/D_n_char/D_End  to  'qghf
+                bindkey -M viins "^['"  backward-kill-word
+                bindkey -M viins '^[q'   backward-kill-line
+                bindkey -M viins '^[g'   backward-delete-char
+                bindkey -M viins '^[h'   delete-char
+                bindkey -M viins '^[f'   kill-line
+
+                #==============================================================
+                # Mappings for completion mode (fixed for bépo)
+                #==============================================================
+
                 zmodload zsh/complist
-                bindkey -M menuselect 'c' vi-backward-char
-                bindkey -M menuselect 't' vi-down-line-or-history
-                bindkey -M menuselect 's' vi-up-line-or-history
-                bindkey -M menuselect 'r' vi-forward-char
-                bindkey -M menuselect '^[' send-break
-                bindkey -M menuselect 'u' undo
-                bindkey -M menuselect '^[^M' accept-and-infer-next-history
+                bindkey -M menuselect 'c'    backward-char
+                bindkey -M menuselect 't'    down-line
+                bindkey -M menuselect 's'    up-line
+                bindkey -M menuselect 'r'    forward-char
+                bindkey -M menuselect 'n'    accept-and-infer-next-history
+                bindkey -M menuselect '^['   send-break
+                bindkey -M menuselect 'u'    undo
 
 
-                # Vi mode for commands edition
-                bindkey -v
-                export KEYTIMEOUT=1
-                # In zsh normal mode, hit v allows to edit command in nvim
-                autoload -Uz edit-command-line
-                zle -N edit-command-line
-                bindkey -M vicmd v edit-command-line
+                #==============================================================
+                # Commande mode mappings (fixed for bépo)
+                #==============================================================
 
                 # Bepo vi cmdmod remaps
                 bindkey -M vicmd 'c' vi-backward-char
-                bindkey -M vicmd 't' vi-down-line-or-history
-                bindkey -M vicmd 's' vi-up-line-or-history
+                bindkey -M vicmd 't' down-line-or-search
+                bindkey -M vicmd 's' up-line-or-search
                 bindkey -M vicmd 'r' vi-forward-char
                 bindkey -M vicmd 'l' vi-change
                 bindkey -M vicmd 'L' vi-change-eol
@@ -66,6 +86,18 @@
                 bindkey -M vicmd 'j' vi-find-next-char-skip
                 bindkey -M vicmd 'J' vi-find-prev-char-skip
                 bindkey -M vicmd 'T' vi-join
+
+                #==============================================================
+                # Vi mode for commands edition & fixes
+                #==============================================================
+
+                bindkey -v
+                export KEYTIMEOUT=1
+
+                # In zsh normal mode, hit v allows to edit command in nvim
+                autoload -Uz edit-command-line
+                zle -N edit-command-line
+                bindkey -M vicmd v edit-command-line
 
                 # Allow pending operation to work with bracketed and quoted text objects
                 autoload -Uz select-bracketed select-quoted

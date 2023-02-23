@@ -81,10 +81,10 @@ map('ê<SPACE>', ':vsplit<CR>')
 map('ê<CR>', ':split<CR>')
 
 -- Navigation & completion in command mode
-cmap("<A-l>", '<C-B>')     -- Go to begining of line
-cmap('<A-j>', '<End>')     -- Go to end of line
-cmap('<A-v>', '<S-Left>')  -- Cursor one word left
-cmap('<A-d>', '<S-Right>') -- Cursor one word right
+cmap("<A-v>", '<C-B>')                          -- Go to begining of line
+cmap('<A-d>', '<S-Left>')                       -- Cursor one word left
+cmap('<A-l>', '<S-Right>')                      -- Cursor one word right
+cmap('<A-j>', '<End>')                          -- Go to end of line
 
 local function cmap_menu_fallback(key, menu_action, fallback)
     vim.keymap.set('c', key, function()
@@ -96,10 +96,10 @@ cmap_menu_fallback('<A-s>', '<C-P>', '<Right>') -- Previous file/folder | cursor
 cmap(              '<A-c>',          '<Up>')    -- Go to parent folder  | back history command
 cmap(              '<A-r>',          '<Down>')  -- Enter file/folder    | forward history command
 
-cmap('<A-h>', '<C-W>')    -- Delete word before cursor
-cmap('<A-q>', '<BS>')     -- Delete char before cursor
-cmap('<A-g>', '<Del>')    -- Delete char after cursor
-cmap('<A-k>', '<C-U>')    -- Delete all char before cursor
+cmap('<A-\'>', '<C-W>')                         -- Delete word before cursor
+cmap('<A-q>', '<C-U>')                          -- Delete all char before cursor
+cmap('<A-g>', '<BS>')                           -- Delete char before cursor
+cmap('<A-h>', '<Del>')                          -- Delete char after cursor
 
 --  fix les deplaement haut bas et le tri des entrées dans Ex (nav. fichier vim)
 vim.cmd[[
