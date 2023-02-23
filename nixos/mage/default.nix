@@ -4,9 +4,12 @@
         ../modules/bootloader.nix
         ../modules/common
         ../modules/ssh.nix
+        ../modules/nvidia.nix
 
         ./hardware.nix
     ];
+
+    hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_470;
 
     networking.hostName = "mage";
 
