@@ -8,7 +8,7 @@
             ########
             mage = {
                 user = "antoine";
-                hostname = "manjaro.g2elab.grenoble-inp.fr";
+                hostname = "nixos.g2elab.grenoble-inp.fr";
             };
 
             ###########
