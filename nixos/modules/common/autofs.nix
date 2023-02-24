@@ -29,7 +29,7 @@
             mapConf = pkgs.writeText "autofs.mnt" ''
                 mage_desktop \
                     ${sshfsOptions} \
-                    :antoine@manjaro.g2elab.grenoble-inp.fr\:/home/antoine/
+                    :antoine@nixos.g2elab.grenoble-inp.fr\:/home/antoine/
             '';
 
             gricadProxyCommand = "ssh -i ${pathToRsaKey} -q marteaua@access-gricad.univ-grenoble-alpes.fr nc -w 60 cargo 22";
@@ -50,7 +50,7 @@
 
         in ''
             /mnt/gricad  ${gricadMapConf} ${autoMasterSshfsOptions}
+            /mnt         ${mapConf}       ${autoMasterSshfsOptions}
         '';
-            #/mnt         ${mapConf}       ${autoMasterSshfsOptions}
     };
 }

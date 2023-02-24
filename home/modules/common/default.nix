@@ -51,6 +51,7 @@
         # screen management
         arandr
         mons
+        remmina # xrdp client
 
         #latex
         texlive.combined.scheme-full
