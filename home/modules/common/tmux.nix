@@ -8,13 +8,14 @@
 
         prefix = "C-t";
 
-        # neovim comdatibility https://github.com/neovim/neovim/wiki/FAQ
+        # neovim compatibility https://github.com/neovim/neovim/wiki/FAQ
         escapeTime = 10;
 
         plugins = with pkgs; [
             tmuxPlugins.cpu
             tmuxPlugins.gruvbox
             {
+                # prefix+Ctrl+s to save session, prefix+Ctrl+r to restore
                 plugin = tmuxPlugins.resurrect;
                 extraConfig = "set -g @resurrect-strategy-nvim 'session'";
             }
