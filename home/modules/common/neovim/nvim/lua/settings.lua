@@ -87,5 +87,5 @@ o.smartindent = true        -- Do clever autoindenting
 vim.cmd("let wildchar  = '<Tab>'")  -- Trigger for completion in command mode
 vim.o.wildcharm = vim.o.wildchar    -- wildchar for mapping (see :h wildcharm)
 
-o.textwidth = 80
+o.textwidth = 0             -- do not automatically break lines
 
