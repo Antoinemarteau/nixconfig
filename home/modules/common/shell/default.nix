@@ -17,6 +17,10 @@
 
             vulab = "nmcli con up G2Elab";
             vdlab = "nmcli con down G2Elab";
+
+            # activate bepo or azerty manually
+            bepo = "xkbcomp ${../../../../nixos/modules/common/keyboard/xkbmap} $DISPLAY";
+            azer = "setxkbmap fr oss";
         };
     };
 }
