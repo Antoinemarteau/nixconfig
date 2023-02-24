@@ -21,14 +21,14 @@ hl('Normal', { bg='none' })
 hl('ExtraWhitespace', { bg='Red' })
 vim.fn.matchadd('ExtraWhitespace', '\\s\\+$')
 
--- Coloration syntaxique des .pro et .geo comme pour .cpp
+-- Coloration syntaxique des .pro, .geo et .dat comme pour .cpp
 vim.api.nvim_create_autocmd(
     {
         'BufNewFile',
         'BufReadPost'
     },
     {
-        pattern={'*.pro', '*.geo'},
+        pattern={'*.pro', '*.geo', '*.dat'},
         callback=function()
             vim.api.nvim_buf_set_option(0, 'filetype', 'onelab')
         end

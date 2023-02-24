@@ -60,8 +60,8 @@
 
                 zmodload zsh/complist
                 bindkey -M menuselect 'c'    backward-char
-                bindkey -M menuselect 't'    down-line
-                bindkey -M menuselect 's'    up-line
+                bindkey -M menuselect 't'    down-line-or-search
+                bindkey -M menuselect 's'    up-line-or-search
                 bindkey -M menuselect 'r'    forward-char
                 bindkey -M menuselect 'n'    accept-and-infer-next-history
                 bindkey -M menuselect '^['   send-break
