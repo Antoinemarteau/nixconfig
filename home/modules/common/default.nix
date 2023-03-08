@@ -40,6 +40,7 @@
         #file editors
         pinta
         libreoffice
+        pdfsam-basic
 
         # gui applications
         signal-desktop
