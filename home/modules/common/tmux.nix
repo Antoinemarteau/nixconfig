@@ -82,5 +82,7 @@
         tma = "tmux attach -t";
         tmk = "tmux kill-session -t";
         tmd = "tmux detach";
+        tn = "tmux switch-client -n";
+        tp = "tmux switch-client -p";
     };
 }
