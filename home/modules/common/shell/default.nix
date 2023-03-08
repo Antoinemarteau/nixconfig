@@ -19,6 +19,7 @@
             vdlab = "nmcli con down G2Elab";
 
             # activate bepo or azerty manually
+            # the xkbmap file was obtained with $xkbcomp -xdg $DISPLAY xkbmap
             bepo = "xkbcomp ${../../../../nixos/modules/common/keyboard/xkbmap} $DISPLAY";
             azer = "setxkbmap fr oss";
         };
