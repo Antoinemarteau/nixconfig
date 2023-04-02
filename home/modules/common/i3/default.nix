@@ -8,11 +8,6 @@
         python3
     ];
 
-    xdg.dataFile = {
-        wallpaper.source = ./wallpaper.jpeg;
-        glove80.source = ./../../../../nixos/modules/common/keyboard/Glove80_full.pdf;
-    };
-
     xsession.windowManager.i3 = {
         enable = true;
 
@@ -125,7 +120,7 @@
                 "${mod}+k" = "exec arandr"; # choosing display layout
                 "${mod}+apostrophe" = "exec pavucontrol --tab=3"; # choosing display layout
 
-                "${mod}+g" = "exec zathura --mode fullscreen ${config.xdg.dataFile.glove80.target}";
+                "${mod}+g" = "exec zathura --mode fullscreen ${../../../../nixos/modules/common/keyboard/Glove80_full.pdf}";
                 "${mod}+h" = "mode resize";
             };
 
@@ -152,7 +147,7 @@
                 { command = "nextcloud"; }
                 { command = "zotero"; }
                 { command = "${pkgs.redshift}/bin/redshift -P -O 4500"; }
-                { command = "${pkgs.feh}/bin/feh --bg-fill ${config.xdg.dataFile.wallpaper.target}"; }
+                { command = "${pkgs.feh}/bin/feh --bg-fill ${./wallpaper.jpeg}"; }
                 { command = "kitty --class=ttrm";      always = true; }
                 { command = "kitty --class=btop btop"; always = true; }
             ];
