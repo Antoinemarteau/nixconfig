@@ -8,7 +8,10 @@
         python3
     ];
 
-    xdg.dataFile.wallpaper.source = ./wallpaper.jpeg;
+    xdg.dataFile = {
+        wallpaper.source = ./wallpaper.jpeg;
+        glove80.source = ./../../../../nixos/modules/common/keyboard/Glove80_full.pdf;
+    };
 
     xsession.windowManager.i3 = {
         enable = true;
@@ -116,12 +119,13 @@
                 "${mod}+Shift+equal         " = "move container to workspace number 10";
 
                 "${mod}+w" = "[class=\"ttrm\"] scratchpad show; move position center"; # floating terminal
-                "${mod}+y" = "[class=\"btop\"] scratchpad show; move position center";
+                "${mod}+y" = "[class=\"btop\"] scratchpad show; move position center"; # floating task manager
                 "${mod}+x" = "[class=\"Spotify\"] scratchpad show; move position center"; # spotify
                 "${mod}+period" = "exec blueman-manager"; # bluetooth applet
                 "${mod}+k" = "exec arandr"; # choosing display layout
                 "${mod}+apostrophe" = "exec pavucontrol --tab=3"; # choosing display layout
 
+                "${mod}+g" = "exec zathura --mode fullscreen ${config.xdg.dataFile.glove80.target}";
                 "${mod}+h" = "mode resize";
             };
 
