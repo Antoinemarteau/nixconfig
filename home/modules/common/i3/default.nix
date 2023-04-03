@@ -93,7 +93,7 @@
                 "Print" = "exec --no-startup-id flameshot gui";
                 "${mod}+Insert" = "exec --no-startup-id scrot -e 'mv $f ~/Pictures/'";
 
-                "${mod}+quotedbl      " = "workspace number 1";
+                "${mod}+Tab           " = "workspace number 1";
                 "${mod}+guillemotleft " = "workspace number 2";
                 "${mod}+guillemotright" = "workspace number 3";
                 "${mod}+numbersign    " = "workspace number 4";
@@ -104,7 +104,7 @@
                 "${mod}+at            " = "workspace number 9";
                 "${mod}+equal         " = "workspace number 10";
 
-                "${mod}+Shift+quotedbl      " = "move container to workspace number 1";
+                "${mod}+Shift+Tab           " = "move container to workspace number 1";
                 "${mod}+Shift+guillemotleft " = "move container to workspace number 2";
                 "${mod}+Shift+guillemotright" = "move container to workspace number 3";
                 "${mod}+Shift+numbersign    " = "move container to workspace number 4";

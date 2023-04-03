@@ -68,6 +68,8 @@ vim.g.vimtex_quickfix_ignore_filters = {
     'undefined references',
     '(re)run Biber',
     'Unused global option(s)',
+    'Token not allowed in a PDF string',
+    'level fixed',
 }
 
 vim.g.vimtex_quickfix_autoclose_after_keystrokes = 4
