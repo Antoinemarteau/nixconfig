@@ -8,8 +8,6 @@
         python3
     ];
 
-    xdg.dataFile.wallpaper.source = ./wallpaper.jpeg;
-
     xsession.windowManager.i3 = {
         enable = true;
 
@@ -94,6 +92,7 @@
                 "${mod}+Insert" = "exec --no-startup-id scrot -e 'mv $f ~/Pictures/'";
 
                 "${mod}+Tab           " = "workspace number 1";
+                "${mod}+quotedbl      " = "workspace number 1";
                 "${mod}+guillemotleft " = "workspace number 2";
                 "${mod}+guillemotright" = "workspace number 3";
                 "${mod}+numbersign    " = "workspace number 4";
@@ -105,6 +104,7 @@
                 "${mod}+equal         " = "workspace number 10";
 
                 "${mod}+Shift+Tab           " = "move container to workspace number 1";
+                "${mod}+Shift+quotedbl      " = "move container to workspace number 1";
                 "${mod}+Shift+guillemotleft " = "move container to workspace number 2";
                 "${mod}+Shift+guillemotright" = "move container to workspace number 3";
                 "${mod}+Shift+numbersign    " = "move container to workspace number 4";
@@ -116,12 +116,13 @@
                 "${mod}+Shift+equal         " = "move container to workspace number 10";
 
                 "${mod}+w" = "[class=\"ttrm\"] scratchpad show; move position center"; # floating terminal
-                "${mod}+y" = "[class=\"btop\"] scratchpad show; move position center";
+                "${mod}+y" = "[class=\"btop\"] scratchpad show; move position center"; # floating task manager
                 "${mod}+x" = "[class=\"Spotify\"] scratchpad show; move position center"; # spotify
                 "${mod}+period" = "exec blueman-manager"; # bluetooth applet
                 "${mod}+k" = "exec arandr"; # choosing display layout
                 "${mod}+apostrophe" = "exec pavucontrol --tab=3"; # choosing display layout
 
+                "${mod}+g" = "exec zathura --mode fullscreen ${../../../../nixos/modules/common/keyboard/Glove80_full.pdf}";
                 "${mod}+h" = "mode resize";
             };
 
@@ -148,7 +149,7 @@
                 { command = "nextcloud"; }
                 { command = "zotero"; }
                 { command = "${pkgs.redshift}/bin/redshift -P -O 4500"; }
-                { command = "${pkgs.feh}/bin/feh --bg-fill ${config.xdg.dataFile.wallpaper.target}"; }
+                { command = "${pkgs.feh}/bin/feh --bg-fill ${./wallpaper.jpeg}"; }
                 { command = "kitty --class=ttrm";      always = true; }
                 { command = "kitty --class=btop btop"; always = true; }
             ];
