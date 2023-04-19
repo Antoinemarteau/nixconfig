@@ -70,6 +70,7 @@ vim.g.vimtex_quickfix_ignore_filters = {
     'Unused global option(s)',
     'Token not allowed in a PDF string',
     'level fixed',
+    'float specifier changed to',
 }
 
 vim.g.vimtex_quickfix_autoclose_after_keystrokes = 4
