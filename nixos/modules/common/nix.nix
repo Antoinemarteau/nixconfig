@@ -38,7 +38,7 @@
 
         gc = {
             automatic = true;
-            options = "--delete-older-than 30d";
+            options = "--delete-older-than 5d";
         };
 
         # set the value NIX_PATH to whatever nixpkgs our flake uses

@@ -10,31 +10,28 @@
             blocks = [
                 {
                     alert = 10.0;
-                    alias = "/";
+                    format = "$icon / $available";
                     block = "disk_space";
                     info_type = "available";
                     interval = 60;
                     path = "/";
-                    unit = "GB";
                     warning = 20.0;
                 }
              (lib.mkIf ( config.home.sessionVariables.HOSTNAME == "desktop" )
                 {
                     alert = 10.0;
-                    alias = "hdd";
+                    format = "$icon hdd $available";
                     block = "disk_space";
                     info_type = "available";
                     interval = 60;
                     path = "/mnt/hdd/";
-                    unit = "GB";
                     warning = 20.0;
                 }
              )
                 {
                     block = "memory";
-                    display_type = "memory";
-                    format_mem = "{mem_used_percents}";
-                    format_swap = "{swap_used_percents}";
+                    format = " $icon $mem_total_used_percents.eng(w:2) ";
+                    format_alt = " $icon_swap $swap_used_percents.eng(w:2) ";
                 }
                 {
                     block = "cpu";
@@ -47,13 +44,19 @@
                 }
                 {
                     block = "sound";
-                    on_click = "pavucontrol --tab=3";
+                    click = [{
+                      button = "left";
+                      cmd = "pavucontrol --tab=3";
+                    }];
                 }
                 {
                     block = "time";
-                    format = "%a %d/%m %R";
-                    interval = 60;
-                    on_click = "kitty --hold cal -y -w";
+                    format = " $timestamp.datetime(f:'%a %d/%m %R') ";
+                    interval = 10;
+                    click = [{
+                      button = "left";
+                      cmd = "kitty --hold cal -y -w";
+                    }];
                 }
             (lib.mkIf ( builtins.elem config.home.sessionVariables.HOSTNAME [ "framework" "vm" ] )
                 {

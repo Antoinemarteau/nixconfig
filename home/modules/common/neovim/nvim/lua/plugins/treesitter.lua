@@ -1,5 +1,4 @@
-local ft_to_parser = require"nvim-treesitter.parsers".filetype_to_parsername
-ft_to_parser.onelab = "cpp"
+require 'vim.treesitter.language'.register("cpp", "onelab")
 
 require 'nvim-treesitter.configs'.setup {
 
