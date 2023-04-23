@@ -57,7 +57,7 @@ o.splitright = true         -- A new window is put right of the current one
 
 o.swapfile = false          -- Disable the swap file
 o.modeline = true           -- Tags such as 'vim:ft=sh'
-o.modelines = 10           -- Sets the type of modelines
+o.modelines = 10            -- Sets the type of modelines
 o.undofile = true           -- Automatically save and restore undo history
 o.incsearch = true          -- Incremental search: show match for partly typed search command
 o.smartcase = true          -- Override the 'ignorecase' option if the search
