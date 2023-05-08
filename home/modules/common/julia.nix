@@ -18,12 +18,12 @@
                     ENV["JULIA_EDITOR"] = "vim"
                     ENV["JULIA_NUM_THREADS"] = 4
 
-                    import Pkg
+                    import Pkg as var"#Pkg"
                     let
                         pkgs = ["Revise", "OhMyREPL", "BenchmarkTools", "Cthulhu", "Debugger", "Profile", "ProfileView"]
                         for pkg in pkgs
                         if Base.find_package(pkg) === nothing
-                            Pkg.add(pkg)
+                            var"#Pkg".add(pkg)
                         end
                         end
                     end
@@ -66,6 +66,10 @@
                             end
                             return ast
                         end)
+                    end
+
+                    if isfile("Project.toml") && isfile("Manifest.toml")
+                        var"#Pkg".activate(".")
                     end
                 '';
                 target = ".julia/config/startup.jl";
