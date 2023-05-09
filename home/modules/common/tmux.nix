@@ -44,6 +44,11 @@
             # Create new window and name it directly
             bind C command-prompt -p "Name of new window: " "new-window -n '%%'"
 
+            # Cd to current directory when spliting window
+            bind '"' split-window -v -c "#{pane_current_path}"
+            bind  %  split-window -h -c "#{pane_current_path}"
+            bind  c  new-window      -c "#{pane_current_path}"
+
             # index window and panes from 1
             set -g base-index 1
             set -g pane-base-index 1
