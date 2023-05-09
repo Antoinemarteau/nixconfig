@@ -14,6 +14,7 @@
         plugins = with pkgs; [
             tmuxPlugins.cpu
             tmuxPlugins.gruvbox
+            tmuxPlugins.yank
             {
                 # prefix+Ctrl+s to save session, prefix+Ctrl+r to restore
                 plugin = tmuxPlugins.resurrect;
@@ -43,14 +44,21 @@
             # Create new window and name it directly
             bind C command-prompt -p "Name of new window: " "new-window -n '%%'"
 
+            # index window and panes from 1
+            set -g base-index 1
+            set -g pane-base-index 1
+            set-window-option -g pane-base-index 1
+            set-option -g renumber-windows on
+
             # vim-like pane switching and edditing
+            bind -T copy-mode-vi v   send-keys -X begin-selection
+            bind -T copy-mode-vi C-v send-keys -X rectangle-toggle
+            bind -T copy-mode-vi y   send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
+            bind -T copy-mode-vi s   send-keys -X cursor-up
+            bind -T copy-mode-vi t   send-keys -X cursor-down
+            bind -T copy-mode-vi c   send-keys -X cursor-left
+            bind -T copy-mode-vi r   send-keys -X cursor-right
             bind -r ^ last-window
-            bind -T copy-mode-vi v send-keys -X begin-selection
-            bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
-            bind -T copy-mode-vi s send-keys -X cursor-up
-            bind -T copy-mode-vi t send-keys -X cursor-down
-            bind -T copy-mode-vi c send-keys -X cursor-left
-            bind -T copy-mode-vi r send-keys -X cursor-right
             bind -r s select-pane -U
             bind -r t select-pane -D
             bind -r c select-pane -L
