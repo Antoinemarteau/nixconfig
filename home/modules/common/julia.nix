@@ -22,14 +22,16 @@
                     let
                         pkgs = ["Revise", "OhMyREPL", "BenchmarkTools", "Cthulhu", "Debugger", "Profile", "ProfileView"]
                         for pkg in pkgs
-                        if Base.find_package(pkg) === nothing
-                            var"#Pkg".add(pkg)
-                        end
+                            if Base.find_package(pkg) === nothing
+                                var"#Pkg".add(pkg)
+                            end
                         end
                     end
 
-                    using Revise
-                    using OhMyREPL
+                    @sync @eval begin
+                        @async @eval using Revise
+                        @async @eval using OhMyREPL
+                    end
 
                     if Base.isinteractive() &&
                       (local REPL = get(Base.loaded_modules, Base.PkgId(Base.UUID("3fa0cd96-eef1-5676-8a61-b3b8758bbffb"), "REPL"), nothing); REPL !== nothing)
