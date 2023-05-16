@@ -39,6 +39,7 @@
                 { class = "blueman-manager-wrapped"; }
                 { class = ".arandr-wrapped"; }
                 { class = "Pavucontrol"; }
+                { title = "Makie"; }
             ];
 
             gaps = {
