@@ -22,6 +22,11 @@ vim.api.nvim_create_autocmd(
   pattern={"qf"},
   command=[[nnoremap <buffer> <CR> <CR>:cclose<CR>]]})
 
+-- Highlight yanked text
+autocmd('TextYankPost', {
+    command = "silent! lua vim.highlight.on_yank()",
+})
+
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = 'ç'
