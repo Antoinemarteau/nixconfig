@@ -20,7 +20,7 @@
 
                     import Pkg as var"#Pkg"
                     let
-                        pkgs = ["Revise", "OhMyREPL", "BenchmarkTools", "Cthulhu", "Debugger", "Profile", "ProfileView"]
+                        pkgs = ["Revise", "OhMyREPL", "BenchmarkTools", "Cthulhu", "Debugger", "Profile", "ProfileView", "LanguageServer"]
                         for pkg in pkgs
                             if Base.find_package(pkg) === nothing
                                 var"#Pkg".add(pkg)
