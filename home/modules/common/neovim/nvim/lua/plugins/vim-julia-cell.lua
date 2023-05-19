@@ -7,7 +7,7 @@ local xmap = require 'utils'.xmap
 vim.g.slime_target = 'tmux'
 vim.g.slime_default_config = {
     socket_name = 'default',
-    target_pane = '{right-of}'
+    target_pane = ":{end}.{right}"
 }
 vim.g.slime_dont_ask_default = 1
 vim.g.slime_cell_delimiter = "##"
