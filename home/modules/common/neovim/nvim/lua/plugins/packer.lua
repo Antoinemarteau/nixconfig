@@ -65,8 +65,8 @@ use 'nvim-treesitter/nvim-treesitter-refactor'
 
 use {'nvim-telescope/telescope.nvim',   -- Telescope
     requires={'nvim-lua/plenary.nvim'}}
-use {'kyazdani42/nvim-tree.lua',        -- File tree
-    require={'kyazdani42/nvim-web-devicons'}}
+--use {'kyazdani42/nvim-tree.lua',        -- File tree
+--    require={'kyazdani42/nvim-web-devicons'}}
 -- use 'ThePrimeagen/harpoon'              -- Harpoon
 
 use 'tpope/vim-fugitive'                -- Git integration
@@ -82,6 +82,9 @@ use {'iamcco/markdown-preview.nvim',    -- Markdown preview
      run = 'cd app && yarn install'}
 
 use 'JuliaEditorSupport/julia-vim'      -- julia support
+use {'mroavi/vim-julia-cell',           -- run code in cells
+    require={'jpalardy/vim-slime'}} --for = 'julia' }
+
 --[[
 use 'folke/trouble.nvim'                -- Pretty list for showing diagnostics
 

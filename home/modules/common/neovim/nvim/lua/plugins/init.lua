@@ -1,6 +1,5 @@
 -- Packer
 require 'plugins.packer'
-
 -- Plugins configuration
 -- require 'plugins.barbar'
 -- require 'plugins.colorizer'
@@ -15,8 +14,9 @@ require 'plugins.markdown-preview'
 -- require 'plugins.neorg'
 -- require 'plugins.nvim-autopairs'
 require 'plugins.nvim-cmp'
-require 'plugins.nvim-tree'
+-- require 'plugins.nvim-tree'
 -- require 'plugins.simpylfold'
+-- require 'plugins.slime'
 -- require 'plugins.startify'
 -- require 'plugins.tabnine'
 -- require 'plugins.tagbar'
@@ -27,5 +27,6 @@ require 'plugins.ultisnips'
 require 'plugins.vimtex'
 require 'plugins.vim-airline'
 require 'plugins.vim-autoformat'
+require 'plugins.vim-julia-cell'
 --require 'plugins.vim-tmux-navigator' -- buggy, cannot rotate threw split vim
 --in two split tmux
