@@ -65,6 +65,7 @@ use 'nvim-treesitter/nvim-treesitter-refactor'
 
 use {'nvim-telescope/telescope.nvim',   -- Telescope
     requires={'nvim-lua/plenary.nvim'}}
+use 'stevearc/oil.nvim'                 -- navigate and modify folder like buffer
 --use {'kyazdani42/nvim-tree.lua',        -- File tree
 --    require={'kyazdani42/nvim-web-devicons'}}
 -- use 'ThePrimeagen/harpoon'              -- Harpoon
