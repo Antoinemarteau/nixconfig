@@ -86,13 +86,6 @@ cmap('<A-d>', '<S-Left>')                       -- Cursor one word left
 cmap('<A-l>', '<S-Right>')                      -- Cursor one word right
 cmap('<A-j>', '<End>')                          -- Go to end of line
 
-local function cmap_menu_fallback(key, menu_action, fallback)
-    vim.keymap.set('c', key, function()
-        return vim.fn.wildmenumode() == 1 and menu_action or fallback
-    end, {expr = true})
-end
-cmap_menu_fallback('<A-t>', '<C-N>', '<Left>')  -- Next file/folder     | cursor Left
-cmap_menu_fallback('<A-s>', '<C-P>', '<Right>') -- Previous file/folder | cursor Right
 cmap(              '<A-c>',          '<Up>')    -- Go to parent folder  | back history command
 cmap(              '<A-r>',          '<Down>')  -- Enter file/folder    | forward history command
 

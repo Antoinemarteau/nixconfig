@@ -2,17 +2,22 @@
     description = "antoine-nixos";
 
     inputs = {
-        nixpkgs.url = github:nixos/nixpkgs/nixos-unstable;
+        nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
         home-manager = {
-            url = github:nix-community/home-manager;
+            url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
+        };
+        nixvim = {
+          url = "github:pta2002/nixvim";
+          inputs.nixpkgs.follows = "nixpkgs";
         };
     };
 
     outputs = {
         self,
         nixpkgs,
-        home-manager
+        home-manager,
+        nixvim
     }:
     let
         nixpkgs-outPath = {
@@ -33,7 +38,10 @@
                             useUserPackages = true;
                             #users.antoine = import ./home/${hostname};
                             users.antoine = {
-                                imports = [ ./home/${hostname} ];
+                                imports = [
+                                    ./home/${hostname}
+                                    nixvim.homeManagerModules.nixvim
+                                ];
                                 home.sessionVariables.HOSTNAME = hostname;
                             };
                         };

@@ -121,8 +121,8 @@ nmap('jse', '<plug>(vimtex-env-toggle-star)')
 nmap('js', '$<plug>(vimtex-env-toggle-math)')
 nmap('jsd', '<plug>(vimtex-delim-toggle-modifier)')
 xmap('jsd', '<plug>(vimtex-delim-toggle-modifier)')
-nmap('jsd', '<plug>(vimtex-delim-toggle-modifier-reverse)')
-xmap('jsd', '<plug>(vimtex-delim-toggle-modifier-reverse)')
+nmap('jsD', '<plug>(vimtex-delim-toggle-modifier-reverse)')
+xmap('jsD', '<plug>(vimtex-delim-toggle-modifier-reverse)')
 
 -- Remap % en ç en normal mode
 nmap('ç ', '<Plug>(MatchitNormalForward)')
