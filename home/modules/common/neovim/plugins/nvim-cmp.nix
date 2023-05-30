@@ -52,21 +52,21 @@
 
     extraConfigLua = ''
       -- mappings for accepting the Nth item in list
-      --local function confirm_Nth_item(N)
-      --    cmp = require('cmp')
-      --    if not (cmp == nil) then
-      --        for _ = 1, N do
-      --            cmp.select_next_item()
-      --        end
-      --        cmp.confirm()
-      --    end
-      --end
+      local function confirm_Nth_item(N)
+          local cmp = require('cmp')
+          if not (cmp == nil) then
+              for _ = 1, N do
+                  cmp.select_next_item()
+              end
+              cmp.confirm()
+          end
+      end
 
-      --vim.keymap.set('i', '<A-v>', function() confirm_Nth_item(1) end, { silent = true })
-      --vim.keymap.set('i', '<A-d>', function() confirm_Nth_item(2) end, { silent = true })
-      --vim.keymap.set('i', '<A-l>', function() confirm_Nth_item(3) end, { silent = true })
-      --vim.keymap.set('i', '<A-j>', function() confirm_Nth_item(4) end, { silent = true })
-      --vim.keymap.set('i', '<A-à>', function() confirm_Nth_item(5) end, { silent = true })
+      vim.keymap.set('i', '<A-v>', function() confirm_Nth_item(1) end, { silent = true })
+      vim.keymap.set('i', '<A-d>', function() confirm_Nth_item(2) end, { silent = true })
+      vim.keymap.set('i', '<A-l>', function() confirm_Nth_item(3) end, { silent = true })
+      vim.keymap.set('i', '<A-j>', function() confirm_Nth_item(4) end, { silent = true })
+      vim.keymap.set('i', '<A-à>', function() confirm_Nth_item(5) end, { silent = true })
     '';
   };
 }

@@ -3,6 +3,7 @@
   imports = [
     ./comment.nix
     ./fugitive.nix
+    ./harpoon.nix
     ./julia-cell.nix
     ./lsp.nix
     ./markdown-preview.nix
@@ -29,6 +30,7 @@
       airline = {
         enable = true;
         powerline = true;
+        theme = "base16_gruvbox_dark_hard";
       };
     };
 

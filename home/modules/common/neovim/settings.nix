@@ -44,7 +44,7 @@
             cursorline = false;        # Highlight the screen line of the cursor
             cursorcolumn = false;      # Highlight the screen column of the cursor
             signcolumn = "yes";        # Whether to show the signcolumn
-            colorcolumn = "80";        # Columns to highlight
+            colorcolumn = "0";         # Columns to highlight
             wrap = false;              # Don't wrap lines
             laststatus = 2;            # When to use a status line for the last window
             termguicolors = true;      # Enables 24-bit RGB color in the |TUI|

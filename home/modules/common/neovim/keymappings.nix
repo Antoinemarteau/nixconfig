@@ -21,9 +21,6 @@
           # Rafraichir les racourcis
           normal."<leader>ç" = ":so /home/antoine/dotfiles/config/nvim/init.lua<cr>";
 
-          # explorer
-          normal."<leader>\"" = ":NvimTreeToggle<CR>";
-
           normal."à" = { action = ":"; silent = false; };
 
           normalVisualOp = {
