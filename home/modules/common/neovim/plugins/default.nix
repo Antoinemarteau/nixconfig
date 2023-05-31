@@ -12,7 +12,7 @@
     ./packer.nix
     ./telescope.nix
     ./treesitter.nix
-    ./ultisnips.nix # TODO
+    ./ultisnips.nix
     ./vimtex.nix
   ];
 
@@ -38,14 +38,6 @@
       pkgs.vimPlugins.julia-vim
       pkgs.vimPlugins.vim-autoformat
     ];
-    extraConfigLua = ''
-      --require('oil').setup ({
-      --  columns = {
-      --    "icon",
-      --    "size"
-      --  },
-      --})
-    '';
 
     globals = {
       # julia-vim

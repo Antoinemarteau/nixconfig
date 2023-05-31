@@ -45,7 +45,6 @@
           {name = "ultisnips";}
           {name = "buffer";}
           #{name = "cmp_tabnine";}
-          {name = "neorg";}
         ];
       };
     };
