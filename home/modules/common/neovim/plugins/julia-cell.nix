@@ -11,7 +11,7 @@
           target_pane = ":{end}.{right}";
         };
         dontAskDefault = true;
-        #pasteFile = "$(XDG_CACHE_HOME)/slime_paste";
+        pasteFile = "${config.xdg.cacheHome}/slime_paste";
 
         extraConfig = {
           cell_delimiter = "##";
