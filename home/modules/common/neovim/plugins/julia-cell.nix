@@ -1,32 +1,39 @@
-{ pkgs, config, ... }:
+{ config, ... }:
 {
   programs.nixvim = {
+    plugins = {
+      vim-slime = {
+        enable = true;
 
-    extraPlugins = [
-      pkgs.vimPlugins.vim-slime
-    ];
-
-    extraConfigLua = ''
-      --require('oil').setup ({
-      --  columns = {
-      --    "icon",
-      --    "size"
-      --  },
-      --})
-    '';
-
-    globals = {
-      # slime globals
-      slime_target = "tmux";
-      slime_default_config = {
+        target = "tmux";
+        defaultConfig = {
           socket_name = "default";
           target_pane = ":{end}.{right}";
-      };
-      slime_dont_ask_default = 1;
-      slime_cell_delimiter = "##";
+        };
+        dontAskDefault = true;
+        #pasteFile = "$(XDG_CACHE_HOME)/slime_paste";
 
-      # julia-cell configuration
-      julia_cell_delimit_cells_by = "tags";
+        extraConfig = {
+          cell_delimiter = "##";
+          cell_delimiter_cells_by = "tags";
+        };
+      };
+
+      julia-cell = {
+        enable = true;
+
+        delimitCellsBy = "tags";
+
+        keymaps = {
+            silent          = true;
+            clear           = "<Leader>jl";
+            executeCell     = "<Leader>jc";
+            executeCellJump = "<Leader>jC";
+            nextCell        = "<Leader>jn";
+            prevCell        = "<Leader>jp";
+            run             = "<Leader>jr";
+        };
+      };
     };
 
     maps = config.nixvim.helpers.mkMaps {silent = true;} {
@@ -36,22 +43,6 @@
         # execute the current line or current selection
         "<Leader>je" = "<Plug>SlimeLineSend";
         "<Leader>e"  = "<Plug>SlimeSendCell";
-
-        # run entire file
-        "<Leader>jr" = ":JuliaCellRun<CR>";
-
-        # execute the current cell
-        "<Leader>jc" = ":JuliaCellExecuteCell<CR>";
-
-        # execute the current cell and jump to the next cell
-        "<Leader>jC" = ":JuliaCellExecuteCellJump<CR>";
-
-        # map <Leader>jl to clear Julia screen
-        "<Leader>jl" = ":JuliaCellClear<CR>";
-
-        # jump to the previous and next cell header
-        "<Leader>jp" = ":JuliaCellPrevCell<CR>";
-        "<Leader>jn" = ":JuliaCellNextCell<CR>";
 
         # save and run script
         "<F5>" = ":w<CR>:JuliaCellRun<CR>";

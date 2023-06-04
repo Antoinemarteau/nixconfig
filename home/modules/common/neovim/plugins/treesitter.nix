@@ -1,32 +1,38 @@
 {config, ...}:
 {
-  programs.nixvim.plugins = {
-    treesitter = {
-      enable = true;
+  programs.nixvim = {
+    plugins = {
+      treesitter = {
+        enable = true;
 
-      nixvimInjections = true;
+        nixvimInjections = true;
 
-      folding = false;
-      indent = true;
+        folding = false;
+        indent = true;
 
-      grammarPackages = with config.programs.nixvim.plugins.treesitter.package.builtGrammars; [
-        bash
-        c
-        cpp
-        html
-        julia
-        latex
-        lua
-        nix
-        python
-        vimdoc
-      ];
+        grammarPackages = with config.programs.nixvim.plugins.treesitter.package.builtGrammars; [
+          bash
+          c
+          cpp
+          html
+          julia
+          latex
+          lua
+          nix
+          python
+          vimdoc
+        ];
+      };
+
+      treesitter-refactor = {
+        enable = true;
+        highlightDefinitions.enable = true;
+      };
     };
 
-    treesitter-refactor = {
-      enable = true;
-      highlightDefinitions.enable = true;
-    };
+    extraConfigLua = ''
+      require 'vim.treesitter.language'.register("cpp", "onelab")
+    '';
   };
 }
 
