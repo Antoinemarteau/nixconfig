@@ -2,7 +2,7 @@
     services.openssh = {
         enable = true;
 
-        settings.passwordAuthentication = false;
+        settings.PasswordAuthentication = false;
     };
 
     users.users.antoine.openssh.authorizedKeys.keys = [

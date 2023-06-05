@@ -22,6 +22,8 @@
           python
           vimdoc
         ];
+
+        languageRegister.cpp = "onelab";
       };
 
       treesitter-refactor = {
@@ -29,10 +31,6 @@
         highlightDefinitions.enable = true;
       };
     };
-
-    extraConfigLua = ''
-      require 'vim.treesitter.language'.register("cpp", "onelab")
-    '';
   };
 }
 
