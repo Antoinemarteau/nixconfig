@@ -20,7 +20,7 @@
 
         extraPackages = with pkgs; [
 
-            ltex-ls                                     # LaTeX language server
+        #    ltex-ls                                     # LaTeX language server
         #    xdotool                                     # For forward search in zathura
         #    pstree                                      # For inverse search in vimtex
         #    rnix-lsp                                    # Nix language server
