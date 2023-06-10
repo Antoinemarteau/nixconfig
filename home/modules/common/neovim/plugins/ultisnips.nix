@@ -14,18 +14,17 @@
     };
 
     autoCmd = [
-        # .pro (getDP) snippets priority : pro > onelab > all (discard any others)
+        # .pro and .dat (getDP) snippets priority : pro > onelab > all (discard any others)
         {
             event = [ "BufNewFile" "BufReadPost" ] ;
-            pattern = "*.pro";
+            pattern = "*.{pro,dat}";
             command = "UltiSnipsAddFiletypes pro.onelab";
         }
         {
             event = [ "BufNewFile" "BufReadPost" ] ;
-            pattern = "*.pro";
+            pattern = "*.{pro,dat}";
             command = "UltiSnipsAddFiletypes onelab.all";
         }
-        # .geo (gmsh)  snippets priority : geo > onelab > all (discard any others)
         {
             event = [ "BufNewFile" "BufReadPost" ] ;
             pattern = "*.geo";
