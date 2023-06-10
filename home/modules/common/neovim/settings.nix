@@ -38,9 +38,9 @@
             modelines = 10;            # Sets the type of modelines
             undofile = true;           # Automatically save and restore undo history
             incsearch = true;          # Incremental search: show match for partly typed search command
-            smartcase = true;          # Override the 'ignorecase' option if the search
-                                        # pattern contains; upper case characters
+            smartcase = true;          # Override the 'ignorecase' option if the search pattern contains; upper case characters
             scrolloff = 8;             # Number of screen lines to show around the cursor
+            sidescrolloff = 8;         # Number of screen columns to show around the cursor
             cursorline = false;        # Highlight the screen line of the cursor
             cursorcolumn = false;      # Highlight the screen column of the cursor
             signcolumn = "yes";        # Whether to show the signcolumn
@@ -52,6 +52,7 @@
             shortmess = "filnxtToOFc";
             listchars = "nbsp:·";      # Point médian treated as unbreakable space
             list = true;               # With listchars option
+            virtualedit = "block";     # Virtual Block selection across empti columns
 
             # Tab options
             tabstop = 4;               # Number of spaces a <Tab> in the text stands for (local to buffer)

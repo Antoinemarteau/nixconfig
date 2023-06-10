@@ -83,6 +83,7 @@ use {'iamcco/markdown-preview.nvim',    -- Markdown preview
      run = 'cd app && yarn install'}
 
 use 'JuliaEditorSupport/julia-vim'      -- julia support
+use 'jpalardy/vim-slime'                -- send code in other term
 use {'mroavi/vim-julia-cell',           -- run code in cells
     require={'jpalardy/vim-slime'}} --for = 'julia' }
 
