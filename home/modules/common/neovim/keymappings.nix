@@ -53,15 +53,15 @@
               #  Corollaire : correction orthographique
               "]k" = "]s";
               "[k" = "[s";
-              #  ligne écran précédente / suivante (à l"intérieur d"une phrase
-              gs = "gk";
-              gt = "gj";
-              #  onglet précédent / suivant
-              gb = "gT";
-              "gé" = "gt";
-              #  optionnel : {gB} / {gÉ} pour aller au premier / dernier onglet
-              gB   = '':exe "silent! tabfirst"<CR>'';
-              "gÉ" = '':exe "silent! tablast"<CR>'';
+              ##  ligne écran précédente / suivante (à l"intérieur d"une phrase
+              #gs = "gk";
+              #gt = "gj";
+              ##  onglet précédent / suivant
+              #gb = "gT";
+              #"gé" = "gt";
+              ##  optionnel : {gB} / {gÉ} pour aller au premier / dernier onglet
+              #gB   = '':exe "silent! tabfirst"<CR>'';
+              #"gÉ" = '':exe "silent! tablast"<CR>'';
               #  optionnel : {g"} pour aller au début de la ligne écran
               "g\"" = "g0";
 

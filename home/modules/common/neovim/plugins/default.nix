@@ -5,6 +5,7 @@
     ./fugitive.nix
     ./harpoon.nix
     ./julia-cell.nix
+    ./leap.nix
     ./lsp.nix
     ./markdown-preview.nix
     ./nvim-cmp.nix
