@@ -15,7 +15,6 @@
           c
           cpp
           html
-          latex
           lua
           nix
           python

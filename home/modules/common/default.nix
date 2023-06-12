@@ -9,6 +9,7 @@
         ./i3
         ./julia.nix
         ./kitty.nix
+        ./latex.nix
         ./less.nix
         ./neovim
         ./note.nix
@@ -53,9 +54,6 @@
         arandr
         mons
         remmina # xrdp client
-
-        #latex
-        texlive.combined.scheme-full
 
         # # cpp dev
         # gdb

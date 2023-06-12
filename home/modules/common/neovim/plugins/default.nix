@@ -13,7 +13,6 @@
     ./telescope.nix
     ./treesitter.nix
     ./ultisnips.nix
-    ./vimtex.nix
   ];
 
   programs.nixvim = {

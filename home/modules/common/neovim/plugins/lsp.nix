@@ -28,8 +28,6 @@
         servers = {
           bashls.enable  = true;
           clangd.enable  = true;
-          texlab.enable  = true;
-          ltex.enable    = true;
           lua-ls.enable  = true;
           pylsp.enable   = true;
         };
