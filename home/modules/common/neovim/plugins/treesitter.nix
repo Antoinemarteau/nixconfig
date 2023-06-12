@@ -15,7 +15,6 @@
           c
           cpp
           html
-          julia
           latex
           lua
           nix

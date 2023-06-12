@@ -4,7 +4,6 @@
     ./comment.nix
     ./fugitive.nix
     ./harpoon.nix
-    ./julia-cell.nix
     ./leap.nix
     ./lsp.nix
     ./markdown-preview.nix
@@ -36,14 +35,8 @@
     };
 
     extraPlugins = [
-      pkgs.vimPlugins.julia-vim
       pkgs.vimPlugins.vim-autoformat
     ];
-
-    globals = {
-      # julia-vim
-      latex_to_unicode_keymap = true;
-    };
 
     # vim-autoformat
     maps.normal."<leader>a" = {

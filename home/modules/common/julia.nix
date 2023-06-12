@@ -1,5 +1,22 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
+
+    imports = [ ./neovim/plugins/julia-cell.nix ];
+
+    programs.nixvim = {
+        plugins = {
+            # Parser
+            treesitter.grammarPackages = with config.programs.nixvim.plugins.treesitter.package.builtGrammars; [ julia ];
+
+            # LanguageServer
+            lsp.servers.julials.enable = true;
+        };
+
+        # julia-vim
+        extraPlugins = [ pkgs.vimPlugins.julia-vim ];
+        globals.latex_to_unicode_keymap = true;
+    };
+
     home = {
         shellAliases = {
             ju = "julia";

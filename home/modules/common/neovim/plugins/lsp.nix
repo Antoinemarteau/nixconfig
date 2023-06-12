@@ -32,7 +32,6 @@
           ltex.enable    = true;
           lua-ls.enable  = true;
           pylsp.enable   = true;
-          julials.enable = true;
         };
       };
     };
