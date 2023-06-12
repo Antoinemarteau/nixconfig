@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
     imports = [
+        #./cpp.nix
         ./dunst.nix
         ./firefox.nix
         ./flameshot.nix
@@ -54,13 +55,6 @@
         arandr
         mons
         remmina # xrdp client
-
-        # # cpp dev
-        # gdb
-        # cmake
-        # cppman
-        # ccls
-        # valgrind
     ];
 
     services = {

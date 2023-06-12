@@ -1,5 +1,6 @@
 { config, ... }:
 {
+    # Source : https://idie.ru/posts/vim-modern-cpp/#enhancing-syntax-highlighting-for-modern-c
     programs.nixvim = {
         globals = {
           mapleader = " ";
@@ -142,19 +143,6 @@
                     noremap <buffer> s k
                     noremap <buffer> k s
                 endfunction
-            ]]
-
-            -- Acces a doc c++ cppman
-            vim.cmd[[
-                function! s:JbzCppMan()
-                    let old_isk = &iskeyword
-                    setl iskeyword+=:
-                    let str = expand("<cword>")
-                    let &l:iskeyword = old_isk
-                    execute 'Man ' . str
-                endfunction
-                command! JbzCppMan :call s:JbzCppMan()
-                au FileType cpp nnoremap <buffer>K :JbzCppMan<CR>
             ]]
         '';
     };
