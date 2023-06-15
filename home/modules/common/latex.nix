@@ -13,8 +13,15 @@
             lsp.servers.texlab.enable  = true;
             lsp.servers.ltex.enable    = true;
         };
+
+        filetype.extension = {
+            pdf_tex = "tex";
+        };
     };
 
-    home.packages = with pkgs; [ texlive.combined.scheme-full ];
+    home.packages = with pkgs; [
+        texlive.combined.scheme-full
+        inkscape # for svg support
+    ];
 }
 
