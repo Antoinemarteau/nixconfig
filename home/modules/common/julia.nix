@@ -37,12 +37,20 @@
 
                     import Pkg as var"#Pkg"
                     let
-                        pkgs = ["Revise", "OhMyREPL", "BenchmarkTools", "Cthulhu", "Debugger", "Profile", "ProfileView", "LanguageServer"]
+                        pkgs = ["Revise", "OhMyREPL", "BenchmarkTools", "Cthulhu", "Debugger", "Profile", "ProfileView"]
                         for pkg in pkgs
                             if Base.find_package(pkg) === nothing
                                 var"#Pkg".add(pkg)
                             end
                         end
+                        # LanguageServer should be installed in special
+                        # folder for neovim
+                        mkpath("/home/antoine/.julia/environments/nvim-lspconfig")
+                        var"#Pkg".activate("/home/antoine/.julia/environments/nvim-lspconfig")
+                        if Base.find_package("LanguageServer") === nothing
+                            var"#Pkg".add("LanguageServer")
+                        end
+                        var"#Pkg".activate()
                     end
 
                     @sync @eval begin
