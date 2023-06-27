@@ -12,6 +12,7 @@
                 executable = true;
                 text = ''
                     #!/bin/sh
+                    /home/antoine/prog/sandbox/hmm_smc/hmm_spheres/commit.sh ./commit.txt
 
                     # Absolute path to container
                     CONTAINER=$HOME/prog/these/gricad/singularity_container.sif
