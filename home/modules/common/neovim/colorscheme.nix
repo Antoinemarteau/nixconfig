@@ -11,7 +11,6 @@
         highlight = {
             Normal.bg = "none";
             ColorColumn = {
-                ctermbg = 0;
                 bg = "grey";
             };
             ExtraWhitespace.bg = "Red";

@@ -1,4 +1,4 @@
-{ lib, ...}:
+{ lib, pkgs, ...}:
 {
     imports = [
         ../modules/common
@@ -9,6 +9,10 @@
         username = "antoine";
         homeDirectory = "/home/antoine";
         stateVersion = "22.11";
+
+        packages = with pkgs; [
+            mesa
+        ];
     };
 
     services.picom.enable = lib.mkForce false;
