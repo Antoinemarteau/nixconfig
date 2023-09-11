@@ -55,6 +55,7 @@
                 refresh_i3status = "killall -SIGUSR1 i3status";
             in {
                 "${mod}+o" = "exec i3lock";
+                "${mod}+Shift+o" = "exec i3lock && systemctl suspend";
                 "XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%      && ${refresh_i3status}";
                 "XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%      && ${refresh_i3status}";
                 "XF86AudioMute"        = "exec --no-startup-id pactl set-sink-mute   @DEFAULT_SINK@   toggle && ${refresh_i3status}";
