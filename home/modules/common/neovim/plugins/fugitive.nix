@@ -11,7 +11,7 @@
       xremap = { r = "h"; s = "k"; }; # c = "l";
     };
 
-    maps = config.nixvim.helpers.mkMaps {silent = true;} {
+    maps = config.nixvim.helpers.keymaps.mkMaps {silent = true;} {
       normal = {
         "<leader>,s" = ":vert Git<CR>";
         "<leader>,b" = ":GBranches<CR>";

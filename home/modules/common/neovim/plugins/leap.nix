@@ -6,7 +6,7 @@
       pkgs.vimPlugins.leap-nvim
     ];
 
-    maps = config.nixvim.helpers.mkMaps {silent = true;} {
+    maps = config.nixvim.helpers.keymaps.mkMaps {silent = true;} {
       normalVisualOp."é" = "<Plug>(leap-forward-to)";
       normalVisualOp."É" = "<Plug>(leap-backward-to)";
       normalVisualOp."gé"= "<Plug>(leap-from-window)";

@@ -10,7 +10,7 @@
           maplocalleader = "ç";
         };
 
-        maps = config.nixvim.helpers.mkMaps {silent = true;} {
+        maps = config.nixvim.helpers.keymaps.mkMaps {silent = true;} {
           normal."<Space>" = "<NOP>";
 
           # Esc to clear search results

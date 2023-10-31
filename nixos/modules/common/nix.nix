@@ -1,6 +1,11 @@
 {
     nixpkgs.config.allowUnfree = true;
 
+    nixpkgs.config.permittedInsecurePackages = [
+      "zotero-6.0.27"
+    ];
+
+
     nix = {
 
         settings = {

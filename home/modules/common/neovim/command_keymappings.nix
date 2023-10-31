@@ -2,7 +2,7 @@
 {
     programs.nixvim = {
 
-        maps = config.nixvim.helpers.mkMaps {silent = false;} {
+        maps = config.nixvim.helpers.keymaps.mkMaps {silent = false;} {
           # Navigation & completion in command mode
           command."<A-v>" = "<C-B>";                          # Go to begining of line
           command."<A-d>" = "<S-Left>";                       # Cursor one word left

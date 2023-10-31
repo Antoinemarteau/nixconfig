@@ -36,7 +36,7 @@
       };
     };
 
-    maps = config.nixvim.helpers.mkMaps {silent = true;} {
+    maps = config.nixvim.helpers.keymaps.mkMaps {silent = true;} {
         # execute the current line or current selection
       visual."<Leader>je" = "<Plug>SlimeRegionSend";
       normal = {

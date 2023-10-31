@@ -35,7 +35,7 @@
       };
     };
 
-    maps = config.nixvim.helpers.mkMaps {silent = true;} {
+    maps = config.nixvim.helpers.keymaps.mkMaps {silent = true;} {
       normal.m = ":VimtexView<CR>";
 
       # change commands
