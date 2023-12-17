@@ -11,9 +11,12 @@
       browser = "firefox";
     };
 
-    maps.normal."<leader>m" = {
-      action = ":MarkdownPreview<cr>";
-      silent = true;
-    };
+    keymaps = [
+      {
+        key = "<leader>m";
+        action = ":MarkdownPreview<cr>";
+        options.silent = true;
+      }
+    ];
   };
 }

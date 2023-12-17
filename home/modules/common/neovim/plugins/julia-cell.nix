@@ -36,17 +36,30 @@
       };
     };
 
-    maps = config.nixvim.helpers.keymaps.mkMaps {silent = true;} {
+    keymaps = [
         # execute the current line or current selection
-      visual."<Leader>je" = "<Plug>SlimeRegionSend";
-      normal = {
-        # execute the current line or current selection
-        "<Leader>je" = "<Plug>SlimeLineSend";
-        "<Leader>e"  = "<Plug>SlimeSendCell";
-
+        {
+            mode = "v";
+            key = "<Leader>je";
+            action = "<Plug>SlimeRegionSend";
+            options.silent = true;
+        }
+        {
+            key = "<Leader>je";
+            action = "<Plug>SlimeLineSend";
+            options.silent = true;
+        }
+        {
+            key = "<Leader>e";
+            action = "<Plug>SlimeSendCell";
+            options.silent = true;
+        }
         # save and run script
-        "<F5>" = ":w<CR>:JuliaCellRun<CR>";
-      };
-    };
+        {
+            key = "<F5>";
+            action = ":w<CR>:JuliaCellRun<CR>";
+            options.silent = true;
+        }
+    ];
   };
 }

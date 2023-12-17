@@ -6,16 +6,47 @@
       pkgs.vimPlugins.leap-nvim
     ];
 
-    maps = config.nixvim.helpers.keymaps.mkMaps {silent = true;} {
-      normalVisualOp."é" = "<Plug>(leap-forward-to)";
-      normalVisualOp."É" = "<Plug>(leap-backward-to)";
-      normalVisualOp."gé"= "<Plug>(leap-from-window)";
-
-      visual."x" = "<Plug>(leap-forward-till)";
-      operator."x" = "<Plug>(leap-forward-till)";
-      visual."X" = "<Plug>(leap-backward-till)";
-      operator."X" = "<Plug>(leap-backward-till)";
-    };
+    keymaps = [
+        {
+            key = "é";
+            action = "<Plug>(leap-forward-to)";
+            options.silent = true;
+        }
+        {
+            key = "É";
+            action = "<Plug>(leap-backward-to)";
+            options.silent = true;
+        }
+        {
+            key = "gé";
+            action = "<Plug>(leap-from-window)";
+            options.silent = true;
+        }
+        {
+            mode = "v";
+            key = "x";
+            action = "<Plug>(leap-forward-till)";
+            options.silent = true;
+        }
+        {
+            mode = "o";
+            key = "x";
+            action = "<Plug>(leap-forward-till)";
+            options.silent = true;
+        }
+        {
+            mode = "v";
+            key = "X";
+            action = "<Plug>(leap-backward-till)";
+            options.silent = true;
+        }
+        {
+            mode = "o";
+            key = "X";
+            action = "<Plug>(leap-backward-till)";
+            options.silent = true;
+        }
+    ];
 
     extraConfigLua = ''
         local leap = require('leap')
