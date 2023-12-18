@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 {
     # command mode keymaps
     imports = [./command_keymappings.nix];
@@ -10,108 +10,139 @@
           maplocalleader = "ç";
         };
 
-        maps = config.nixvim.helpers.keymaps.mkMaps {silent = true;} {
-          normal."<Space>" = "<NOP>";
+    # the '(' is to append a mapping without silent = true at the end
+    keymaps = (let
+        normVisOp =
+          lib.mapAttrsToList
+          (key: action: {
+            mode = "";
+            inherit action key;
+          })
+          {
+            ## [HJKL] -> {CTSR}
+            c = "h";
+            r = "l";
+            t = "j";
+            s = "k";
+            C = "H";
+            R = "L";
+            T = "J";
+            S = "K";
+            zs = "zj";
+            zt = "zk";
 
-          # Esc to clear search results
-          normal."<esc>" = ":noh<CR>";
+            # {HJKL} <- [CTSR]
+            # {J} = « Jusqu"à »            (j = suivant, J = précédant
+            j = "t";
+            J = "T";
+            # {L} = « Change »             (l = attend un mvt, L = jusqu"à la fin de ligne
+            l = "c";
+            L = "C";
+            # {H} = « Remplace »           (h = un caractère slt, H = reste en « Remplace »
+            h = "r";
+            H = "R";
+            # {K} = « Substitue »          (k = caractère, K = ligne
+            k = "s";
+            K = "S";
+            #  Corollaire : correction orthographique
+            "]k" = "]s";
+            "[k" = "[s";
+            ##  ligne écran précédente / suivante (à l"intérieur d"une phrase
+            #gs = "gk";
+            #gt = "gj";
+            ##  onglet précédent / suivant
+            #gb = "gT";
+            #"gé" = "gt";
+            ##  optionnel : {gB} / {gÉ} pour aller au premier / dernier onglet
+            #gB   = '':exe "silent! tabfirst"<CR>'';
+            #"gÉ" = '':exe "silent! tablast"<CR>'';
+            #  optionnel : {g"} pour aller au début de la ligne écran
+            "g\"" = "g0";
 
-          # Normal mode dans le terminal
-          terminal."<A-g>" = "<C-\\><C-n>";
-
-          # fix Y behaviour
-          normal."Y" = "y$";
-
-          # Rafraichir les racourcis
-          normal."<leader>ç" = ":so /home/antoine/dotfiles/config/nvim/init.lua<cr>";
-
-          normal."à" = { action = ":"; silent = false; };
-
-          normalVisualOp = {
-
-              ## [HJKL] -> {CTSR}
-              c = "h";
-              r = "l";
-              t = "j";
-              s = "k";
-              C = "H";
-              R = "L";
-              T = "J";
-              S = "K";
-              zs = "zj";
-              zt = "zk";
-
-              # {HJKL} <- [CTSR]
-              # {J} = « Jusqu"à »            (j = suivant, J = précédant
-              j = "t";
-              J = "T";
-              # {L} = « Change »             (l = attend un mvt, L = jusqu"à la fin de ligne
-              l = "c";
-              L = "C";
-              # {H} = « Remplace »           (h = un caractère slt, H = reste en « Remplace »
-              h = "r";
-              H = "R";
-              # {K} = « Substitue »          (k = caractère, K = ligne
-              k = "s";
-              K = "S";
-              #  Corollaire : correction orthographique
-              "]k" = "]s";
-              "[k" = "[s";
-              ##  ligne écran précédente / suivante (à l"intérieur d"une phrase
-              #gs = "gk";
-              #gt = "gj";
-              ##  onglet précédent / suivant
-              #gb = "gT";
-              #"gé" = "gt";
-              ##  optionnel : {gB} / {gÉ} pour aller au premier / dernier onglet
-              #gB   = '':exe "silent! tabfirst"<CR>'';
-              #"gÉ" = '':exe "silent! tablast"<CR>'';
-              #  optionnel : {g"} pour aller au début de la ligne écran
-              "g\"" = "g0";
-
-              #  Pour faciliter les manipulations de fenêtres, on utilise {ê} comme un Ctrl+W :
-              "ê" = "<C-w>";
-              "Ê" = "<C-w><C-w>";
-              "êt" = "<C-w>j";
-              "ês" = "<C-w>k";
-              "êc" = "<C-w>h";
-              "êr" = "<C-w>l";
-              "êd" = "<C-w>s";
-              "êp" = "<C-w>o";
-              "ê<SPACE>" = ":vsplit<CR>";
-              "ê<CR>" = ":split<CR>";
+            #  Pour faciliter les manipulations de fenêtres, on utilise {ê} comme un Ctrl+W :
+            "ê" = "<C-w>";
+            "Ê" = "<C-w><C-w>";
+            "êt" = "<C-w>j";
+            "ês" = "<C-w>k";
+            "êc" = "<C-w>h";
+            "êr" = "<C-w>l";
+            "êd" = "<C-w>s";
+            "êp" = "<C-w>o";
+            "ê<SPACE>" = ":vsplit<CR>";
+            "ê<CR>" = ":split<CR>";
           };
+        normal =
+          lib.mapAttrsToList
+          (key: action: {
+            mode = "n";
+            inherit action key;
+          })
+          {
+            "<Space>" = "<NOP>";
 
-          # resize with arrows
-          normal."<C-Up>" = ":resize -2<CR>";
-          normal."<C-Down>" = ":resize +2<CR>";
-          normal."<C-Left>" = ":vertical resize +2<CR>";
-          normal."<C-Right>" = ":vertical resize -2<CR>";
+            # Esc to clear search results
+            "<esc>" = ":noh<CR>";
 
-          # move current line up/down
-          normal."<C-s>" = ":move-2<CR>";
-          normal."<C-t>" = ":move+<CR>";
+            # fix Y behaviour
+            "Y" = "y$";
 
-          # center buffer on current line after jump
-          normal."<C-u>" = "<C-u>zz";
-          normal."<C-d>" = "<C-d>zz";
+            # Rafraichir les racourcis
+            "<leader>ç" = ":so /home/antoine/dotfiles/config/nvim/init.lua<cr>";
 
-          # Close quickfix list
-          normal."<A-q>" = ":cclose<cr>";
-          normal."<A-o>" = ":copen<cr>";
 
-          # better indenting
-          visual.">" = ">gv";
-          visual."<" = "<gv";
-          visual."<TAB>" = ">gv";
-          visual."<S-TAB>" = "<gv";
+            # resize with arrows
+            "<C-Up>" = ":resize -2<CR>";
+            "<C-Down>" = ":resize +2<CR>";
+            "<C-Left>" = ":vertical resize +2<CR>";
+            "<C-Right>" = ":vertical resize -2<CR>";
 
-          # move selected line / block of text in visual mode
-          visual."S" = ":m '<-2<CR>gv=gv";
-          visual."T" = ":m '>+1<CR>gv=gv";
+            # move current line up/down
+            "<C-s>" = ":move-2<CR>";
+            "<C-t>" = ":move+<CR>";
 
-          # command mappings in other file
-        };
+            # center buffer on current line after jump
+            "<C-u>" = "<C-u>zz";
+            "<C-d>" = "<C-d>zz";
+
+            # Close quickfix list
+            "<A-q>" = ":cclose<cr>";
+            "<A-o>" = ":copen<cr>";
+          };
+        visual =
+          lib.mapAttrsToList
+          (key: action: {
+            mode = "v";
+            inherit action key;
+          })
+          {
+            # better indenting
+            ">"       = ">gv";
+            "<"       = "<gv";
+            "<TAB>"   = ">gv";
+            "<S-TAB>" = "<gv";
+
+            # move selected line / block of text in visual mode
+            "S" = ":m '<-2<CR>gv=gv";
+            "T" = ":m '>+1<CR>gv=gv";
+          };
+        terminal = [
+          {
+            mode = "t";
+            key = "<A-g>";
+            action = "<C-\\><C-n>";
+          }
+        ];
+      in
+        config.nixvim.helpers.keymaps.mkKeymaps
+        {options.silent = true;}
+        (normal ++ visual ++ normVisOp ++ terminal) ++ [
+            {
+                mode = "n";
+                key = "à";
+                action = ":";
+                options.silent = false;
+            }
+        ]);
 
         extraConfigLua = ''
             -- Navigation & completion in command mode

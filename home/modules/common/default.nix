@@ -55,11 +55,14 @@
         arandr
         mons
         remmina # xrdp client
+
+        #debug network-manager-applet.enable = true
+        networkmanagerapplet
     ];
 
     services = {
-        blueman-applet.enable = true;
-        network-manager-applet.enable = true;
+        #blueman-applet.enable = true;
+        #network-manager-applet.enable = true;
         udiskie.enable = true;
         nextcloud-client.enable = true;
     };

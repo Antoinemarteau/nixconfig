@@ -22,13 +22,14 @@
         };
       };
 
-    maps.normal = {
-      "-" = {
-        lua = true;
-        action = "require(\"oil\").open";
-        silent = true;
-      };
-    };
+    keymaps = [
+        {
+            key = "-";
+            action = "require('oil').open";
+            lua = true;
+            options.silent = true;
+        }
+    ];
   };
 }
 

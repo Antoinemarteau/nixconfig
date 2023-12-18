@@ -38,10 +38,13 @@
     ];
 
     # vim-autoformat
-    maps.normal."<leader>a" = {
-      action = ":Autoformat<CR>";
-      silent = true;
-    };
+    keymaps = [
+        {
+            key = "<leader>a";
+            action = ":Autoformat<CR>";
+            options.silent = true;
+        }
+    ];
 
   };
 }

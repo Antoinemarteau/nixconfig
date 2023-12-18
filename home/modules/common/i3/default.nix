@@ -146,6 +146,8 @@
                 { command = "nitrogen --restore"; }
                 { command = "kitty"; }
                 { command = "pa-applet"; }
+                { command = "blueman-applet"; }
+                { command = "nm-applet"; }
                 { command = "signal-desktop"; }
                 { command = "firefox"; }
                 { command = "nextcloud"; }

@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 {
   programs.nixvim = {
     plugins.vimtex = {
@@ -35,43 +35,62 @@
       };
     };
 
-    maps = config.nixvim.helpers.keymaps.mkMaps {silent = true;} {
-      normal.m = ":VimtexView<CR>";
+    keymaps = let
+        normal =
+          lib.mapAttrsToList
+          (key: action: {
+            mode = "n";
+            inherit action key;
+          })
+          {
+            m = ":VimtexView<CR>";
+            # change commands
+            lse = "<plug>(vimtex-env-change)";
+            lsc = "<plug>(vimtex-cmd-change)";
+            ls  ="$<plug>(vimtex-env-change-math)";
+            lsd = "<plug>(vimtex-delim-change-math)";
+            # toggle commands
+            jsf = "<plug>(vimtex-cmd-toggle-frac)";
+            jsc = "<plug>(vimtex-cmd-toggle-star)";
+            jse = "<plug>(vimtex-env-toggle-star)";
+            js  ="$<plug>(vimtex-env-toggle-math)";
+            jsd = "<plug>(vimtex-delim-toggle-modifier)";
+            jsD = "<plug>(vimtex-delim-toggle-modifier-reverse)";
+          };
+        visual =
+          lib.mapAttrsToList
+          (key: action: {
+            mode = "v";
+            inherit action key;
+          })
+          {
+            # toggle commands
+            jsf = "<plug>(vimtex-cmd-toggle-frac)";
+            jsd = "<plug>(vimtex-delim-toggle-modifier)";
+            jsD = "<plug>(vimtex-delim-toggle-modifier-reverse)";
+            # text object:
+            "aç"= "<Plug>(MatchitVisualTextObject)";
+          };
+      in
+        config.nixvim.helpers.keymaps.mkKeymaps
+        {options.silent = true;}
+        (normal ++ visual);
 
-      # change commands
-      normal.lse = "<plug>(vimtex-env-change)";
-      normal.lsc = "<plug>(vimtex-cmd-change)";
-      normal.ls  ="$<plug>(vimtex-env-change-math)";
-      normal.lsd = "<plug>(vimtex-delim-change-math)";
-      # toggle commands
-      normal.jsf = "<plug>(vimtex-cmd-toggle-frac)";
-      visual.jsf = "<plug>(vimtex-cmd-toggle-frac)";
-      normal.jsc = "<plug>(vimtex-cmd-toggle-star)";
-      normal.jse = "<plug>(vimtex-env-toggle-star)";
-      normal.js  ="$<plug>(vimtex-env-toggle-math)";
-      normal.jsd = "<plug>(vimtex-delim-toggle-modifier)";
-      visual.jsd = "<plug>(vimtex-delim-toggle-modifier)";
-      normal.jsD = "<plug>(vimtex-delim-toggle-modifier-reverse)";
-      visual.jsD = "<plug>(vimtex-delim-toggle-modifier-reverse)";
-
-      # text object:
-      visual."aç"= "<Plug>(MatchitVisualTextObject)";
-
-      ## Remap % en ç en normal mode
-      #nmap('ç ', '<Plug>(MatchitNormalForward)')
-      #nmap('gç', '<Plug>(MatchitNormalBackward)')
-      #xmap('ç ', '<Plug>(MatchitVisualForward)')
-      #xmap('gç', '<Plug>(MatchitVisualBackward)')
-      #omap('ç ', '<Plug>(MatchitOperationForward)')
-      #omap('gç', '<Plug>(MatchitOperationBackward)')
-      #
-      #nmap('[ç', '<Plug>(MatchitNormalMultiBackward)')
-      #nmap(']ç', '<Plug>(MatchitNormalMultiForward)')
-      #xmap('[ç', '<Plug>(MatchitVisualMultiBackward)')
-      #xmap(']ç', '<Plug>(MatchitVisualMultiForward)')
-      #omap('[ç', '<Plug>(MatchitOperationMultiBackward)')
-      #omap(']ç', '<Plug>(MatchitOperationMultiForward)')
-    };
+    # Old forgotten remaps
+    ## Remap % en ç en normal mode
+    #nmap('ç ', '<Plug>(MatchitNormalForward)')
+    #nmap('gç', '<Plug>(MatchitNormalBackward)')
+    #xmap('ç ', '<Plug>(MatchitVisualForward)')
+    #xmap('gç', '<Plug>(MatchitVisualBackward)')
+    #omap('ç ', '<Plug>(MatchitOperationForward)')
+    #omap('gç', '<Plug>(MatchitOperationBackward)')
+    #
+    #nmap('[ç', '<Plug>(MatchitNormalMultiBackward)')
+    #nmap(']ç', '<Plug>(MatchitNormalMultiForward)')
+    #xmap('[ç', '<Plug>(MatchitVisualMultiBackward)')
+    #xmap(']ç', '<Plug>(MatchitVisualMultiForward)')
+    #omap('[ç', '<Plug>(MatchitOperationMultiBackward)')
+    #omap(']ç', '<Plug>(MatchitOperationMultiForward)')
 
     autoCmd = [
       {

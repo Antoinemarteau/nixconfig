@@ -42,9 +42,13 @@
             { event = [ "BufEnter" ] ; pattern = "*.h";
               command = "let b:fswitchdst = 'c,cpp,m,cc' | let b:fswitchlocs = 'reg:|include.*|src/**|'"; }
         ];
-        maps = config.nixvim.helpers.keymaps.mkMaps {silent = true;} {
-          normal."<A-m>" = ":FSHere<cr>";
-        };
+        keymaps = [
+            {
+                key = "<A-m>";
+                action = ":FSHere<cr>";
+                options.silent = true;
+            }
+        ];
     };
 }
 
