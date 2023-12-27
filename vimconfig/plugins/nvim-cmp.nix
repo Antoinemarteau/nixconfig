@@ -1,5 +1,6 @@
 {
-  programs.nixvim = {
+  config = {
+
     options.completeopt = ["menu" "menuone" "noselect"];
 
     # nice icons in completion menu

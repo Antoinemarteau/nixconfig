@@ -1,5 +1,6 @@
+{ config, lib, helpers, ... }:
 {
-    programs.nixvim = {
+	config = {
         globals = {
             ########-
             ## Providers #
@@ -65,5 +66,5 @@
 
             textwidth = 0;             # do not automatically break lines
         };
-    };
+	};
 }

@@ -1,7 +1,5 @@
-{ config, lib, ... }:
+{ config, lib, helpers, ... }:
 {
-    programs.nixvim = {
-
       keymaps = let
           command =
             lib.mapAttrsToList
@@ -24,10 +22,9 @@
               "<A-h>" = "<Del>";                          # Delete char after cursor
             };
         in
-          config.nixvim.helpers.keymaps.mkKeymaps
+          helpers.keymaps.mkKeymaps
           {options.silent = true;}
           command;
 
-    };
 }
 
