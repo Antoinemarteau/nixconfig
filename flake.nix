@@ -20,6 +20,20 @@
         nixvim
     }:
     let
+        system = "x86_64-linux";
+        pkgs = import nixpkgs {
+            inherit system;
+        };
+        nixvim' = nixvim.legacyPackages.${system};
+        my-nvim = nixvim'.makeNixvimWithModule {
+          inherit pkgs;
+          module = ./vimconfig;
+          # You can use `extraSpecialArgs` to pass additional arguments to your module files
+          extraSpecialArgs = {
+            inherit self;
+          };
+        };
+
         nixpkgs-outPath = {
             environment.etc."nix/inputs/nixpkgs".source = nixpkgs.outPath;
         };
@@ -36,6 +50,7 @@
                         home-manager = {
                             useGlobalPkgs = true;
                             useUserPackages = true;
+                            extraSpecialArgs = { inherit my-nvim; };
                             #users.antoine = import ./home/${hostname};
                             users.antoine = {
                                 imports = [
@@ -53,6 +68,7 @@
         nixosConfigurations = builtins.listToAttrs (
             builtins.map mkNixosSystem [ "framework" "desktop" "vm" "mage" ]
         );
+        packages.${system}.default = my-nvim;
     };
 }
 

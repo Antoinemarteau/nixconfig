@@ -1,5 +1,5 @@
 {
-    programs.nixvim.autoCmd = [
+    autoCmd = [
         {
             # close quickfix menu after selecting choice
             event = "FileType";

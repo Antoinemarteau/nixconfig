@@ -1,5 +1,5 @@
 {
-  programs.nixvim.plugins.comment-nvim = {
+  plugins.comment-nvim = {
     enable = true;
 
     opleader = {line = "<leader>C";};

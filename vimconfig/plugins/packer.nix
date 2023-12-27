@@ -1,5 +1,5 @@
 {
-  programs.nixvim.plugins.packer = {
+  plugins.packer = {
       enable = true;
       plugins = [
         #"monplugin"

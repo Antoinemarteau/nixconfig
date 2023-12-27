@@ -12,7 +12,7 @@
         ./kitty.nix
         ./latex.nix
         ./less.nix
-        ./neovim
+        ./neovim.nix
         ./note.nix
         ./picom.nix
         ./readline.nix

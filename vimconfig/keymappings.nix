@@ -1,10 +1,9 @@
-{ config, lib, ... }:
+{ config, lib, helpers, ... }:
 {
     # command mode keymaps
     imports = [./command_keymappings.nix];
 
     # Source : https://idie.ru/posts/vim-modern-cpp/#enhancing-syntax-highlighting-for-modern-c
-    programs.nixvim = {
         globals = {
           mapleader = " ";
           maplocalleader = "ç";
@@ -133,7 +132,7 @@
           }
         ];
       in
-        config.nixvim.helpers.keymaps.mkKeymaps
+        helpers.keymaps.mkKeymaps
         {options.silent = true;}
         (normal ++ visual ++ normVisOp ++ terminal) ++ [
             {
@@ -167,5 +166,4 @@
                 endfunction
             ]]
         '';
-    };
 }
