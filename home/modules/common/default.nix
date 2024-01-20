@@ -37,7 +37,7 @@
         vlc
         zathura
         mpv
-        gnome.gedit
+        gedit
 
         #file editors
         pinta
