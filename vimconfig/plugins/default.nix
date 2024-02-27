@@ -18,7 +18,7 @@
   ];
 
   plugins = {
-    # git diff on left side
+    # git diff on left side + preview hunk and diff
     gitsigns = {
       enable = true;
       signs = {
@@ -38,11 +38,22 @@
     pkgs.vimPlugins.vim-autoformat
   ];
 
-  # vim-autoformat
   keymaps = [
+  # vim-autoformat
       {
           key = "<leader>a";
           action = ":Autoformat<CR>";
+          options.silent = true;
+      }
+  # gitsigns
+      {
+          key = "<leader>,b";
+          action = ":Gitsigns toggle_current_line_blame<CR>";
+          options.silent = true;
+      }
+      {
+          key = "<leader>,h";
+          action = ":Gitsigns preview_hunk<CR>";
           options.silent = true;
       }
   ];

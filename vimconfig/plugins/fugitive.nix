@@ -19,7 +19,6 @@
         })
         {
           "<leader>,s" = ":vert Git<CR>";
-          "<leader>,b" = ":GBranches<CR>";
           "<leader>,t" = ":Git pull<CR>";
           "<leader>,p" = ":Git push<CR>";
           "<leader>,c" = ":diffget //2<CR>";
