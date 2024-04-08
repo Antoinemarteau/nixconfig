@@ -1,7 +1,7 @@
 {
   config = {
 
-    options.completeopt = ["menu" "menuone" "noselect"];
+    opts.completeopt = ["menu" "menuone" "noselect"];
 
     # nice icons in completion menu
     plugins = {
@@ -21,50 +21,52 @@
         };
       };
 
-      nvim-cmp = {
+      cmp = {
         enable = true;
 
-        snippet.expand = "ultisnips";
+        settings = {
+          sources = [
+            { name = "path"; }
+            { name = "nvim_lsp"; }
+            { name = "ultisnips"; }
+            {
+              name = "buffer";
+              option = { # all buffers
+                get_bufnrs.__raw = ''function()
+                      return vim.api.nvim_list_bufs()
+                    end
+                '';
+              };
+              #option = { # all visible buffers
+              #  get_bufnrs.__raw = ''function()
+              #    local bufs = {}
+              #    for _, win in ipairs(vim.api.nvim_list_wins()) do
+              #      bufs[vim.api.nvim_win_get_buf(win)] = true
+              #    end
+              #    return vim.tbl_keys(bufs)
+              #  end
+              #'';
+              #};
+            }
+            #{name = "cmp_tabnine";}
+          ];
 
-        mapping = {
-          "<C-b>" = "cmp.mapping.scroll_docs(-4)";
-          "<C-f>" = "cmp.mapping.scroll_docs(4)";
+          snippet.expand = "function(args) vim.fn[\"UltiSnips#Anon\"](args.body) end";
 
-          "<C-e>" = "cmp.mapping.abort()";
-          "<A-e>" = "cmp.mapping.abort()";
+          mapping = {
+            "<C-b>" = "cmp.mapping.scroll_docs(-4)";
+            "<C-f>" = "cmp.mapping.scroll_docs(4)";
 
-          "<C-Space>" = "cmp.mapping.complete()";
-          "<CR>" = "cmp.mapping.confirm({ select = true })";
+            "<C-e>" = "cmp.mapping.abort()";
+            "<A-e>" = "cmp.mapping.abort()";
 
-          "<A-t>" = "cmp.mapping.select_next_item()";
-          "<A-s>" = "cmp.mapping.select_prev_item()";
+            "<C-Space>" = "cmp.mapping.complete()";
+            "<CR>"  = "cmp.mapping.confirm({ select = true })";
+
+            "<A-t>" = "cmp.mapping.select_next_item()";
+            "<A-s>" = "cmp.mapping.select_prev_item()";
+          };
         };
-
-        sources = [
-          {name = "path";}
-          {name = "nvim_lsp";}
-          {name = "ultisnips";}
-          {
-            name = "buffer";
-            option = { # all buffers
-              get_bufnrs.__raw = ''function()
-                    return vim.api.nvim_list_bufs()
-                  end
-              '';
-            };
-            #option = { # all visible buffers
-            #  get_bufnrs.__raw = ''function()
-            #    local bufs = {}
-            #    for _, win in ipairs(vim.api.nvim_list_wins()) do
-            #      bufs[vim.api.nvim_win_get_buf(win)] = true
-            #    end
-            #    return vim.tbl_keys(bufs)
-            #  end
-            #'';
-            #};
-          }
-          #{name = "cmp_tabnine";}
-        ];
       };
     };
 

@@ -1,6 +1,6 @@
 { config, lib, helpers, ... }:
 {
-	config = {
+  config = {
         globals = {
             ########-
             ## Providers #
@@ -18,7 +18,7 @@
             providers.xclip.enable = true;
         };
 
-        options = {
+        opts = {
 
             ############
             # Settings #

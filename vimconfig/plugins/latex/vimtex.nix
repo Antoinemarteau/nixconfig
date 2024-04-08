@@ -3,7 +3,7 @@
   config = {
     plugins.vimtex = {
       enable = true;
-      extraConfig = {
+      settings = {
         view_method = "zathura";
 
         imaps_enabled = true;
@@ -145,6 +145,6 @@
       tex_conceal="abdmg";
     };
 
-    options.conceallevel = 2;
+    opts.conceallevel = 2;
   };
 }

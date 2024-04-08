@@ -21,7 +21,7 @@
     # git diff on left side + preview hunk and diff
     gitsigns = {
       enable = true;
-      signs = {
+      settings.signs = {
         add.text = "+";
         change.text = "~";
       };
@@ -29,8 +29,10 @@
     # barre
     airline = {
       enable = true;
-      powerline = true;
-      theme = "base16_gruvbox_dark_hard";
+      settings = {
+          powerline_fonts = true;
+          theme = "base16_gruvbox_dark_hard";
+      };
     };
   };
 

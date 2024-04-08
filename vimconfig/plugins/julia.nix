@@ -14,15 +14,14 @@
     vim-slime = {
       enable = true;
 
-      target = "tmux";
-      defaultConfig = {
-        socket_name = "default";
-        target_pane = ":{end}.{right}";
-      };
-      dontAskDefault = true;
-      pasteFile = "$XDG_CACHE_HOME/slime_paste";
-
-      extraConfig = {
+      settings = {
+        default_config = {
+          socket_name = "default";
+          target_pane = ":{end}.{right}";
+        };
+        target = "tmux";
+        dont_ask_default = true;
+        paste_file = "$XDG_CACHE_HOME/slime_paste";
         cell_delimiter = "##";
         cell_delimiter_cells_by = "tags";
       };
@@ -31,7 +30,7 @@
     julia-cell = {
       enable = true;
 
-      delimitCellsBy = "tags";
+      settings.delimit_cells_by = "tags";
 
       keymaps = {
           silent          = true;

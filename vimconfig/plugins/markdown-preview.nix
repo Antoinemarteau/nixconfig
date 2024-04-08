@@ -2,12 +2,14 @@
   plugins.markdown-preview = {
     enable = true;
 
-    autoStart = false;
-    autoClose = false;
+    settings = {
+      auto_start = false;
+      auto_close = false;
 
-    theme = "dark";
+      theme = "dark";
 
-    browser = "firefox";
+      browser = "firefox";
+    };
   };
 
   keymaps = [
