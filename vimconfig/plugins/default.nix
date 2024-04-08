@@ -31,7 +31,6 @@
       enable = true;
       settings = {
           powerline_fonts = true;
-          theme = "base16_gruvbox_dark_hard";
       };
     };
   };
