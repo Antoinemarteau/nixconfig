@@ -2,7 +2,7 @@
 {
     home.packages = with pkgs; [
         prismlauncher
-        minecraft
+        #minecraft TODO test if it is fixed
         lutris
         wine
     ];

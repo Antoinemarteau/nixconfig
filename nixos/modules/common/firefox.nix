@@ -6,6 +6,6 @@
              "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         };
 
-        languagePacks = [ "fr" "en-US" ];
+        #languagePacks = [ "fr" "en-US" ]; TODO debug
     };
 }
