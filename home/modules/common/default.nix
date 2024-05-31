@@ -21,6 +21,7 @@
         ./ssh.nix
         ./thesis.nix
         ./tmux.nix
+        ./vscode.nix
         ./xdg.nix
         ./zathura.nix
     ];
