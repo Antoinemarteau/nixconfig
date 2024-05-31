@@ -24,7 +24,8 @@
         networkmanager.enable = true;
     };
 
-    time.timeZone = "Europe/Paris";
+    #time.timeZone = "Europe/Paris";
+    time.timeZone = "Australia/Melbourne";
 
     # Select internationalisation properties.
     i18n = {
