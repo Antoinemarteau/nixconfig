@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
-  programs.vscode-fhs.enable = true;
+    home.packages = with pkgs; [ vscode-fhs ];
 }
