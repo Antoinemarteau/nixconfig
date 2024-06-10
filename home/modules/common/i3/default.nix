@@ -170,9 +170,9 @@
                     { command = "move scratchpad";                       criteria = { class = "ttrm"; }; }
                     { command = "move scratchpad";                       criteria = { class = "btop"; }; }
                     { command = "move scratchpad";                       criteria = { class = "Spotify"; }; }
-                    { command = "resize set width 80 ppt height 80 ppt"; criteria = { class = "ttrm"; }; }
-                    { command = "resize set width 80 ppt height 80 ppt"; criteria = { class = "btop"; }; }
-                    { command = "resize set width 80 ppt height 80 ppt"; criteria = { class = "Spotify"; }; }
+                    { command = "resize set width 90 ppt height 90 ppt"; criteria = { class = "ttrm"; }; }
+                    { command = "resize set width 90 ppt height 90 ppt"; criteria = { class = "btop"; }; }
+                    { command = "resize set width 90 ppt height 90 ppt"; criteria = { class = "Spotify"; }; }
                     { command = "resize set width 80 ppt height 80 ppt"; criteria = { class = ".arandr-wrapped"; }; }
                     { command = "resize set width 80 ppt height 80 ppt"; criteria = { class = "Pavucontrol"; }; }
                     { command = "move position center";                  criteria = { class = ".arandr-wrapped"; }; }
