@@ -52,6 +52,9 @@
         # and change font in the gui "view" menu
         zotero
 
+        # tui applications
+        bluetuith
+
         # screen management
         arandr
         mons
