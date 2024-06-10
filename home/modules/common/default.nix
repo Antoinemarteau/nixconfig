@@ -42,6 +42,7 @@
 
         #file editors
         pinta
+        inkscape
         libreoffice
         pdfsam-basic
 
@@ -65,8 +66,6 @@
     ];
 
     services = {
-        #blueman-applet.enable = true;
-        #network-manager-applet.enable = true;
         udiskie.enable = true;
         nextcloud-client.enable = true;
     };
