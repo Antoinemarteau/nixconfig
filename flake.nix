@@ -66,7 +66,7 @@
         };
     in {
         nixosConfigurations = builtins.listToAttrs (
-            builtins.map mkNixosSystem [ "framework" "desktop" "vm" "mage" ]
+            builtins.map mkNixosSystem [ "framework" "desktop" "vm" "mage" "monash" ]
         );
         packages.${system}.default = my-nvim;
     };
