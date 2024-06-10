@@ -58,7 +58,7 @@
                       cmd = "kitty --hold cal -y -w";
                     }];
                 }
-            (lib.mkIf ( builtins.elem config.home.sessionVariables.HOSTNAME [ "framework" "vm" ] )
+            (lib.mkIf ( builtins.elem config.home.sessionVariables.HOSTNAME [ "framework" "vm" "monash"] )
                 {
                     block = "battery";
                 }
