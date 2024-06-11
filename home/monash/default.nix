@@ -10,16 +10,16 @@
         stateVersion = "24.05";
 
         packages = with pkgs; [
-            mesa
+            mesa # for openGL rendering glMakie without graphic card ?
             zoom-us
-            openconnect
+            openconnect # for the Cisco vpn
         ];
     };
 
     xsession.windowManager.i3.config = {
       assigns = {
-          "4" = [{class = "ode"; }];
-          "7" = [{class = "oom"; }];
+          "4" = [{class = "ode"; }]; # vscode
+          "7" = [{class = "oom"; }]; # zoom-us
       };
       startup = [
         { command = "code"; }
@@ -28,6 +28,7 @@
 
       keybindings = let
           mod = config.xsession.windowManager.i3.config.modifier;
+          # script to set display setting created with arandr
           math_office_output = pkgs.writeScript "math_office" ''
           #!/bin/sh
           xrandr --output eDP-1 --off --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output DP-3 --off --output DP-4 --off --output DP-5 --off --output DP-4-1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-4-2 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-4-3 --off
