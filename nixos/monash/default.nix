@@ -10,6 +10,10 @@
     networking.hostName = "monash";
 
     services = {
+      # Attempt to synchronize the Monash OneDrive locally, but need admin login
+      # https://nixos.wiki/wiki/OneDrive
+      # onedrive.enable = true;
+
       # display settings:
       # To trigger autorandr during lock/unlock and sleep/out of sleep?
       udev.extraRules = ''ACTION=="change", SUBSYSTEM=="drm", RUN+="${pkgs.autorandr}/bin/autorandr -c"'';
