@@ -42,6 +42,7 @@
 
         #file editors
         pinta
+        inkscape
         libreoffice
         pdfsam-basic
 
@@ -51,6 +52,9 @@
         # set setting layout.css.devPixelsPerPx = 1.5 in zotero GUI,
         # and change font in the gui "view" menu
         zotero
+
+        # tui applications
+        bluetuith
 
         # screen management
         arandr
@@ -62,8 +66,6 @@
     ];
 
     services = {
-        #blueman-applet.enable = true;
-        #network-manager-applet.enable = true;
         udiskie.enable = true;
         nextcloud-client.enable = true;
     };

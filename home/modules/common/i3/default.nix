@@ -53,6 +53,10 @@
                 mod = config.xsession.windowManager.i3.config.modifier;
                 term = config.xsession.windowManager.i3.config.terminal;
                 refresh_i3status = "killall -SIGUSR1 i3status";
+                laptop_output = pkgs.writeScript "laptop" ''
+                #!/bin/sh
+                xrandr --output eDP-1 --mode 1920x1200 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output DP-3 --off --output DP-4 --off --output DP-5 --off --output DP-4-1 --off --output DP-4-2 --off --output DP-4-3 --off
+            '';
             in {
                 "${mod}+o" = "exec i3lock";
                 "${mod}+Shift+o" = "exec i3lock && systemctl suspend";
@@ -62,7 +66,9 @@
                 "XF86AudioMicMute"     = "exec --no-startup-id pactl set-sink-mute   @DEFAULT_SOURCE@ toggle && ${refresh_i3status}";
 
                 "${mod}+Return" = "exec ${term}";
-                "${mod}+a" = "kill";
+                "${mod}+Shift+a" = "kill";
+
+                "${mod}+l" = "exec --no-startup-id ${laptop_output}";
 
                 "${mod}+c" = "focus left ";
                 "${mod}+t" = "focus down ";
@@ -122,7 +128,7 @@
                 "${mod}+x" = "[class=\"Spotify\"] scratchpad show; move position center"; # spotify
                 "${mod}+period" = "exec blueman-manager"; # bluetooth applet
                 "${mod}+k" = "exec arandr"; # choosing display layout
-                "${mod}+apostrophe" = "exec pavucontrol --tab=3"; # choosing display layout
+                "${mod}+apostrophe" = "exec pavucontrol --tab=3"; # sound manager
 
                 "${mod}+g" = "exec zathura --mode fullscreen ${../../../../nixos/modules/common/keyboard/Glove80_full.pdf}";
                 "${mod}+h" = "mode resize";
@@ -170,18 +176,30 @@
                     { command = "move scratchpad";                       criteria = { class = "ttrm"; }; }
                     { command = "move scratchpad";                       criteria = { class = "btop"; }; }
                     { command = "move scratchpad";                       criteria = { class = "Spotify"; }; }
-                    { command = "resize set width 80 ppt height 80 ppt"; criteria = { class = "ttrm"; }; }
-                    { command = "resize set width 80 ppt height 80 ppt"; criteria = { class = "btop"; }; }
-                    { command = "resize set width 80 ppt height 80 ppt"; criteria = { class = "Spotify"; }; }
+                    { command = "resize set width 90 ppt height 90 ppt"; criteria = { class = "ttrm"; }; }
+                    { command = "resize set width 90 ppt height 90 ppt"; criteria = { class = "btop"; }; }
+                    { command = "resize set width 90 ppt height 90 ppt"; criteria = { class = "Spotify"; }; }
                     { command = "resize set width 80 ppt height 80 ppt"; criteria = { class = ".arandr-wrapped"; }; }
                     { command = "resize set width 80 ppt height 80 ppt"; criteria = { class = "Pavucontrol"; }; }
                     { command = "move position center";                  criteria = { class = ".arandr-wrapped"; }; }
                     { command = "move position center";                  criteria = { class = "Pavucontrol"; }; }
                 ];
                 hideEdgeBorders = "smart";
+                titlebar = false;
             };
 
             workspaceAutoBackAndForth = false;
+
+            workspaceOutputAssign = [
+                { workspace = "2"; output = ["xroot-0" "DP-4-1"]; }
+                { workspace = "5"; output = ["xroot-0" "DP-4-1"]; }
+                { workspace = "6"; output = ["xroot-0" "DP-4-1"]; }
+                { workspace = "7"; output = ["xroot-0" "DP-4-1"]; }
+
+                { workspace = "1"; output = ["xroot-0" "DP-4-2"]; }
+                { workspace = "3"; output = ["xroot-0" "DP-4-2"]; }
+                { workspace = "4"; output = ["xroot-0" "DP-4-2"]; }
+            ];
         };
     };
 }
