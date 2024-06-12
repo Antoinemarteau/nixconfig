@@ -3,6 +3,7 @@
   config = {
     plugins.vimtex = {
       enable = true;
+      texlivePackage = null;
       settings = {
         view_method = "zathura";
 
@@ -143,6 +144,7 @@
     globals = {
       tex_flavor = "latex";
       tex_conceal="abdmg";
+      vimtex_view_use_temp_files = true;
     };
 
     opts.conceallevel = 2;
