@@ -5,6 +5,7 @@
         ../modules/common
 
         ./hardware.nix
+        ./shared_folder.nix
     ];
 
     networking.hostName = "monash";
