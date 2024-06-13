@@ -6,6 +6,7 @@
 
     home.packages = with pkgs; [
         python3
+        xvkbd # for commands outputing text
     ];
 
     xsession.windowManager.i3 = {
@@ -132,6 +133,12 @@
 
                 "${mod}+g" = "exec zathura --mode fullscreen ${../../../../nixos/modules/common/keyboard/Glove80_full.pdf}";
                 "${mod}+h" = "mode resize";
+
+                # Text typing commands (e.g. email adresses)
+                # antoine.marteau@protonmail.com
+                "${mod}+Control+p" = "exec sleep 0.2 && bash -c \"printf 'antoine.marteau@protonmail.com' | xvkbd -utf8 -file -\"";
+                # antoine.marteau@monash.edu
+                "${mod}+Control+m" = "exec sleep 0.2 && bash -c \"printf 'antoine.marteau@monash.edu' | xvkbd -utf8 -file -\"";
             };
 
             modes.resize = {
