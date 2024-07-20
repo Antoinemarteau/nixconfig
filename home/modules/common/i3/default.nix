@@ -15,10 +15,10 @@
         config = {
             assigns = {
                 "2" = [{class = "irefox$"; }];
-                "4" = [{class = "FLTK"; }];
                 "5" = [{class = "Signal"; }];
                 "6" = [{class = "Zotero"; }];
                 "7" = [{class = "^evince$"; }];
+                "8" = [{class = "FLTK"; }];
             };
 
             bars = [
@@ -69,7 +69,7 @@
                 "${mod}+Return" = "exec ${term}";
                 "${mod}+Shift+a" = "kill";
 
-                "${mod}+l" = "exec --no-startup-id ${laptop_output}";
+                "${mod}+Shift+l" = "exec --no-startup-id ${laptop_output}";
 
                 "${mod}+c" = "focus left ";
                 "${mod}+t" = "focus down ";
@@ -94,7 +94,7 @@
                 "${mod}+parenright" = "exec setxkbmap bepo_antoine && dunstify 'loaded bepo   layout'";
 
                 "${mod}+d" = "exec --no-startup-id rofi -show run";
-                "${mod}+Shift+l" = "reload";
+                #"${mod}+Shift+l" = "reload";
                 "${mod}+Shift+h" = "restart";
                 "${mod}+Shift+q" = "exec i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'";
                 "Print" = "exec --no-startup-id flameshot gui";
@@ -202,6 +202,7 @@
                 { workspace = "5"; output = ["xroot-0" "DP-4-1"]; }
                 { workspace = "6"; output = ["xroot-0" "DP-4-1"]; }
                 { workspace = "7"; output = ["xroot-0" "DP-4-1"]; }
+                { workspace = "8"; output = ["xroot-0" "DP-4-1"]; }
 
                 { workspace = "1"; output = ["xroot-0" "DP-4-2"]; }
                 { workspace = "3"; output = ["xroot-0" "DP-4-2"]; }
