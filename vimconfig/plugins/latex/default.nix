@@ -17,9 +17,9 @@
        pdf_tex = "tex";
    };
 
-   #files."ftplugin/tex.lua".localOptions = {
-   #    textwidth = 80
-   #    sidescrolloff = 0;
-   #};
+   files."ftplugin/tex.lua".localOpts = {
+       textwidth = 80;
+       sidescrolloff = 0;
+   };
 }
 
