@@ -4,6 +4,12 @@
   extraPlugins = [ pkgs.vimPlugins.julia-vim ];
   globals.latex_to_unicode_keymap = true;
 
+  files."ftplugin/julia.lua".localOpts = {
+    tabstop = 2;     # Number of spaces a <Tab> in the text stands for (local to buffer)
+    shiftwidth = 2;  # Number of spaces used for each step of (auto)indent (local to buffer)
+    softtabstop = 2; # If non-zero, number of spaces to insert for a <Tab> (local to buffer)
+  };
+
   plugins = {
     # Parser
     treesitter.grammarPackages = with config.plugins.treesitter.package.builtGrammars; [ julia ];

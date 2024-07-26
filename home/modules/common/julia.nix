@@ -79,7 +79,7 @@
                         end)
                     end
 
-                    if isfile("Project.toml") && isfile("Manifest.toml")
+                    if isfile("Project.toml") #&& isfile("Manifest.toml")
                         var"#Pkg".activate(".")
                     end
                 '';
