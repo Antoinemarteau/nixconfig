@@ -3,6 +3,14 @@
         enable = true;
 
         matchBlocks = {
+            ##########
+            # Monash #
+            ##########
+            monash = {
+                user = "user1";
+                hostname = "130.194.161.81";
+            };
+
             ########
             # Mage #
             ########
@@ -32,6 +40,7 @@
     };
 
     home.shellAliases = {
+        nash  = "ssh    monash";
         mage  = "ssh -t mage";
         dahu  = "ssh -t dahu.ciment  .nix-profile/bin/zsh-5.8";
         cargo = "ssh -t cargo.ciment .nix-profile/bin/zsh-5.8";
