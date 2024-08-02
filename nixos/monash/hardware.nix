@@ -35,6 +35,7 @@
   # networking.interfaces.wlp0s20f3.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  # All firmware enabled to try fixing mic issue, but it might be useless
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault  config.hardware.enableAllFirmware; # config.hardware.enableRedistributableFirmware;
 }
 
