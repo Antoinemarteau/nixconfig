@@ -21,7 +21,7 @@
 
                     import Pkg as var"#Pkg"
                     let
-                        pkgs = ["Revise", "OhMyREPL", "BenchmarkTools", "Cthulhu", "Debugger", "Profile", "ProfileView"]
+                        pkgs = ["Revise", "OhMyREPL", "BenchmarkTools", "Cthulhu", "Debugger", "Profile", "ProfileView", "Test"]
                         for pkg in pkgs
                             if Base.find_package(pkg) === nothing
                                 var"#Pkg".add(pkg)
@@ -51,12 +51,14 @@
                         # - Debugger.jl when encountering @enter or @run
                         # - Profile.jl when encountering @profile
                         # - ProfileView.jl when encountering @profview
+                        # - Test when encountering @test
                         local tooling_dict = Dict{Symbol,Vector{Symbol}}(
                             :BenchmarkTools => Symbol.(["@btime", "@benchmark"]),
                             :Cthulhu        => Symbol.(["@descend", "@descend_code_typed", "@descend_code_warntype"]),
                             :Debugger       => Symbol.(["@enter", "@run"]),
                             :Profile        => Symbol.(["@profile"]),
                             :ProfileView    => Symbol.(["@profview"]),
+                            :Test           => Symbol.(["@test"]),
                         )
                         pushfirst!(REPL.repl_ast_transforms, function(ast::Union{Expr,Nothing})
                             function contains_macro(ast, m)
