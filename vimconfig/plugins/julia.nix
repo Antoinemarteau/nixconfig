@@ -51,20 +51,36 @@
   };
 
   keymaps = [
-      # execute the current line or current selection
+      # execute the lines in the current paragraph
+      {
+          mode = "n";
+          key = "<Leader>p";
+          action = "<Plug>SlimeParagraphSend";
+          options.silent = true;
+      }
+      # execute the lines according to next motion
+      {
+          mode = "n";
+          key = "<Leader>e";
+          action = "<Plug>SlimeMotionSend";
+          options.silent = true;
+      }
+      # execute the selected lines
       {
           mode = "v";
-          key = "<Leader>je";
+          key = "<Leader>e";
           action = "<Plug>SlimeRegionSend";
           options.silent = true;
       }
+      # execute the current line and go down one line
       {
-          key = "<Leader>je";
-          action = "<Plug>SlimeLineSend";
+          key = "<Leader>l";
+          action = "<Plug>SlimeLineSend<CR>";
           options.silent = true;
       }
+      # execute the current cell
       {
-          key = "<Leader>e";
+          key = "<Leader>c";
           action = "<Plug>SlimeSendCell";
           options.silent = true;
       }
