@@ -134,8 +134,8 @@
         -- Disable wrong bépo mappings
         vim.cmd( [[
             let g:vimtex_mappings_disable = {
-                \ 'n': ['tsd', 'tsd', 'tsf', 'tsc', 'tse', 'csd', 'csc', 'cse', 'cs$'],
-                \ 'x': ['tsd', 'tsd', 'tsf'],
+                \ 'n': ['tsb', 'tsd', 'tsf', 'tsc', 'tse', 'csd', 'csc', 'cse', 'cs$'],
+                \ 'x': ['tsb', 'tsd', 'tsf'],
                 \}
                 ]]
         )
