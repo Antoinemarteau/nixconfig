@@ -30,8 +30,7 @@
   keymaps = [
       {
           key = "-";
-          action = "require('oil').open";
-          lua = true;
+          action.__raw = "require('oil').open";
           options.silent = true;
       }
   ];
