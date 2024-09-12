@@ -3,7 +3,7 @@
 
     home = {
         shellAliases = {
-            ju = "julia";
+            ju = "LD_LIBRARY_PATH=/run/opengl-driver/lib/ julia";
         };
 
         sessionVariables = {
@@ -16,7 +16,7 @@
             startup = {
                 executable = true;
                 text = ''
-                    ENV["JULIA_EDITOR"] = "vim"
+                    ENV["JULIA_EDITOR"] = "nvim"
                     ENV["JULIA_NUM_THREADS"] = 4
 
                     import Pkg as var"#Pkg"
