@@ -2,9 +2,7 @@
 {
 
     home = {
-        shellAliases = {
-            ju = "LD_LIBRARY_PATH=/run/opengl-driver/lib/ julia";
-        };
+        shellAliases.ju = "LD_LIBRARY_PATH=/run/opengl-driver/lib/ julia";
 
         sessionVariables = {
             JULIA_LOAD_PATH = "$HOME/prog/these/julia:$JULIA_LOAD_PATH";
