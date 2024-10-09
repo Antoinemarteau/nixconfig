@@ -11,13 +11,17 @@
           url = "github:nix-community/nixvim/nixos-24.05";
           inputs.nixpkgs.follows = "nixpkgs";
         };
+        scientific-fhs = {
+            url = "github:olynch/scientific-fhs";
+        };
     };
 
     outputs = {
         self,
         nixpkgs,
         home-manager,
-        nixvim
+        nixvim,
+        scientific-fhs
     }:
     let
         system = "x86_64-linux";
@@ -56,6 +60,7 @@
                                 imports = [
                                     ./home/${hostname}
                                     nixvim.homeManagerModules.nixvim
+                                    scientific-fhs.nixosModules.default
                                 ];
                                 home.sessionVariables.HOSTNAME = hostname;
                             };

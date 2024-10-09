@@ -1,14 +1,28 @@
 { pkgs, config, ... }:
 {
 
+    programs.scientific-fhs = {
+      enable = true;
+      juliaVersions = [
+        {
+          version = "1.10.1";
+          default = true;
+        }
+      ];
+      enableNVIDIA = false;
+    };
+
     home = {
-        shellAliases.ju = "LD_LIBRARY_PATH=/run/opengl-driver/lib/ julia";
+        shellAliases.ju = "julia";
+        shellAliases.pluto = "julia -e \"using Pluto; Pluto.run()\" &> /dev/null &";
+
+        # If stop using scientific-fhs, julia and OpenGL lib are needed
+        #shellAliases.ju = "LD_LIBRARY_PATH=/run/opengl-driver/lib/ julia";
+        #packages = with pkgs; [ julia-bin ];
 
         sessionVariables = {
             JULIA_LOAD_PATH = "$HOME/prog/these/julia:$JULIA_LOAD_PATH";
         };
-
-        packages = with pkgs; [ julia-bin ];
 
         file = {
             startup = {
