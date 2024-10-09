@@ -92,6 +92,8 @@
 
                 "${mod}+percent"    = "exec setxkbmap fr oss       && dunstify 'loaded azerty layout'";
                 "${mod}+parenright" = "exec setxkbmap bepo_antoine && dunstify 'loaded bepo   layout'";
+                "${mod}+equal"      = "exec setxkbmap us        && dunstify 'loaded qwerty layout'";
+                "${mod}+0"          = "exec setxkbmap bepo_antoine && dunstify 'loaded bepo   layout'";
 
                 "${mod}+d" = "exec --no-startup-id rofi -show run";
                 #"${mod}+Shift+l" = "reload";
@@ -110,7 +112,6 @@
                 "${mod}+plus          " = "workspace number 7";
                 "${mod}+minus         " = "workspace number 8";
                 "${mod}+at            " = "workspace number 9";
-                "${mod}+equal         " = "workspace number 10";
 
                 "${mod}+Shift+Tab           " = "move container to workspace number 1";
                 "${mod}+Shift+quotedbl      " = "move container to workspace number 1";
@@ -122,7 +123,6 @@
                 "${mod}+Shift+plus          " = "move container to workspace number 7";
                 "${mod}+Shift+minus         " = "move container to workspace number 8";
                 "${mod}+Shift+at            " = "move container to workspace number 9";
-                "${mod}+Shift+equal         " = "move container to workspace number 10";
 
                 "${mod}+w" = "[class=\"ttrm\"] scratchpad show; move position center"; # floating terminal
                 "${mod}+y" = "[class=\"btop\"] scratchpad show; move position center"; # floating task manager
