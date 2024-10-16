@@ -52,6 +52,8 @@
         # set setting layout.css.devPixelsPerPx = 1.5 in zotero GUI,
         # and change font in the gui "view" menu
         zotero
+        # write math with tablet
+        xournal
 
         # tui applications
         bluetuith
