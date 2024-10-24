@@ -13,7 +13,7 @@
     };
 
     home = {
-        shellAliases.ju = "julia";
+        shellAliases.ju = "julia -t auto";
         shellAliases.pluto = "julia -e \"using Pluto; Pluto.run()\" &> /dev/null &";
 
         # If stop using scientific-fhs, julia and OpenGL lib are needed
@@ -29,7 +29,6 @@
                 executable = true;
                 text = ''
                     ENV["JULIA_EDITOR"] = "nvim"
-                    ENV["JULIA_NUM_THREADS"] = 4
 
                     import Pkg as var"#Pkg"
                     let
