@@ -1,4 +1,4 @@
-{ lib, pkgs, ...}:
+{ lib, config, pkgs, ...}:
 {
     imports = [
         ../modules/common
@@ -13,6 +13,17 @@
         packages = with pkgs; [
             mesa
         ];
+    };
+
+    xsession.windowManager.i3.config = {
+      keybindings = let
+        mod = config.xsession.windowManager.i3.config.modifier;
+      in {
+        # update display to default
+        "${mod}+Shift+l" = "${pkgs.autorandr}/bin/autorandr --load laptop";
+        # update display rendering (automatic detection)
+        "${mod}+Shift+u" = "${pkgs.autorandr}/bin/autorandr -c";
+      };
     };
 
     services.picom.enable = lib.mkForce false;

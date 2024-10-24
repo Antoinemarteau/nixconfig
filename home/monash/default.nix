@@ -30,14 +30,14 @@
       ];
 
       keybindings = let
-          mod = config.xsession.windowManager.i3.config.modifier;
-          # script to set display setting created with arandr
-          math_office_output = pkgs.writeScript "math_office" ''
-          #!/bin/sh
-          xrandr --output eDP-1 --off --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output DP-3 --off --output DP-4 --off --output DP-5 --off --output DP-4-1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-4-2 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-4-3 --off
-          '';
+        mod = config.xsession.windowManager.i3.config.modifier;
       in {
-          "${mod}+Shift+m" = "exec --no-startup-id ${math_office_output}";
+        # update display to monash math office from /nixos/monash/default.nix
+        "${mod}+Shift+m" = "${pkgs.autorandr}/bin/autorandr --load math_office";
+        # update display to default
+        "${mod}+Shift+l" = "${pkgs.autorandr}/bin/autorandr --load laptop";
+        # update display rendering (automatic detection)
+        "${mod}+Shift+u" = "${pkgs.autorandr}/bin/autorandr -c";
       };
     };
 

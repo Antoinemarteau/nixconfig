@@ -54,10 +54,6 @@
                 mod = config.xsession.windowManager.i3.config.modifier;
                 term = config.xsession.windowManager.i3.config.terminal;
                 refresh_i3status = "killall -SIGUSR1 i3status";
-                laptop_output = pkgs.writeScript "laptop" ''
-                #!/bin/sh
-                xrandr --output eDP-1 --mode 1920x1200 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output DP-3 --off --output DP-4 --off --output DP-5 --off --output DP-4-1 --off --output DP-4-2 --off --output DP-4-3 --off
-            '';
             in {
                 "${mod}+o" = "exec i3lock";
                 "${mod}+Shift+o" = "exec i3lock && systemctl suspend";
@@ -68,8 +64,6 @@
 
                 "${mod}+Return" = "exec ${term}";
                 "${mod}+Shift+a" = "kill";
-
-                "${mod}+Shift+l" = "exec --no-startup-id ${laptop_output}";
 
                 "${mod}+c" = "focus left ";
                 "${mod}+t" = "focus down ";
