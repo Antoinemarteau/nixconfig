@@ -69,7 +69,7 @@
                             :Debugger       => Symbol.(["@enter", "@run"]),
                             :Profile        => Symbol.(["@profile"]),
                             :ProfileView    => Symbol.(["@profview"]),
-                            :Test           => Symbol.(["@test", "@testset"]),
+                            :Test           => Symbol.(["@test", "@testset", "@test_throws"]),
                         )
                         pushfirst!(REPL.repl_ast_transforms, function(ast::Union{Expr,Nothing})
                             function contains_macro(ast, m)
