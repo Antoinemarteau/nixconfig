@@ -5,8 +5,11 @@
       enable = true;
       juliaVersions = [
         {
-          version = "1.10.1";
+          version = "1.11.1";
           default = true;
+        }
+        {
+          version = "1.6.7";
         }
       ];
       enableNVIDIA = false;
