@@ -8,6 +8,10 @@
         ./hardware.nix
     ];
 
+    ## To install mobile os (GrapheneOS)
+    #programs.adb.enable = true;
+    #users.users.antoine.extraGroups = ["adbusers" "kvm"];
+
     services = {
       # display settings:
       # To trigger autorandr during lock/unlock and sleep/out of sleep?
