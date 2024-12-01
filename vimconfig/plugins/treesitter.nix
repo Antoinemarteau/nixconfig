@@ -7,7 +7,7 @@
       nixvimInjections = true;
 
       folding = false;
-      indent = true;
+      settings.indent.enable = true;
 
       grammarPackages = with config.plugins.treesitter.package.builtGrammars; [
         bash

@@ -7,7 +7,7 @@
             size = 13;
         };
 
-        theme = "Gruvbox Dark";
+        themeFile = "gruvbox-dark";
 
         settings = {
             enable_audio_bell = false;

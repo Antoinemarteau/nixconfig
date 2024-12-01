@@ -26,7 +26,7 @@
 
       servers = {
         bashls.enable  = true;
-        lua-ls.enable  = true;
+        lua_ls.enable  = true;
         pylsp.enable   = true;
       };
     };

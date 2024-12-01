@@ -14,8 +14,11 @@
     # Parser
     treesitter.grammarPackages = with config.plugins.treesitter.package.builtGrammars; [ julia ];
 
-    # LanguageServer
-    lsp.servers.julials.enable = true;
+    # LanguageServer, but is installed in startup.jl in home-manager
+    lsp.servers.julials = {
+        enable = true;
+        package = null;
+    };
 
     vim-slime = {
       enable = true;
@@ -26,7 +29,7 @@
           target_pane = ":{end}.{right}";
         };
         target = "tmux";
-        dont_ask_default = true;
+        dont_ask_default = 1;
         paste_file = "$XDG_CACHE_HOME/slime_paste";
         cell_delimiter = "##";
         cell_delimiter_cells_by = "tags";

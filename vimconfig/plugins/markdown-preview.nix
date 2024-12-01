@@ -3,8 +3,8 @@
     enable = true;
 
     settings = {
-      auto_start = false;
-      auto_close = false;
+      auto_start = 0;
+      auto_close = 0;
 
       theme = "dark";
 

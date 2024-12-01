@@ -30,7 +30,7 @@
     airline = {
       enable = true;
       settings = {
-          powerline_fonts = true;
+          powerline_fonts = 1;
       };
     };
   };

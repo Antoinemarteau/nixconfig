@@ -38,5 +38,7 @@
       set_env.COLORTERM = "truecolor";
     };
   };
+
+  plugins.web-devicons.enable = true;
 }
 
