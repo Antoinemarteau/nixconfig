@@ -49,6 +49,7 @@
                       cmd = "pavucontrol --tab=3";
                     }];
                 }
+            (lib.mkIf ( builtins.elem config.home.sessionVariables.HOSTNAME [ "desktop" "mage" "vm" "monash"] )
                 {
                     block = "time";
                     format = " $timestamp.datetime(f:'%a %d/%m %R') ";
@@ -58,6 +59,7 @@
                       cmd = "kitty --hold cal -y -w";
                     }];
                 }
+            )
             (lib.mkIf ( builtins.elem config.home.sessionVariables.HOSTNAME [ "framework" "vm" "monash"] )
                 {
                     block = "battery";
