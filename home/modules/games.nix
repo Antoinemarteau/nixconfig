@@ -5,7 +5,7 @@
         #minecraft TODO test if it is fixed
         lutris
         wine
-        (callPackage ./ankama.nix {})
-        #ankama-launcher
+        #(callPackage ./ankama.nix {})
+        ankama-launcher
     ];
 }
