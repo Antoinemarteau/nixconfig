@@ -3,7 +3,7 @@ let
   name = "ankama-launcher";
   src = fetchurl {
     url = "https://launcher.cdn.ankama.com/installers/production/Dofus-Setup-x86_64.AppImage";
-    hash = "sha256-ii156AkxkqNCFmcMwfYn8AMX3/vJWUDKRbF6Cs0QIYw="; # Change for the sha256 you get after running nix-prefetch-url https://download.ankama.com/launcher/full/linux
+    hash = "sha256-u0u8L85Mmf9un9mhngg8hlRJNnmwg5HynXYlcqaxnLA="; # Change for the sha256 you get after running nix-prefetch-url https://download.ankama.com/launcher/full/linux
     name = "ankama-launcher.AppImage";
  };
 

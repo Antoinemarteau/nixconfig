@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
     imports = [
         ./i3status.nix
@@ -16,8 +16,7 @@
             assigns = {
                 "2" = [{class = "irefox$"; }];
                 "5" = [{class = "Signal"; }];
-                "6" = [{class = "Zotero"; }];
-                "6" = [{class = "ankama"; }];
+                "6" = [{class = "ankama"; } {class = "Zotero"; }];
                 "7" = [{class = "^evince$"; }];
                 "8" = [{class = "FLTK"; }];
             };
