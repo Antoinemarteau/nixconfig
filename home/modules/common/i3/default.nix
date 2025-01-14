@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
     imports = [
         ./i3status.nix
@@ -16,7 +16,7 @@
             assigns = {
                 "2" = [{class = "irefox$"; }];
                 "5" = [{class = "Signal"; }];
-                "6" = [{class = "Zotero"; }];
+                "6" = [{class = "ankama"; } {class = "Zotero"; }];
                 "7" = [{class = "^evince$"; }];
                 "8" = [{class = "FLTK"; }];
             };
@@ -158,7 +158,9 @@
                 { command = "signal-desktop"; }
                 { command = "firefox"; }
                 { command = "nextcloud"; }
+              (lib.mkIf ( config.home.sessionVariables.HOSTNAME == "monash" )
                 { command = "zotero"; }
+              )
                 { command = "${pkgs.redshift}/bin/redshift -P -O 4500"; }
                 { command = "${pkgs.feh}/bin/feh --bg-fill ${./wallpaper.jpeg}"; }
                 { command = "kitty --class=ttrm";      always = true; }

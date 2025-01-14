@@ -6,5 +6,6 @@
         lutris
         wine
         (callPackage ./ankama.nix {})
+        #ankama-launcher
     ];
 }
