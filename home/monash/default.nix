@@ -26,7 +26,6 @@
       startup = [
         { command = "code"; }
         { command = "zoom-us"; }
-        { command = "paraview"; }
       ];
 
       keybindings = let
