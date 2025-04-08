@@ -48,7 +48,7 @@
       }
   # gitsigns
       {
-          key = "<leader>,b";
+          key = "<leader>,l";
           action = ":Gitsigns toggle_current_line_blame<CR>";
           options.silent = true;
       }

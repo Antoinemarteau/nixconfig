@@ -23,6 +23,7 @@
           "<leader>,p" = ":Git push<CR>";
           "<leader>,c" = ":diffget //2<CR>";
           "<leader>,r" = ":diffget //3<CR>";
+          "<leader>,b" = ":Git branch<CR>";
         };
     in
       helpers.keymaps.mkKeymaps
