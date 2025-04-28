@@ -763,8 +763,8 @@ include "%L"
 <UFDD8> <UFDD4> <i> : U1D7C
 <UFDD4> <UFDD8> <i> : U1D7C
 <UFDD4> <UFDD8> <u> : U1D7F
-<dead_stroke> <UFDD4> <o> : UAB3F
-<UFDD4> <dead_stroke> <o> : UAB3F
+<dead_stroke> <UFDD4> <o> : UAB3F                # ꬿ
+<UFDD4> <dead_stroke> <o> : UAB3F                # ꬿ
 <dead_hook> <U025F> : U0284
 <dead_hook> <dead_abovedot> <UFDD8> <j> : U0284
 <dead_hook> <UFDD8> <dead_abovedot> <j> : U0284
@@ -892,40 +892,44 @@ include "%L"
 <UFDD5> <UFDD5> <u> : U1D64
 <UFDD5> <UFDD5> <v> : U1D65
 <UFDD5> <UFDD5> <x> : U2093
+<UFDD7> <quotedbl> : musicalflat      # ♭ \flat    #  U2644
+<UFDD7> <endash> : musicalsharp       # ♯ \sharp   #  malesymbol
+<UFDD7> <ae> : figdash                # ‒          #  UA725
+<UFDD7> <AE> : U266E                  # ♮ \natural #  UA724
+<UFDD7> <ugrave> : U227A              # ≺          # U0265
+<UFDD7> <dead_diaeresis> : U227B      # ≻
+<UFDD7> <numbersign> : U230A          # ⌊          # U263F
+<UFDD7> <dead_currency> : U2308       # ⌈
+<UFDD7> <EuroSign> : U228F            # ⊏
+<UFDD7> <dead_greek> : U230B          # ⌋
+<UFDD7> <UFDD4> : U2309               # ⌉
+<UFDD7> <dead_circumflex> : U2290     # ⊐
 <UFDD7> <dollar> : femalesymbol
-<UFDD7> <numbersign> : U263F
-<UFDD7> <endash> : malesymbol
 <UFDD7> <paragraph> : U2641
-<UFDD7> <quotedbl> : U2644
-<UFDD7> <1> : U2643
 <UFDD7> <emdash> : U2646
 <UFDD7> <doublelowquotemark> : U2645
-<UFDD7> <guillemotleft> : leftanglebracket
-<UFDD7> <2> : U226A
-<UFDD7> <less> : U227A
-<UFDD7> <guillemotright> : rightanglebracket
-<UFDD7> <3> : U226B
-<UFDD7> <greater> : U227B
-<UFDD7> <parenleft> : downstile
+<UFDD7> <guillemotleft> : U226A       # ≪   # <2>
+<UFDD7> <less> : leftanglebracket     # ⟨   # ≺ U227A
+<UFDD7> <guillemotright> : U226B      # ≫   # <3>
+<UFDD7> <greater> : rightanglebracket # ⟨   # ≺ U227B
 <UFDD7> <4> : upstile
 <UFDD7> <bracketleft> : U228F
-<UFDD7> <U2A7D> : lessthanequal
-<UFDD7> <parenright> : U230B
+<UFDD7> <U2A7D> : lessthanequal       # ≤
 <UFDD7> <5> : U2309
 <UFDD7> <bracketright> : U2290
-<UFDD7> <U2A7E> : greaterthanequal
+<UFDD7> <U2A7E> : greaterthanequal    # ⩾
 <UFDD7> <at> : U27F6
 <UFDD7> <6> : U27FC
 <UFDD7> <asciicircum> : U202D
 <UFDD7> <U262D> : U20D5
 <UFDD7> <plus> : U2295
-<UFDD7> <7> : U229E
+<UFDD7> <trademark> : U229E
 <UFDD7> <plusminus> : U228E
 <UFDD7> <minus> : infinity
 <UFDD7> <8> : variation
-<UFDD7> <asterisk> : U2297
-<UFDD7> <0> : U2217
-<UFDD7> <multiply> : U22C6
+<UFDD7> <asterisk> : U22C6            # ⋆  # \star     ⊗ U2297
+<UFDD7> <threequarters> : U2217       # ∗  # \ast        <0>
+<UFDD7> <multiply> : U2297            # ⊗  # \otimes   ⋆ U22C6
 <UFDD7> <equal> : U2194
 <UFDD7> <degree> : ifonlyif
 <UFDD7> <notequal> : identical
@@ -943,15 +947,19 @@ include "%L"
 <UFDD7> <oe> : U2300
 <UFDD7> <egrave> : leftarrow
 <UFDD7> <Egrave> : U21D0
-<UFDD7> <dead_circumflex> : rightarrow
+#<UFDD7> <dead_circumflex> : rightarrow
 <UFDD7> <exclam> : implies
 <UFDD7> <exclamdown> : U21A6
 <UFDD7> <U2620> : U21C0
 <UFDD7> <v> : downcaret
 <UFDD7> <V> : radical
 <UFDD7> <dead_caron> : U22BB
-<UFDD7> <d> : partialderivative
-<UFDD7> <D> : U2206
+
+<UFDD7> <d> : partialderivative # ∂   # \partial
+<UFDD7> <D> : U2206             # ∆   # \increment
+<UFDD7> <6> : nabla             # ∇   # \nabla
+#
+
 <UFDD7> <UFDD7> : nabla
 <UFDD7> <U2623> : U22B2
 <UFDD7> <l> : U2113
@@ -965,29 +973,47 @@ include "%L"
 <UFDD7> <w> : U2248
 <UFDD7> <W> : U223F
 <UFDD7> <U269C> : U2393
-<UFDD7> <A> : U2200
-<UFDD7> <u> : downshoe
-<UFDD7> <U> : intersection
-<UFDD7> <dead_diaeresis> : U2129
-<UFDD7> <e> : elementof
-<UFDD7> <E> : U2203
-<UFDD7> <EuroSign> : leftshoe
-<UFDD7> <dead_currency> : U2286
-<UFDD7> <comma> : containsas
-<UFDD7> <apostrophe> : rightshoe
-<UFDD7> <dead_belowcomma> : U2287
+
+<UFDD7> <A> : U2200                 # ∀
+
+<UFDD7> <u> : downshoe              # ∪
+<UFDD7> <U> : intersection          # ∩
+<UFDD7> <parenleft> : lessthanequal # ≤
+
+#       <i> ...         Touche morte : lettres latines italiques
+#       <I> ...         Touche morte : lettres latines et nabla gras italiques
+<UFDD7> <parenright> : U2129        # ℩ # U230B
+#                                   # ♮
+
+<UFDD7> <e> : elementof             # ∈
+<UFDD7> <E> : leftshoe              # ⊂ # <E> : U2203
+<UFDD7> <braceright> : U2203        # ∃ # <EuroSign> : leftshoe
+<UFDD7> <Ugrave> : U2286            # ⊆ <dead_currency>
+
+<UFDD7> <comma> : containsas        # ∋
+<UFDD7> <semicolon> : rightshoe     # ⊃ # <apostrophe> : rightshoe
+#
+<UFDD7> <dead_belowcomma> : U2287   # ⊇
+
 <UFDD7> <C> : U2201
 <UFDD7> <dead_cedilla> : U2103
-<UFDD7> <t> : downtack
-<UFDD7> <T> : uptack
+
+<UFDD7> <t> : downtack # ⊤
+<UFDD7> <T> : uptack   #
 <UFDD7> <UFDD5> : lefttack
-<UFDD7> <trademark> : U22A7
-<UFDD7> <s> : integral
-<UFDD7> <S> : U2211
-<UFDD7> <UFDD4> : U222E
-<UFDD7> <U017F> : dintegral
-<UFDD7> <n> : U2016
-<UFDD7> <N> : U2135
+<UFDD7> <0> : U22A2                 # ⊬
+<UFDD7> <trademark> : U22A7         # ⊧
+
+<UFDD7> <s> : integral              # ∫
+<UFDD7> <S> : U2211                 # ∑
+<UFDD7> <1> : U222E                 # ∮   # ♃ : U2643
+# TODO <UFDD7> <UFDD4> : U222C             # ∬   # ∮ : U222E
+
+#       <r>     : 𝓇                 Caractere script
+
+<UFDD7> <n> : U2016                 # ‖
+<UFDD7> <N> : U2135                 # ℵ
+
 <UFDD7> <backslash> : U2216
 <UFDD7> <y> : U22C9
 <UFDD7> <x> : U22CA
@@ -1009,46 +1035,65 @@ include "%L"
 <UFDD7> <dead_belowdot> : U210F
 <UFDD7> <dead_abovedot> <dead_abovedot> : U210F
 <UFDD7> <dead_ogonek> : U2109
-<UFDD7> <dead_stroke> <less> : U2280
-<UFDD7> <dead_stroke> <greater> : U2281
-<UFDD7> <dead_stroke> <notequal> : notidentical
+
+<UFDD7> <dead_stroke> <ugrave> : U2280           # ⊀
+<UFDD7> <dead_stroke> <dead_diaeresis> : U2281   # ⊁
+
+<UFDD7> <dead_stroke> <notequal> : notidentical  # ≢
 <UFDD7> <dead_stroke> <bar> : U2224
 <UFDD7> <dead_stroke> <U2623> : U22EA
-<UFDD7> <dead_stroke> <e> : notelementof
-<UFDD7> <dead_stroke> <E> : U2204
-<UFDD7> <dead_stroke> <comma> : U220C
-<UFDD7> <dead_stroke> <EuroSign> : U2284
-<UFDD7> <dead_stroke> <apostrophe> : U2285
-<UFDD7> <dead_stroke> <dead_currency> : U228A
-<UFDD7> <dead_stroke> <dead_belowcomma> : U228B
-<UFDD7> <dead_stroke> <Q> : U2226
-<UFDD7> <dead_stroke> <UFDD5> : U22AC
-<UFDD7> <dead_stroke> <trademark> : U22AD
-<UFDD7> <dead_stroke> <k> : U2241
-<dead_stroke> <UFDD7> <less> : U2280
-<dead_stroke> <UFDD7> <greater> : U2281
+
+<UFDD7> <dead_stroke> <eacute> : U22BC           # ⊼
+<UFDD7> <dead_stroke> <v> : U22BD                # ⊽
+
+<UFDD7> <dead_stroke> <e> : notelementof         # ∉
+<UFDD7> <dead_stroke> <E> : U2284                # ⊄   # ∄ <E> : U2204
+<UFDD7> <dead_stroke> <braceright> : U2204       # ∄   # ⊄ <EuroSign> : U2284
+<UFDD7> <dead_stroke> <Ugrave> : U228A           # ⊊   # dead_currency
+
+<UFDD7> <dead_stroke> <comma> : U220C            # ∌
+<UFDD7> <dead_stroke> <semicolon> : U2285        # ⊅   # <apostrophe>
+#
+<UFDD7> <dead_stroke> <dead_belowcomma> : U228B  # ⊋
+
+<UFDD7> <dead_stroke> <0> : U22AC                # ⊬
+<UFDD7> <dead_stroke> <trademark> : U22AD        # ⊭
+
+<UFDD7> <dead_stroke> <greater> : U2281          # ⊀
+<UFDD7> <dead_stroke> <U2A7D> : U2270            # ≰
+
+<UFDD7> <dead_stroke> <less> : U2280             # ⊁
+<UFDD7> <dead_stroke> <U2A7E> : U2271            # ≱
+
+<UFDD7> <dead_stroke> <k> : U2241                # ≁
+
+<UFDD7> <dead_stroke> <Q> : U2226                # ∦
+
+
 <dead_stroke> <UFDD7> <notequal> : notidentical
 <dead_stroke> <UFDD7> <bar> : U2224
 <dead_stroke> <UFDD7> <U2623> : U22EA
+<dead_stroke> <UFDD7> <eacute> : U22BC  # ⊼
+<dead_stroke> <UFDD7> <v> : U22BD       # ⊽
 <dead_stroke> <UFDD7> <e> : notelementof
-<dead_stroke> <UFDD7> <E> : U2204
+<dead_stroke> <UFDD7> <E> : U2284
+<dead_stroke> <UFDD7> <braceright> : U2204
+<dead_stroke> <UFDD7> <Ugrave> : U228A
 <dead_stroke> <UFDD7> <comma> : U220C
-<dead_stroke> <UFDD7> <EuroSign> : U2284
-<dead_stroke> <UFDD7> <apostrophe> : U2285
-<dead_stroke> <UFDD7> <dead_currency> : U228A
+<dead_stroke> <UFDD7> <semicolon> : U2285
 <dead_stroke> <UFDD7> <dead_belowcomma> : U228B
-<dead_stroke> <UFDD7> <Q> : U2226
-<dead_stroke> <UFDD7> <UFDD5> : U22AC
-<dead_stroke> <UFDD7> <trademark> : U22AD
+<dead_stroke> <UFDD7> <greater> : U2281
+<dead_stroke> <UFDD7> <less> : U2280
 <dead_stroke> <UFDD7> <k> : U2241
+<dead_stroke> <UFDD7> <0> : U22AC                # ⊬
+<dead_stroke> <UFDD7> <trademark> : U22AD        # ⊭
+<dead_stroke> <UFDD7> <Q> : U2226
+
 <UFDD7> <dead_macron> <eacute> : U22BC
 <UFDD7> <dead_macron> <v> : U22BD
 <dead_macron> <UFDD7> <eacute> : U22BC
 <dead_macron> <UFDD7> <v> : U22BD
-<UFDD7> <dead_stroke> <eacute> : U22BC
-<UFDD7> <dead_stroke> <v> : U22BD
-<dead_stroke> <UFDD7> <eacute> : U22BC
-<dead_stroke> <UFDD7> <v> : U22BD
+
 <UFDD7> <b> <a> : U1D552
 <UFDD7> <b> <b> : U1D553
 <UFDD7> <b> <c> : U1D554
@@ -1111,8 +1156,8 @@ include "%L"
 <UFDD7> <b> <7> : U1D7DF
 <UFDD7> <b> <8> : U1D7E0
 <UFDD7> <b> <9> : U1D7E1
-<UFDD7> <b> <bracketleft> : U301A
-<UFDD7> <b> <bracketright> : U301B
+<UFDD7> <b> <bracketleft> :  U27E6  # ⟦   # U301A
+<UFDD7> <b> <bracketright> : U27E7  # ⟧   # U301B
 <UFDD7> <b> <braceleft> : U2983
 <UFDD7> <b> <braceright> : U2984
 <UFDD7> <b> <parenleft> : U27EC
@@ -1229,8 +1274,8 @@ include "%L"
 <UFDD7> <i> <dead_greek> <X> : U1D6F8
 <UFDD7> <i> <dead_greek> <Y> : U1D6F6
 <UFDD7> <i> <dead_greek> <Z> : U1D6E7
-<UFDD7> <i> <UFDD7> : U1D715
-<UFDD7> <i> <U2623> : U1D6FB
+<UFDD7> <i> <6> : U1D715               # 𝜕   # <UFDD7> \itpartial
+<UFDD7> <i> <dead_stroke> : U1D6FB     # 𝛻   # <U2623> \itnabla
 <UFDD7> <i> <dead_diaeresis> : U1D6A4
 <UFDD7> <i> <U262E> : U1D6A5
 <UFDD7> <I> <A> : U1D468
@@ -1340,8 +1385,9 @@ include "%L"
 <UFDD7> <I> <dead_greek> <X> : U1D732
 <UFDD7> <I> <dead_greek> <Y> : U1D730
 <UFDD7> <I> <dead_greek> <Z> : U1D721
-<UFDD7> <I> <UFDD7> : U1D74F
-<UFDD7> <I> <U2623> : U1D735
+<UFDD7> <I> <UFDD7> : U1D74F           # 𝜕  # \bipartial
+<UFDD7> <I> <6> : U1D74F               # 𝜕  # \bipartial
+<UFDD7> <I> <dead_stroke> : U1D735     # 𝜵  # <U2623>  \binabla
 <UFDD7> <c> <A> : U1D4D0
 <UFDD7> <c> <B> : U1D4D1
 <UFDD7> <c> <C> : U1D4D2
@@ -1565,8 +1611,9 @@ include "%L"
 <UFDD7> <g> <dead_greek> <X> : U1D6BE
 <UFDD7> <g> <dead_greek> <Y> : U1D6BC
 <UFDD7> <g> <dead_greek> <Z> : U1D6AD
-<UFDD7> <g> <UFDD7> : U1D6DB
-<UFDD7> <g> <U2623> : U1D6C1
+<UFDD7> <g> <UFDD7> : U1D6DB           # 𝛛   # \bfpartial
+<UFDD7> <g> <6> : U1D6DB               # 𝛛   # \bfpartial
+<UFDD7> <g> <dead_stroke> : U1D735     # 𝛁   # <U2623>  \bfnabla
 <UFDD7> <f> <A> : U1D504
 <UFDD7> <f> <B> : U1D505
 <UFDD7> <f> <C> : U212D

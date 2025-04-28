@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
     imports = [
         #./cpp.nix
@@ -71,4 +71,7 @@
         udiskie.enable = true;
         nextcloud-client.enable = true;
     };
+
+    # XCompose file for bepo_antoine
+    home.file."${config.home.homeDirectory}/.XCompose".source = config.lib.file.mkOutOfStoreSymlink "${../../../nixos/modules/common/keyboard/XCompose}";
 }

@@ -13,8 +13,8 @@ xkb_symbols "bepo_antoine" {                        // MODIFIED antoine
 	key <AE01> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ quotedbl, endash, ae, AE ] }; // " – æ Æ
 	key <AE02> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ guillemotleft, emdash, ugrave, Ugrave ] }; // « — ù Ù
 	key <AE03> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ guillemotright, heart, dead_diaeresis, dead_abovedot ] }; // » ♥ ¨ ˙
-	key <AE04> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ numbersign, heart, EuroSign, dead_currency ] }; // # ♥ € ¤
-	key <AE05> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ dead_greek, UFDD4, dead_circumflex, heart ] }; // µ ß ^ ♥
+	key <AE04> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ numbersign, dead_currency, EuroSign, dead_currency ] }; // # ¤ € ¤
+	key <AE05> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ dead_greek, UFDD4, dead_circumflex, UFDD4 ] }; // µ ß ^ ß
 	key <AE06> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ UFDD7, copyright, heart, notsign ] }; // ∞ © ♥ ¬
 	key <AE07> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ plus, trademark, plusminus, onequarter ] }; // + ™ ± ¼
 	key <AE08> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ minus, heart, U2212, onehalf ] }; // - ♥ − ½
