@@ -24,6 +24,7 @@
           "<leader>,c" = ":diffget //2<CR>";
           "<leader>,r" = ":diffget //3<CR>";
           "<leader>,b" = ":Git branch<CR>";
+          "<leader>,a" = ":Git blame<CR>";
         };
     in
       helpers.keymaps.mkKeymaps
