@@ -64,13 +64,11 @@
                         var"#Pkg".activate()
                     end
 
-                    @sync @eval begin
-                        @async @eval using Revise
-                        @async @eval using OhMyREPL
-                    end
+                    @async @eval using Revise
+                    using OhMyREPL
 
                     if Base.isinteractive() &&
-                      (local REPL = get(Base.loaded_modules, Base.PkgId(Base.UUID("3fa0cd96-eef1-5676-8a61-b3b8758bbffb"), "REPL"), nothing); REPL !== nothing)
+                      (local REPL = get(Base.loaded_modules, Base.PkgId(Base.UUID("3fa0cd96-eef1-5676-8a61-b3b8758bbffb"), "REPL"), nothing); !isnothing(REPL))
                         # Source: https://github.com/fredrikekre/.dotfiles/blob/master/.julia/config/startup.jl
                         # Automatically load tooling on demand:
                         # - BenchmarkTools.jl when encountering @btime or @benchmark
@@ -106,6 +104,8 @@
                             end
                             return ast
                         end)
+                    else
+                        println("REPL not found, isinteractive $(Base.isinteractive())")
                     end
 
                     if isfile("Project.toml") #&& isfile("Manifest.toml")
