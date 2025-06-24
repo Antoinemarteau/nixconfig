@@ -12,7 +12,7 @@
           inputs.nixpkgs.follows = "nixpkgs";
         };
         scientific-fhs = {
-            url = "github:manuelbb-upb/scientific-fhs";
+            url = "github:Antoinemarteau/scientific-fhs";
         };
     };
 

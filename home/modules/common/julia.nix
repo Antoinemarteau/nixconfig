@@ -5,23 +5,22 @@
       enable = true;
       juliaVersions = [
         {
-          version = "1.11.1";
+          version = "1.11.5";
           default = true;
         }
-    #(lib.mkIf ( config.home.sessionVariables.HOSTNAME == "monash" )
     (lib.mkIf ( builtins.elem config.home.sessionVariables.HOSTNAME ["monash"] )
         {
-          version = "1.10.4";
+          version = "1.10.9";
+        }
+    )
+    (lib.mkIf ( builtins.elem config.home.sessionVariables.HOSTNAME ["monash"] )
+        {
+          version = "1.9.4";
         }
     )
     (lib.mkIf ( builtins.elem config.home.sessionVariables.HOSTNAME ["monash"] )
         {
           version = "1.8.3";
-        }
-    )
-    (lib.mkIf ( builtins.elem config.home.sessionVariables.HOSTNAME ["monash"] )
-        {
-          version = "1.6.7";
         }
     )
       ];
