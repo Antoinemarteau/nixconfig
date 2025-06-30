@@ -97,14 +97,22 @@
       {
         event = ["BufEnter" "BufWinEnter"];
         pattern = "*.tex";
-        command = "set filetype=tex \"| VimtexTocOpen";
+        command = "set filetype=tex";
       }
-      # Compile on initialization ('TSDisable highlight' lets vimtex handle
-      # highlighting, which lets it detect math mode and enables imaps)
+      # Compile on initialization + ensure compiler is running on buffer enter
+      # Source  https://github.com/lervag/vimtex/issues/2996
       {
         event = "User";
         pattern = "VimtexEventInitPost";
-        command = "TSDisable highlight | call vimtex#compiler#compile()";
+        #command = "TSDisable highlight | call vimtex#compiler#compile()";
+        callback.__raw = ''function()
+                            local vimtex = vim.api.nvim_buf_get_var(0, "vimtex")
+                            if vimtex.compiler.status and vimtex.compiler.status < 1 then
+                              vim.cmd "VimtexCompile"
+                            end
+                          end'';
+      # ('TSDisable highlight' lets vimtex handle highlighting, which lets it detect math mode and enables imaps)
+      #command = "TSDisable highlight | call vimtex#compiler#compile()"; ``function()
       }
       # Cleanup on exit
       {
