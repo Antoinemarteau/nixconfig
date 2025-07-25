@@ -5,9 +5,9 @@
   };
 
   globals = {
-    nremap = { r = "h"; s = "k"; }; # c = "l";
-    oremap = { r = "h"; s = "k"; }; # c = "l";
-    xremap = { r = "h"; s = "k"; }; # c = "l";
+    nremap = { r = "h"; s = "k"; "-" = "a"; }; # c = "l";
+    oremap = { r = "h"; s = "k"; "-" = "a"; }; # c = "l";
+    xremap = { r = "h"; s = "k"; "-" = "a"; }; # c = "l";
   };
 
   keymaps = let

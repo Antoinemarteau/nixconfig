@@ -22,7 +22,7 @@
             };
 
             # Highly inspired by Mathieu Cneude's blog
-            initExtra = ''
+            initContent = ''
 
                 # Run the ssh-agent
                 eval `gnome-keyring-daemon --start --components=ssh --daemonize 2> /dev/null`
