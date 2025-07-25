@@ -11,7 +11,7 @@
     ./markdown-preview.nix
     ./nvim-cmp.nix
     ./oil.nix
-    ./packer.nix
+    #./packer.nix # unsuported apparently
     ./telescope.nix
     ./treesitter.nix
     ./ultisnips.nix

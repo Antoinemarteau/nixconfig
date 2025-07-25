@@ -53,7 +53,7 @@
         # and change font in the gui "view" menu
         zotero
         # write math with tablet
-        xournal
+        xournalpp
 
         # tui applications
         bluetuith

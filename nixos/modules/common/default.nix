@@ -41,11 +41,9 @@
     };
 
     fonts.packages = with pkgs; [
-        (nerdfonts.override { fonts = [ "DejaVuSansMono" ]; })
+      nerd-fonts.dejavu-sans-mono
     ];
     fonts.fontDir.enable = true;
-
-
 
     services = {
         # update grub ?

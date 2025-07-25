@@ -10,7 +10,7 @@
         }
     (lib.mkIf ( builtins.elem config.home.sessionVariables.HOSTNAME ["monash"] )
         {
-          version = "1.10.9";
+          version = "1.10.10";
         }
     )
     (lib.mkIf ( builtins.elem config.home.sessionVariables.HOSTNAME ["monash"] )
