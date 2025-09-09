@@ -13,6 +13,7 @@
     ./oil.nix
     #./packer.nix # unsuported apparently
     ./telescope.nix
+    ./typst.nix
     ./treesitter.nix
     ./ultisnips.nix
   ];

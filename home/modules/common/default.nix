@@ -65,6 +65,9 @@
 
         #debug network-manager-applet.enable = true
         networkmanagerapplet
+
+        # languages
+        typst
     ];
 
     services = {
