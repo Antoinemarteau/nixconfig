@@ -15,9 +15,9 @@ xkb_symbols "bepo_antoine" {                        // MODIFIED antoine
 	key <AE03> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ guillemotright, heart, dead_diaeresis, dead_abovedot ] }; // » ♥ ¨ ˙
 	key <AE04> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ numbersign, dead_currency, EuroSign, dead_currency ] }; // # ¤ € ¤
 	key <AE05> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ dead_greek, UFDD4, dead_circumflex, UFDD4 ] }; // µ ß ^ ß
-	key <AE06> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ UFDD7, copyright, heart, notsign ] }; // ∞ © ♥ ¬
+	key <AE06> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ UFDD7, UFDD7, UFDD7, UFDD7 ] }; // ∞ ∞ ∞ ∞
 	key <AE07> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ plus, trademark, plusminus, onequarter ] }; // + ™ ± ¼
-	key <AE08> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ minus, heart, U2212, onehalf ] }; // - ♥ − ½
+	key <AE08> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ minus, copyright, U2212, onehalf ] }; // - © − ½
 	key <AE09> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ at, registered, multiply, threequarters ] }; // @ ® × ¾
 	key <AE10> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ equal, degree, notequal, minutes ] }; // = ° ≠ ′
 	key <AE11> { type[group1] = "FOUR_LEVEL", [ percent, grave, U2030, seconds ] }; // % ` ‰ ″
