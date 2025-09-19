@@ -904,7 +904,7 @@ include "%L"
 <UFDD7> <dead_greek> : U230B          # ⌋
 <UFDD7> <UFDD4> : U2309               # ⌉
 <UFDD7> <dead_circumflex> : U2290     # ⊐
-<UFDD7> <dollar> : femalesymbol
+<UFDD7> <dollar> : U2300              # ⌀
 <UFDD7> <paragraph> : U2641
 <UFDD7> <emdash> : U2646
 <UFDD7> <doublelowquotemark> : U2645
@@ -936,9 +936,12 @@ include "%L"
 <UFDD7> <minutes> : U21C4
 <UFDD7> <B> : U2136
 <UFDD7> <bar> : U2223
-<UFDD7> <eacute> : upcaret
-<UFDD7> <Eacute> : U214B
-<UFDD7> <dead_acute> : U21BA
+
+<UFDD7> <eacute> : upcaret            # ∧
+<UFDD7> <Eacute> : U214B              # ⅋
+<UFDD7> <slash> : U21BA               # ↺
+<UFDD7> <dead_acute> : U21BB          # ↻
+
 <UFDD7> <dead_acute> <dead_acute> : U21BB
 <UFDD7> <p> : U2210
 <UFDD7> <P> : U220F
@@ -974,6 +977,7 @@ include "%L"
 <UFDD7> <W> : U223F
 <UFDD7> <U269C> : U2393
 
+<UFDD7> <a> : U2200                 # ∀
 <UFDD7> <A> : U2200                 # ∀
 
 <UFDD7> <u> : downshoe              # ∪
@@ -1001,15 +1005,16 @@ include "%L"
 <UFDD7> <t> : downtack # ⊤
 <UFDD7> <T> : uptack   #
 <UFDD7> <UFDD5> : lefttack
+<UFDD7> <dead_stroke> <UFDD5> : lefttack
 <UFDD7> <0> : U22A2                 # ⊬
 <UFDD7> <trademark> : U22A7         # ⊧
 
 <UFDD7> <s> : integral              # ∫
 <UFDD7> <S> : U2211                 # ∑
 <UFDD7> <1> : U222E                 # ∮   # ♃ : U2643
-# TODO <UFDD7> <UFDD4> : U222C             # ∬   # ∮ : U222E
 
 #       <r>     : 𝓇                 Caractere script
+<UFDD7> <2> : U222C                 # ∬
 
 <UFDD7> <n> : U2016                 # ‖
 <UFDD7> <N> : U2135                 # ℵ
@@ -1025,16 +1030,21 @@ include "%L"
 <UFDD7> <K> : U2972
 <UFDD7> <asciitilde> : U21AA
 <UFDD7> <U2011> : U21A0
-<UFDD7> <rightsinglequotemark> : U22EF
-<UFDD7> <question> : U22EE
-<UFDD7> <questiondown> : U22F1
+
+<UFDD7> <apostrophe> : U22EF                     # ⋯ # U22EE
+<UFDD7> <question> : U22EE                       # ⋮
+<UFDD7> <rightsinglequotemark> : U22F1           # ⋱ # U22EF
+<UFDD7> <questiondown> : U22F0                   # ⋰ # U22F1
+
 <UFDD7> <dead_hook> : U22F0
-<UFDD7> <q> : U27C2
-<UFDD7> <Q> : U2225
-<UFDD7> <h> : U210E
-<UFDD7> <dead_belowdot> : U210F
-<UFDD7> <dead_abovedot> <dead_abovedot> : U210F
-<UFDD7> <dead_ogonek> : U2109
+<UFDD7> <q> : U27C2                              # ⟂
+<UFDD7> <Q> : U2225                              # ∥
+<UFDD7> <h> : U210E                              # ℎ
+<UFDD7> <H> : femalesymbol                       # ♀
+<UFDD7> <dead_belowdot> : malesymbol             # ♂
+<UFDD7> <ampersand> : U210F                      # ℏ
+<UFDD7> <dead_abovedot> <dead_abovedot> : U210F  # ℏ
+<UFDD7> <dead_ogonek> : U2109                    # ℉
 
 <UFDD7> <dead_stroke> <ugrave> : U2280           # ⊀
 <UFDD7> <dead_stroke> <dead_diaeresis> : U2281   # ⊁
@@ -1612,7 +1622,6 @@ include "%L"
 <UFDD7> <g> <dead_greek> <Y> : U1D6BC
 <UFDD7> <g> <dead_greek> <Z> : U1D6AD
 <UFDD7> <g> <UFDD7> : U1D6DB           # 𝛛   # \bfpartial
-<UFDD7> <g> <6> : U1D6DB               # 𝛛   # \bfpartial
 <UFDD7> <g> <dead_stroke> : U1D735     # 𝛁   # <U2623>  \bfnabla
 <UFDD7> <f> <A> : U1D504
 <UFDD7> <f> <B> : U1D505
