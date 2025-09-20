@@ -892,6 +892,10 @@ include "%L"
 <UFDD5> <UFDD5> <u> : U1D64
 <UFDD5> <UFDD5> <v> : U1D65
 <UFDD5> <UFDD5> <x> : U2093
+
+<UFDD7> <space> : U20DB               #  ⃛ # dead key
+<UFDD7> <U202F> : U20DC               #  ⃜ # dead key
+
 <UFDD7> <quotedbl> : musicalflat      # ♭ \flat    #  U2644
 <UFDD7> <endash> : musicalsharp       # ♯ \sharp   #  malesymbol
 <UFDD7> <ae> : figdash                # ‒          #  UA725
@@ -919,13 +923,21 @@ include "%L"
 <UFDD7> <bracketright> : U2290
 <UFDD7> <U2A7E> : greaterthanequal    # ⩾
 <UFDD7> <at> : U27F6
-<UFDD7> <6> : U27FC
-<UFDD7> <asciicircum> : U202D
+# <UFDD7> <6> : U27FC
+
+<UFDD7> <asciicircum> : U2192         # →
+<UFDD7> <exclam> : implies            # ⇒
+<UFDD7> <ellipsis> : U21A6            # ↦
+<UFDD7> <exclamdown> : U21C0          # ⇀
+
 <UFDD7> <U262D> : U20D5
 <UFDD7> <plus> : U2295
 <UFDD7> <trademark> : U229E
 <UFDD7> <plusminus> : U228E
-<UFDD7> <minus> : infinity
+
+<UFDD7> <minus> : infinity            # ∞
+<UFDD7> <U2212> : U221D               # ∝
+
 <UFDD7> <8> : variation
 <UFDD7> <asterisk> : U22C6            # ⋆  # \star     ⊗ U2297
 <UFDD7> <threequarters> : U2217       # ∗  # \ast        <0>
@@ -948,11 +960,13 @@ include "%L"
 <UFDD7> <o> : jot
 <UFDD7> <O> : emptyset
 <UFDD7> <oe> : U2300
-<UFDD7> <egrave> : leftarrow
-<UFDD7> <Egrave> : U21D0
+
+<UFDD7> <egrave> : leftarrow          # ←
+<UFDD7> <Egrave> : U21D0              # ⇐
+<UFDD7> <grave> : U27F6               # ⟶
+<UFDD7> <dead_grave> : U20D7          #  ⃗⃗⃗⃗⃗ # dead right arrow above
+
 #<UFDD7> <dead_circumflex> : rightarrow
-<UFDD7> <exclam> : implies
-<UFDD7> <exclamdown> : U21A6
 <UFDD7> <U2620> : U21C0
 <UFDD7> <v> : downcaret
 <UFDD7> <V> : radical
@@ -961,7 +975,7 @@ include "%L"
 <UFDD7> <d> : partialderivative # ∂   # \partial
 <UFDD7> <D> : U2206             # ∆   # \increment
 <UFDD7> <6> : nabla             # ∇   # \nabla
-#
+<UFDD7> <sterling> : U22B2      # ⊲ ⋪ # \vartriangleleft
 
 <UFDD7> <UFDD7> : nabla
 <UFDD7> <U2623> : U22B2
@@ -1018,14 +1032,15 @@ include "%L"
 
 <UFDD7> <n> : U2016                 # ‖
 <UFDD7> <N> : U2135                 # ℵ
+<UFDD7> <3> : U22C5                 # ⋅
+<UFDD7> <dead_tilde> : U2299        # ⊙
 
 <UFDD7> <backslash> : U2216
 <UFDD7> <y> : U22C9
 <UFDD7> <x> : U22CA
 <UFDD7> <period> : U2219
 <UFDD7> <colon> : U220E
-<UFDD7> <ellipsis> : U20DB
-<UFDD7> <periodcentered> : U20DC
+<UFDD7> <periodcentered> : U22C5    # ⋅
 <UFDD7> <k> : approximate
 <UFDD7> <K> : U2972
 <UFDD7> <asciitilde> : U21AA

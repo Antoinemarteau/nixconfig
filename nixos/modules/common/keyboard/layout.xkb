@@ -30,8 +30,8 @@ xkb_symbols "bepo_antoine" {                        // MODIFIED antoine
 	key <AD05> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ egrave, Egrave, grave, dead_grave ] }; // è È ` `
 	key <AD06> { type[group1] = "FOUR_LEVEL", [ asciicircum, exclam, ellipsis, exclamdown ] }; // ^ ! … ¡
 	key <AD07> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ v, V, 5, dead_caron ] }; // v V 5 ˇ
-	key <AD08> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ d, D, 6, dead_stroke ] }; // d D 6 /
-	key <AD09> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ l, L, 7, sterling ] }; // l L 7 £
+	key <AD08> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ d, D, 6, sterling ] }; // d D 6 /
+	key <AD09> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ l, L, 7, dead_stroke ] }; // l L 7 £
 	key <AD10> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ j, J, 8, U262F ] }; // j J 8 ☯
 	key <AD11> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ agrave, Agrave, 9, UFDD8 ] }; // à À 9 ―
 	key <AD12> { type[group1] = "FOUR_LEVEL_SEMIALPHABETIC", [ z, Z, periodcentered, U267F ] }; // z Z · ♿
