@@ -177,11 +177,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1757250260,
-        "narHash": "sha256-mnWOuvgauUCPBA3CMa98FtsEVFRAehJ8PS2CgtEI6hM=",
+        "lastModified": 1763169091,
+        "narHash": "sha256-hQ1UCTB2kAAJxc8XpeE2wZ7UL0X9/LF0Jg8Ti63eJks=",
         "owner": "Antoinemarteau",
         "repo": "scientific-fhs",
-        "rev": "67eb6ac2a64d7764cf325a54a877891a147792d9",
+        "rev": "9acbc40924d9bea0df2200b96d80e2270a769294",
         "type": "github"
       },
       "original": {
