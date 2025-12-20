@@ -21,7 +21,11 @@
     };
 
     home = {
-        shellAliases.ju = "julia -t auto";
+        shellAliases.ju  = "julia -t auto";
+        shellAliases.jug = "julia -t auto -i -e \"using Gridap; " +
+          "using Gridap.Helpers;      using Gridap.Arrays;      using Gridap.Algebra;" +
+          "using Gridap.TensorValues; using Gridap.Polynomials; using Gridap.ReferenceFEs\" ";
+
         shellAliases.pluto = "julia -e \"using Pluto; Pluto.run()\" &> /dev/null &";
 
         # If stop using scientific-fhs, julia and OpenGL lib are needed
@@ -39,13 +43,20 @@
                     ENV["JULIA_EDITOR"] = "nvim"
 
                     import Pkg as var"#Pkg"
+
                     let
-                        pkgs = ["Revise", "OhMyREPL", "BenchmarkTools", "Cthulhu", "Debugger", "Profile", "ProfileView", "Test"]
+                        pkgs = [
+                            "BasicAutoloads", "Revise", "OhMyREPL",
+                            "BenchmarkTools", "Chairmarks", "Cthulhu", "Debugger",
+                            "Profile", "ProfileView", "Test", "StaticArrays",
+                            "LinearAlgebra"
+                        ]
                         for pkg in pkgs
                             if Base.find_package(pkg) === nothing
                                 var"#Pkg".add(pkg)
                             end
                         end
+
                         # LanguageServer should be installed in special
                         # folder for neovim
                         mkpath("/home/antoine/.julia/environments/nvim-lspconfig")
@@ -57,47 +68,27 @@
                     end
 
                     @async @eval using Revise
-                    using OhMyREPL
+                    #using OhMyREPL
 
-                    if Base.isinteractive() &&
-                      (local REPL = get(Base.loaded_modules, Base.PkgId(Base.UUID("3fa0cd96-eef1-5676-8a61-b3b8758bbffb"), "REPL"), nothing); !isnothing(REPL))
-                        # Source: https://github.com/fredrikekre/.dotfiles/blob/master/.julia/config/startup.jl
-                        # Automatically load tooling on demand:
-                        # - BenchmarkTools.jl when encountering @btime or @benchmark
-                        # - Cthulhu.jl when encountering @descend(_code_(typed|warntype))
-                        # - Debugger.jl when encountering @enter or @run
-                        # - Profile.jl when encountering @profile
-                        # - ProfileView.jl when encountering @profview
-                        # - Test when encountering @test or @testset
-                        local tooling_dict = Dict{Symbol,Vector{Symbol}}(
-                            :BenchmarkTools => Symbol.(["@btime", "@benchmark"]),
-                            :Cthulhu        => Symbol.(["@descend", "@descend_code_typed", "@descend_code_warntype"]),
-                            :Debugger       => Symbol.(["@enter", "@run"]),
-                            :Profile        => Symbol.(["@profile"]),
-                            :ProfileView    => Symbol.(["@profview"]),
-                            :Test           => Symbol.(["@test", "@testset", "@test_throws"]),
-                        )
-                        pushfirst!(REPL.repl_ast_transforms, function(ast::Union{Expr,Nothing})
-                            function contains_macro(ast, m)
-                                return ast isa Expr && (
-                                    (Meta.isexpr(ast, :macrocall) && ast.args[1] === m) ||
-                                    any(x -> contains_macro(x, m), ast.args)
-                                )
-                            end
-                            for (mod, macros) in tooling_dict
-                                if any(contains_macro(ast, s) for s in macros) && !isdefined(Main, mod)
-                                    @info "Loading $mod ..."
-                                    try
-                                        Core.eval(Main, :(using $mod))
-                                    catch err
-                                        @info "Failed to automatically load $mod" exception=err
-                                    end
-                                end
-                            end
-                            return ast
-                        end)
-                    else
-                        println("REPL not found, isinteractive $(Base.isinteractive())")
+                    if isinteractive()
+                        import BasicAutoloads
+                        BasicAutoloads.register_autoloads([
+                            ["@btime", "@benchmark"] => :(using BenchmarkTools),
+                            ["@b", "@be"]            => :(using Chairmarks),
+                            ["@test", "@testset", "@test_broken", "@test_deprecated", "@test_logs",
+                            "@test_nowarn", "@test_skip", "@test_throws", "@test_warn", "@inferred"]
+                                                     => :(using Test),
+                            ["@descend", "@descend_code_typed", "@descend_code_warntype"] =>
+                                                        :(using Cthulhu),
+                            ["@enter", "@run"]       => :(using Debugger),
+                            ["@profile"]             => :(using Profile),
+                            ["@profview", "@profview_allocs"]
+                                                     => :(using ProfileView),
+                            ["norm", "I"]            => :(using LinearAlgebra),
+
+                           #["pager"]                => :(using TerminalPager),
+                           #["cowsay"]               => :(cowsay(x) = println("Cow: \"$x\"")),
+                        ])
                     end
 
                     if isfile("Project.toml") #&& isfile("Manifest.toml")
