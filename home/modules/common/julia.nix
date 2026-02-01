@@ -52,7 +52,7 @@
                             "BasicAutoloads", "Revise", "OhMyREPL",
                             "BenchmarkTools", "Chairmarks", "Cthulhu", "Debugger",
                             "Profile", "ProfileView", "Test", "StaticArrays",
-                            "LinearAlgebra"
+                            "LinearAlgebra", "About"
                         ]
                         for pkg in pkgs
                             if Base.find_package(pkg) === nothing
@@ -88,6 +88,7 @@
                             ["@profview", "@profview_allocs"]
                                                      => :(using ProfileView),
                             ["norm", "I"]            => :(using LinearAlgebra),
+                            ["about"]                => :(using About),
 
                            #["pager"]                => :(using TerminalPager),
                            #["cowsay"]               => :(cowsay(x) = println("Cow: \"$x\"")),
