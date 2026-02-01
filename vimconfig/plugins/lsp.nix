@@ -28,6 +28,7 @@
         bashls.enable  = true;
         lua_ls.enable  = true;
         pylsp.enable   = true;
+        clangd.enable  = true;
       };
     };
   };
