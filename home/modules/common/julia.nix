@@ -43,37 +43,39 @@
             startup = {
                 executable = true;
                 text = ''
-                    ENV["JULIA_EDITOR"] = "nvim"
-
-                    import Pkg as var"#Pkg"
-
-                    let
-                        pkgs = [
-                            "BasicAutoloads", "Revise", "OhMyREPL",
-                            "BenchmarkTools", "Chairmarks", "Cthulhu", "Debugger",
-                            "Profile", "ProfileView", "Test", "StaticArrays",
-                            "LinearAlgebra", "About"
-                        ]
-                        for pkg in pkgs
-                            if Base.find_package(pkg) === nothing
-                                var"#Pkg".add(pkg)
-                            end
-                        end
-
-                        # LanguageServer should be installed in special
-                        # folder for neovim
-                        mkpath("/home/antoine/.julia/environments/nvim-lspconfig")
-                        var"#Pkg".activate("/home/antoine/.julia/environments/nvim-lspconfig")
-                        if Base.find_package("LanguageServer") === nothing
-                            var"#Pkg".add("LanguageServer")
-                        end
-                        var"#Pkg".activate()
-                    end
-
-                    @async @eval using Revise
-                    #using OhMyREPL
-
                     if isinteractive()
+                        ENV["JULIA_EDITOR"] = "nvim"
+
+                        import Pkg as var"#Pkg"
+                        let
+                            pkgs = [
+                                "BasicAutoloads", "Revise", "OhMyREPL",
+                                "BenchmarkTools", "Chairmarks", "Cthulhu", "Debugger",
+                                "Profile", "ProfileView", "Test", "StaticArrays",
+                                "LinearAlgebra", "About"
+                            ]
+                            for pkg in pkgs
+                                if Base.find_package(pkg) === nothing
+                                    var"#Pkg".add(pkg)
+                                end
+                            end
+
+                            # LanguageServer should be installed in special
+                            # folder for neovim
+                            mkpath("/home/antoine/.julia/environments/nvim-lspconfig")
+                            var"#Pkg".activate("/home/antoine/.julia/environments/nvim-lspconfig")
+                            if Base.find_package("LanguageServer") === nothing
+                                var"#Pkg".add("LanguageServer")
+                            end
+                            var"#Pkg".activate()
+                        end
+
+                        using Revise
+
+                        if isfile("Project.toml") #&& isfile("Manifest.toml")
+                            var"#Pkg".activate(".")
+                        end
+
                         import BasicAutoloads
                         BasicAutoloads.register_autoloads([
                             ["@btime", "@benchmark"] => :(using BenchmarkTools),
@@ -89,14 +91,12 @@
                                                      => :(using ProfileView),
                             ["norm", "I"]            => :(using LinearAlgebra),
                             ["about"]                => :(using About),
+                            ["MVector", "SVector", "MMatrix", "SMatrix", "MArray", "SArray"] =>
+                                                        :(using StaticArrays),
 
                            #["pager"]                => :(using TerminalPager),
                            #["cowsay"]               => :(cowsay(x) = println("Cow: \"$x\"")),
                         ])
-                    end
-
-                    if isfile("Project.toml") #&& isfile("Manifest.toml")
-                        var"#Pkg".activate(".")
                     end
                 '';
                 target = ".julia/config/startup.jl";
