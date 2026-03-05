@@ -40,6 +40,16 @@
         };
 
         file = {
+            nix_ld_jetls = { # wrapp JETLS using nix-ld
+                executable = true;
+                text = ''
+                    #!/bin/sh
+                    export NIX_LD_LIBRARY_PATH=~/.julia/bin/jetls
+                    exec ~/.julia/bin/jetls "$@"
+                '';
+                target = ".local/bin/nix_ld_jetls";
+            };
+
             startup = {
                 executable = true;
                 text = ''
@@ -60,14 +70,29 @@
                                 end
                             end
 
-                            # LanguageServer should be installed in special
-                            # folder for neovim
-                            mkpath("/home/antoine/.julia/environments/nvim-lspconfig")
-                            var"#Pkg".activate("/home/antoine/.julia/environments/nvim-lspconfig")
-                            if Base.find_package("LanguageServer") === nothing
-                                var"#Pkg".add("LanguageServer")
+
+                            # JETLS.jl
+                            #if isnothing(var"#Pkg".App.status( var"#Pkg".PackageSpec("JETLS")))
+                            ## This either installs or updates JETLS
+                            redirect_stderr(devnull) do # makes it silent
+                              var"#Pkg".Apps.add(; url="https://github.com/aviatesk/JETLS.jl", rev="release")
                             end
-                            var"#Pkg".activate()
+                            #end
+
+                            # # LanguageServer.jl
+                            # # it should be installed in special folder for neovim
+                            # mkpath("/home/antoine/.julia/environments/nvim-lspconfig")
+                            # var"#Pkg".activate("/home/antoine/.julia/environments/nvim-lspconfig")
+                            # if isnothing(Base.find_package("LanguageServer"))
+                            #     var"#Pkg".add("LanguageServer")
+                            # end
+                            # if isnothing(Base.find_package("SymbolServer"))
+                            #     var"#Pkg".add("SymbolServer")
+                            # end
+                            # if isnothing(Base.find_package("StaticLint"))
+                            #     var"#Pkg".add("StaticLint")
+                            # end
+                            # var"#Pkg".activate()
                         end
 
                         using Revise

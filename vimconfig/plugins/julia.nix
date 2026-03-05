@@ -10,15 +10,31 @@
     softtabstop = 2; # If non-zero, number of spaces to insert for a <Tab> (local to buffer)
   };
 
+  # JETLS language server, it is installed and wrapped in a script in startup.jl
+  # in home/module/common/julia.nix
+  lsp.servers = {
+      jetls = {
+          enable = true;
+          package = null;
+          config = {
+              cmd = [ "nix_ld_jetls" "serve" ];
+              filetypes = [ "julia" ];
+              root_markers = [ "Project.toml" ];
+          };
+      };
+  };
+
   plugins = {
     # Parser
     treesitter.grammarPackages = with config.plugins.treesitter.package.builtGrammars; [ julia ];
 
-    # LanguageServer, but is installed in startup.jl in home-manager
-    lsp.servers.julials = {
-        enable = true;
-        package = null;
-    };
+        ## LanguageServer, but is installed in startup.jl in home-manager
+        #lsp.servers = {
+        #  julials = {
+        #    enable = true;
+        #    package = null;
+        #  };
+        #};
 
     vim-slime = {
       enable = true;
