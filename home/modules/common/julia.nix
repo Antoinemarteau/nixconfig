@@ -74,7 +74,7 @@
                             #if isnothing(var"#Pkg".App.status( var"#Pkg".PackageSpec("JETLS")))
                             ## This either installs or updates JETLS
                             redirect_stderr(devnull) do # makes it silent
-                              var"#Pkg".Apps.add(; url="https://github.com/aviatesk/JETLS.jl", rev="release")
+                              var"#Pkg".Apps.add(; url="https://github.com/aviatesk/JETLS.jl", rev="2026-02-27")
                             end
                             #end
 
