@@ -28,13 +28,13 @@
     # Parser
     treesitter.grammarPackages = with config.plugins.treesitter.package.builtGrammars; [ julia ];
 
-        ## LanguageServer, but is installed in startup.jl in home-manager
-        #lsp.servers = {
-        #  julials = {
-        #    enable = true;
-        #    package = null;
-        #  };
-        #};
+    # LanguageServer, but is installed in startup.jl in home-manager
+    lsp.servers = {
+      julials = {
+        enable = true;
+        package = null;
+      };
+    };
 
     vim-slime = {
       enable = true;

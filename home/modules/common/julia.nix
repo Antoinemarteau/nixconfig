@@ -70,7 +70,6 @@
                                 end
                             end
 
-
                             # JETLS.jl
                             #if isnothing(var"#Pkg".App.status( var"#Pkg".PackageSpec("JETLS")))
                             ## This either installs or updates JETLS
@@ -79,20 +78,20 @@
                             end
                             #end
 
-                            # # LanguageServer.jl
-                            # # it should be installed in special folder for neovim
-                            # mkpath("/home/antoine/.julia/environments/nvim-lspconfig")
-                            # var"#Pkg".activate("/home/antoine/.julia/environments/nvim-lspconfig")
-                            # if isnothing(Base.find_package("LanguageServer"))
-                            #     var"#Pkg".add("LanguageServer")
-                            # end
-                            # if isnothing(Base.find_package("SymbolServer"))
-                            #     var"#Pkg".add("SymbolServer")
-                            # end
-                            # if isnothing(Base.find_package("StaticLint"))
-                            #     var"#Pkg".add("StaticLint")
-                            # end
-                            # var"#Pkg".activate()
+                            # LanguageServer.jl
+                            # it should be installed in special folder for neovim
+                            mkpath("/home/antoine/.julia/environments/nvim-lspconfig")
+                            var"#Pkg".activate("/home/antoine/.julia/environments/nvim-lspconfig")
+                            if isnothing(Base.find_package("LanguageServer"))
+                                var"#Pkg".add("LanguageServer")
+                            end
+                            if isnothing(Base.find_package("SymbolServer"))
+                                var"#Pkg".add("SymbolServer")
+                            end
+                            if isnothing(Base.find_package("StaticLint"))
+                                var"#Pkg".add("StaticLint")
+                            end
+                            var"#Pkg".activate()
                         end
 
                         using Revise
