@@ -5,15 +5,11 @@
       enable = true;
       juliaVersions = [
         {
-          version = "1.12.1";
+          version = "1.12.5";
           default = true;
         }
-    (lib.mkIf ( builtins.elem config.home.sessionVariables.HOSTNAME ["monash" "framework"] )
-        { version = "1.11.5"; }
-    )
-    (lib.mkIf ( builtins.elem config.home.sessionVariables.HOSTNAME ["monash" "framework"] )
-        { version = "1.10.10"; }
-    )
+    (lib.mkIf ( builtins.elem config.home.sessionVariables.HOSTNAME ["monash" "framework"] ) { version = "1.11.5"; })
+    (lib.mkIf ( builtins.elem config.home.sessionVariables.HOSTNAME ["monash" "framework"] ) { version = "1.10.10";})
     #(lib.mkIf ( builtins.elem config.home.sessionVariables.HOSTNAME ["monash"] ) { version = "1.9.4"; })
     #(lib.mkIf ( builtins.elem config.home.sessionVariables.HOSTNAME ["monash"] ) { version = "1.8.3"; })
       ];
