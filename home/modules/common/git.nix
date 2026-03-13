@@ -1,6 +1,8 @@
+{ pkgs, ...}:
 {
     programs.git = {
         enable = true;
+        package = pkgs.gitFull;
 
         userEmail = "antoine.marteau@protonmail.com";
         userName = "Antoine Marteau";
