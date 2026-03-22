@@ -1,4 +1,4 @@
-{ config, lib, helpers, ... }:
+{ config, lib, ... }:
 {
       keymaps = let
           command =
@@ -22,7 +22,7 @@
               "<A-h>" = "<Del>";                          # Delete char after cursor
             };
         in
-          helpers.keymaps.mkKeymaps
+          lib.nixvim.keymaps.mkKeymaps
           {options.silent = true;}
           command;
 

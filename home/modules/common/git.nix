@@ -4,10 +4,9 @@
         enable = true;
         package = pkgs.gitFull;
 
-        userEmail = "antoine.marteau@protonmail.com";
-        userName = "Antoine Marteau";
-
-        extraConfig = {
+        settings = {
+            user.email = "antoine.marteau@protonmail.com";
+            user.name = "Antoine Marteau";
             core.editor = "nvim";
             github.user = "Antoinemarteau";
             mergetool.prompt = false;

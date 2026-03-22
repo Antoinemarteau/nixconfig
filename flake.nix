@@ -59,7 +59,7 @@
                             users.antoine = {
                                 imports = [
                                     ./home/${hostname}
-                                    nixvim.homeManagerModules.nixvim
+                                    nixvim.homeModules.nixvim
                                     scientific-fhs.nixosModules.default
                                 ];
                                 home.sessionVariables.HOSTNAME = hostname;

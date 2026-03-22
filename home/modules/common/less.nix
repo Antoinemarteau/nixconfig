@@ -2,7 +2,7 @@
     programs.less = {
         enable = true;
 
-        keys = ''
+        config = ''
             # fix bepo shortcuts
             t        forw-line
             s        back-line

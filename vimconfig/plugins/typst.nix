@@ -1,4 +1,4 @@
-{ config, helpers, lib, ... }:
+{ config, lib, ... }:
 {
 
   dependencies.typst.enable = true;
@@ -26,7 +26,7 @@
           "<localleader>c" = ":TypstPreviewFollowCursorToggle<CR>";
         };
     in
-      helpers.keymaps.mkKeymaps
+      lib.nixvim.keymaps.mkKeymaps
       {options.silent = true;}
       normal;
 

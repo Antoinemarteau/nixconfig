@@ -1,4 +1,4 @@
-{ config, lib, helpers, ... }:
+{ config, lib, ... }:
 {
     # command mode keymaps
     imports = [./command_keymappings.nix];
@@ -132,7 +132,7 @@
           }
         ];
       in
-        helpers.keymaps.mkKeymaps
+        lib.nixvim.keymaps.mkKeymaps
         {options.silent = true;}
         (normal ++ visual ++ normVisOp ++ terminal) ++ [
             {

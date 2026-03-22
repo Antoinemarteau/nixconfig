@@ -1,4 +1,4 @@
-{ config, lib, helpers, ... }:
+{ config, lib, ... }:
 {
   config = {
         globals = {

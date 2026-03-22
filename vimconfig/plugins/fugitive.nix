@@ -1,4 +1,4 @@
-{ helpers, lib, ... }:
+{ lib, ... }:
 {
   plugins.fugitive = {
     enable = true;
@@ -27,7 +27,7 @@
           "<leader>,a" = ":Git blame<CR>";
         };
     in
-      helpers.keymaps.mkKeymaps
+      lib.nixvim.keymaps.mkKeymaps
       {options.silent = true;}
       normal;
 }

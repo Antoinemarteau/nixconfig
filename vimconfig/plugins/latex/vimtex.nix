@@ -1,4 +1,4 @@
-{ helpers, lib, ... }:
+{ lib, ... }:
 {
   config = {
     plugins.vimtex = {
@@ -73,7 +73,7 @@
             "aç"= "<Plug>(MatchitVisualTextObject)";
           };
       in
-        helpers.keymaps.mkKeymaps
+        lib.nixvim.keymaps.mkKeymaps
         {options.silent = true;}
         (normal ++ visual);
 

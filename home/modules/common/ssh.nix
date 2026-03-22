@@ -1,6 +1,7 @@
 {
     programs.ssh = {
         enable = true;
+        enableDefaultConfig = false; # unsure if that's breaking stuff
 
         matchBlocks = {
             ##########
