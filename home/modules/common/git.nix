@@ -16,10 +16,8 @@
 
     home.shellAliases = {
         g   = "git";
-        ga  = "git add";
-        gc  = "git commit";
-        gpl = "git pull";
-        gps = "git push";
+        gc  = "git checkout";
+        gps = "git push --set-upstream";
         gs  = "git status";
         gd  = "git diff";
         gf  = "git fetch";
