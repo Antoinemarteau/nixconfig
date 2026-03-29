@@ -7,12 +7,12 @@
   keymaps = [
       {
           key = "é";
-          action = "<Plug>(leap-forward-to)";
+          action = "<Plug>(leap-forward)";
           options.silent = true;
       }
       {
           key = "É";
-          action = "<Plug>(leap-backward-to)";
+          action = "<Plug>(leap-backward)";
           options.silent = true;
       }
       {
