@@ -42,6 +42,7 @@
 
     fonts.packages = with pkgs; [
       nerd-fonts.dejavu-sans-mono
+      newcomputermodern
     ];
     fonts.fontDir.enable = true;
 

@@ -14,7 +14,7 @@
   # in home/module/common/julia.nix
   lsp.servers = {
       jetls = {
-          enable = true;
+          enable = false;
           package = null;
           config = {
               cmd = [ "nix_ld_jetls" "serve" ];

@@ -23,7 +23,8 @@
           "using Gridap.Arrays;      using Gridap.TensorValues;  using Gridap.Fields;" +
           "using Gridap.Polynomials; using Gridap.ReferenceFEs;  using Gridap.Geometry;" +
           "using Gridap.CellData;    using Gridap.Visualization; using Gridap.FESpaces;" +
-          "using Gridap.MultiField;  using Gridap.ODEs;          using Gridap.Adaptivity;\" ";
+          "using Gridap.MultiField;  using Gridap.ODEs;          using Gridap.Adaptivity;" +
+          "using FillArrays;         using LinearAlgebra;\" ";
 
         shellAliases.pluto = "julia -e \"using Pluto; Pluto.run()\" &> /dev/null &";
 
@@ -34,6 +35,7 @@
         sessionVariables = {
             JULIA_LOAD_PATH = "$HOME/prog/these/julia:$JULIA_LOAD_PATH";
         };
+
 
         file = {
             nix_ld_jetls = { # wrapp JETLS using nix-ld
@@ -58,7 +60,7 @@
                                 "BasicAutoloads", "Revise", "OhMyREPL",
                                 "BenchmarkTools", "Chairmarks", "Cthulhu", "Debugger",
                                 "Profile", "ProfileView", "Test", "StaticArrays",
-                                "LinearAlgebra", "About"
+                                "LinearAlgebra", "About", "Pluto"
                             ]
                             for pkg in pkgs
                                 if Base.find_package(pkg) === nothing
