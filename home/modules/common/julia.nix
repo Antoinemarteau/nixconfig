@@ -60,7 +60,7 @@
                                 "BasicAutoloads", "Revise", "OhMyREPL",
                                 "BenchmarkTools", "Chairmarks", "Cthulhu", "Debugger",
                                 "Profile", "ProfileView", "Test", "StaticArrays",
-                                "LinearAlgebra", "About", "Pluto"
+                                "LinearAlgebra", "About", "Pluto", "FillArrays"
                             ]
                             for pkg in pkgs
                                 if Base.find_package(pkg) === nothing
