@@ -8,11 +8,15 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
         nixvim = {
-          url = "github:nix-community/nixvim/nixos-25.11";
-          inputs.nixpkgs.follows = "nixpkgs";
+            url = "github:nix-community/nixvim/nixos-25.11";
+            inputs.nixpkgs.follows = "nixpkgs";
         };
         scientific-fhs = {
             url = "github:Antoinemarteau/scientific-fhs";
+        };
+        sops-nix = {
+            url = "github:Mic92/sops-nix";
+            inputs.nixpkgs.follows = "nixpkgs";
         };
     };
 
@@ -21,7 +25,8 @@
         nixpkgs,
         home-manager,
         nixvim,
-        scientific-fhs
+        scientific-fhs,
+        sops-nix
     }:
     let
         system = "x86_64-linux";
@@ -48,6 +53,7 @@
                 modules = [
                     ./nixos/${hostname}
                     nixpkgs-outPath
+                    sops-nix.nixosModules.sops
 
                     home-manager.nixosModules.home-manager
                     {
@@ -64,6 +70,9 @@
                                 ];
                                 home.sessionVariables.HOSTNAME = hostname;
                             };
+                            sharedModules = [
+                              sops-nix.homeManagerModules.sops
+                            ];
                         };
                     }
                 ];
