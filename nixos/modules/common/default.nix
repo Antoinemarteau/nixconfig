@@ -12,6 +12,7 @@
             ./keyboard
             ./neovim.nix
             ./nix.nix
+            ./secrets
             ./singularity.nix
             ./sound.nix
             ./users.nix

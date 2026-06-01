@@ -35,7 +35,7 @@
             splitright = true;         # A new window is put right of the current one
 
             swapfile = false;          # Disable the swap file
-            modeline = true;           # Tags such as 'vim:ft=sh'
+            modeline = false;           # Tags such as 'vim:ft=sh'
             modelines = 10;            # Sets the type of modelines
             undofile = true;           # Automatically save and restore undo history
             incsearch = true;          # Incremental search: show match for partly typed search command
