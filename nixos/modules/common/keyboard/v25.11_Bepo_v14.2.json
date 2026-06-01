@@ -2,12 +2,12 @@
   "keyboard": "glove80",
   "firmware_api_version": "1",
   "locale": "en-US",
-  "uuid": "",
-  "parent_uuid": "0872af8c-2b09-417c-b8e7-0e0d76fdf617",
+  "uuid": "f4cbba12-2a09-4848-a33d-c702680e7c85",
+  "parent_uuid": "f4cbba12-2a09-4848-a33d-c702680e7c85",
   "unlisted": false,
-  "date": 1733222772,
+  "date": 1779759913,
   "creator": "bigtoine976",
-  "title": "Bepo v14.1 fix Tab",
+  "title": "Bepo v14.2, add @descend, duplicate math key",
   "notes": "FOR CUSTOMS, LOCALE ARE IN QUERTY, NOT AZERTY\n\nCaps is replaced with Esc, and backtick with Alt in my xkb layout (I keep it for better compatibility with usual keyboards).\nCtrl+J is tmux's prefix (Ctrl+T).\nCtrl+C is cut           (Ctrl+X).\nCtrl+H is copy          (Ctrl+C).\nCtrl+U is paste         (Ctrl+V).\nCtrl+A is sel all       (Ctrl+A).\nCtrl+] is undo          (Ctrl+Z).\nCtrl+X is redo          (Ctrl+Y).\nCtrl+K is save          (Ctrl+S).\nCtrl+\\ is search        (Ctrl+f)\n",
   "tags": [
     "bepo",
@@ -474,7 +474,12 @@
         ]
       },
       {
-        "value": "&none"
+        "value": "&kp",
+        "params": [
+          {
+            "value": "N6"
+          }
+        ]
       },
       {
         "value": "&kp",
@@ -1955,7 +1960,7 @@
         "value": "&none"
       },
       {
-        "value": "&none"
+        "value": "&j_descend"
       },
       {
         "value": "&j_less"
@@ -3543,6 +3548,95 @@
           "params": [
             {
               "value": "F"
+            }
+          ]
+        },
+        {
+          "value": "&kp",
+          "params": [
+            {
+              "value": "I"
+            }
+          ]
+        },
+        {
+          "value": "&kp",
+          "params": [
+            {
+              "value": "SPACE"
+            }
+          ]
+        }
+      ],
+      "params": []
+    },
+    {
+      "name": "&j_descend",
+      "description": "⇱@descend␣",
+      "waitMs": 2,
+      "tapMs": 4,
+      "bindings": [
+        {
+          "value": "&kp",
+          "params": [
+            {
+              "value": "HOME"
+            }
+          ]
+        },
+        {
+          "value": "&kp",
+          "params": [
+            {
+              "value": "N9"
+            }
+          ]
+        },
+        {
+          "value": "&kp",
+          "params": [
+            {
+              "value": "I"
+            }
+          ]
+        },
+        {
+          "value": "&kp",
+          "params": [
+            {
+              "value": "F"
+            }
+          ]
+        },
+        {
+          "value": "&kp",
+          "params": [
+            {
+              "value": "K"
+            }
+          ]
+        },
+        {
+          "value": "&kp",
+          "params": [
+            {
+              "value": "H"
+            }
+          ]
+        },
+        {
+          "value": "&kp",
+          "params": [
+            {
+              "value": "F"
+            }
+          ]
+        },
+        {
+          "value": "&kp",
+          "params": [
+            {
+              "value": "SEMI"
             }
           ]
         },
