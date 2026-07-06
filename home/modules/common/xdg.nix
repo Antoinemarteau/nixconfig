@@ -7,6 +7,7 @@
         userDirs = {
 
             enable = true;
+            setSessionVariables = false; # do not set $XDG_DESKTOP_DIR etc. environment variables
 
             desktop     = "${config.home.homeDirectory}/desktop";
             documents   = "${config.home.homeDirectory}/documents";
@@ -30,8 +31,8 @@
                 # Text
                 "text/html"                 = "firefox.desktop";
                 "text/xml"                  = "firefox.desktop";
-                "text/plain"                = "org.gnome.gedit.desktop";
-                "text/markdown"             = "org.gnome.gedit.desktop";
+                "text/plain"                = ["nvim" "org.gnome.gedit.desktop"];
+                "text/markdown"             = ["nvim" "org.gnome.gedit.desktop"];
 
                 # Images
                 "image/gif"                 = "mpvgif.desktop";

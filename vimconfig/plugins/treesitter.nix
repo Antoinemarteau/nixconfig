@@ -6,7 +6,7 @@
 
       nixvimInjections = true;
 
-      folding = false;
+      folding.enable = false;
       settings.indent.enable = true;
 
       grammarPackages = with config.plugins.treesitter.package.builtGrammars; [
@@ -22,10 +22,10 @@
       languageRegister.cpp = "onelab";
     };
 
-    treesitter-refactor = {
-      enable = true;
-      settings.highlight_definitions.enable = true;
-    };
+        #treesitter-refactor = {
+        #  enable = true;
+        #  settings.highlight_definitions.enable = true;
+        #};
   };
 }
 

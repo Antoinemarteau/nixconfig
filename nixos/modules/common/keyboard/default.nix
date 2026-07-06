@@ -16,6 +16,6 @@
 
     # to help manually activate bepo (see shell/default.nix)
     environment.systemPackages = with pkgs; [
-        xorg.xkbcomp
+        xkbcomp
     ];
 }

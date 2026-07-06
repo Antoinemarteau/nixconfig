@@ -1,9 +1,9 @@
 {
     programs.ssh = {
         enable = true;
-        enableDefaultConfig = false; # unsure if that's breaking stuff
+        enableDefaultConfig = false;
 
-        matchBlocks = {
+        settings = {
             # replacement of disabled (and deprecated) default config above
             "*" = {
                 forwardAgent = false;
