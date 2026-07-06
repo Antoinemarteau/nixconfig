@@ -14,11 +14,12 @@
 
         config = {
             assigns = {
+                "1" = [{class = "workspace1"; }]; # base terminal
                 "2" = [{class = "irefox$"; }];
-                "5" = [{class = "Signal"; }];
+                "5" = [{class = "ignal"; }];
                 "6" = [{class = "ankama"; } {class = "Zotero"; }];
-                "7" = [{class = "^evince$"; }];
-                "8" = [{class = "FLTK"; }];
+                "7" = [{class = "FLTK"; }];
+                "8" = [{class = "^evince$"; }];
             };
 
             bars = [
@@ -150,9 +151,11 @@
             modifier = "Mod4";
 
             startup = [
+                { command = "kitty --class=workspace1"; }
+                { command = "kitty --class=ttrm";      always = true; }
+                { command = "kitty --class=btop btop"; always = true; }
                 { command = "dunst"; }
                 { command = "nitrogen --restore"; }
-                { command = "kitty"; }
                 { command = "pa-applet"; }
                 { command = "blueman-applet"; }
                 { command = "nm-applet"; }
@@ -164,8 +167,6 @@
               )
                 { command = "${pkgs.redshift}/bin/redshift -P -O 4500"; }
                 { command = "${pkgs.feh}/bin/feh --bg-fill ${./wallpaper.jpeg}"; }
-                { command = "kitty --class=ttrm";      always = true; }
-                { command = "kitty --class=btop btop"; always = true; }
             ];
 
             terminal = "kitty";
