@@ -55,7 +55,7 @@
     };
 
     home.shellAliases = {
-        nash  = "ssh    monash";
+        nash  = "kitty +kitten ssh monash";
         mage  = "ssh -t mage";
         dahu  = "ssh -t dahu.ciment  .nix-profile/bin/zsh-5.8";
         cargo = "ssh -t cargo.ciment .nix-profile/bin/zsh-5.8";
