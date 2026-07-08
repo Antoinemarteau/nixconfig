@@ -2,6 +2,7 @@
 {
     imports = [
         #./cpp.nix
+        ./direnv.nix
         ./dunst.nix
         ./firefox.nix
         ./flameshot.nix
