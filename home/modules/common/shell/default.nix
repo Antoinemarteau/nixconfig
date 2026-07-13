@@ -10,6 +10,7 @@
             nrs = "sudo nixos-rebuild switch --flake ~/nixconfig -v";
             nfu = "nix flake update";
             nsp = "nix-shell -p";
+            nsup = "nix-shell -I nixpkgs=channel:nixos-unstable -p";
             ncl = "nix-collect-garbage -d";
 
             fs = "pcmanfm";
