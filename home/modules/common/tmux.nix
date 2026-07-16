@@ -97,5 +97,9 @@
         tmd = "tmux detach";
         tn = "tmux switch-client -n";
         tp = "tmux switch-client -p";
+
+        tmgl = "tmux -L julia_agents ls";
+        tmga = "tmux -L julia_agents attach -t";
+        tmgk = "tmux -L julia_agents kill-session";
     };
 }
