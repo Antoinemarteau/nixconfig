@@ -56,6 +56,15 @@
 
     home.shellAliases = {
         nash  = "kitty +kitten ssh monash";
+        nash_agents = ''
+            kitty +kitten ssh -t monash '
+                cd /home/user1/agentprog/agentshome
+                eval "$(direnv export bash)"
+                cd projects
+                export ZDOTDIR=/home/user1/agentprog/.hosthome/.config/zsh
+                exec zsh -i
+            '
+        '';
         mage  = "ssh -t mage";
         dahu  = "ssh -t dahu.ciment  .nix-profile/bin/zsh-5.8";
         cargo = "ssh -t cargo.ciment .nix-profile/bin/zsh-5.8";
